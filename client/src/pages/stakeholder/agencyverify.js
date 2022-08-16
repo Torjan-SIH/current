@@ -1,47 +1,73 @@
 import React from "react";
-import TopBar from "../../components/TopBar/topbar";
+import { useState } from "react";
+import './holderstyles.css'
 
+ const AgencyVerify = () =>{
+    const column = [
+        {heading: 'Name of Agency'},
+        {heading: 'Mail of Agency'},
+        {heading: 'Contact No'},
+        {heading: 'Agency Established Date'},
+        {heading: 'Address'},
+        {heading: 'Government Authorization Certificate'},
+        {heading: 'IT returns(last 3 years'},
 
-const AgencyVerify = () => {
-    return(  
-        <div className="agencyProfileDiv">
-            <TopBar/>
-            <div className="btn">
-            <button >Agency Verification Requests</button>
-            <button >Hei Verification Requests</button>
-            </div>
-            <div className="sideBySide">
-                <form className="agencyProfileForm">
-                    <h1 className="agencyProfileHeading">Agency Registrations</h1>
-                    <table className="agencyProfileTable" cellPadding={15} cellSpacing={15} border={1} align={"right"}>
-                    <tr>
-                    <th>Name of Agency</th>
-                        <th>Mail of agency</th>
-                        <th>Contact No.</th>
-                        <th>Agency established Date</th>
-                        <th>Address</th>
-                        <th>Govt. Authorisation Certificate</th>
-                        <th>IT returns(last 3 years)</th>
-                    </tr>
-                    <tr>
-                        <td>VVIT</td>
-                        <td>vvit.net </td>
-                        <td>0987654321 </td>
-                        <td>nambur</td>
-                        <td>abcdefgh </td>
-                        <td>HEI </td>
-                        <button >Accept/Reject</button>
-                    </tr>
-                    <tr>
-                        <td>Scheme ID </td>
-                        <td>Scheme Name </td>
-                        <td>Applied On </td>
+    ]
+    const row = [
+        {
+            sname: 'agency1',
+            smail: 'xyz',
+            sno: 1,
+            sdate:'1-1-1',
+            sadd:'abc',
+            scert:'abc',
+            sreturns:3,
+        },
+        {
+            sname: 'agency2',
+            smail:' def',
+            sno: 2,
+            sdate:'2-1-1',
+            sadd:'cde',
+            scert:'abc',
+            sreturns:4,
+        },
+        {
+            sname: 'agency3',
+            smail: 'ghi',
+            sno: 3,
+            sdate:'3-1-1',
+            sadd:'ghi',
+            scert:'abc',
+            sreturns:5,
+        },
+    ]
 
+    const [popupstatus, setPopUpStatus] = useState(false);
+    const [popupinfo, setPopUpInfo] = useState();
+
+    return(
+        <div>
+            <table className="agencyVerify" border='1' cellPadding={15} cellSpacing={15} align="center">
+                <thead>
+                    <tr className="agencyVerifyMetaData">
+                        {column.map((head,index) => <td className="agencyVerifyMetaData">{head.heading}</td>)}
                     </tr>
-                    </table>
-                </form>
-            </div>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td className="agencyVerifyMetaData">{row.map((data,index) => <tr >{data.sname}</tr>)}</td>
+                        <td className="agencyVerifyMetaData">{row.map((data,index) => <tr >{data.smail}</tr>)}</td>
+                        <td className="agencyVerifyMetaData">{row.map((data,index) => <tr >{data.sno}</tr>)}</td>
+                        <td className="agencyVerifyMetaData">{row.map((data,index) => <tr >{data.sdate}</tr>)}</td>
+                        <td className="agencyVerifyMetaData">{row.map((data,index) => <tr >{data.sadd}</tr>)}</td>
+                        <td className="agencyVerifyMetaData">{row.map((data,index) => <tr >{data.scert}</tr>)}</td>
+                        <td className="agencyVerifyMetaData">{row.map((data,index) => <tr >{data.sreturns}</tr>)}</td>
+                        <td className="agencyVerifyMetaData">{row.map((data,index) => <tr ><button key={index} onClick={() => {setPopUpStatus(true); setPopUpInfo(data)}}>view{data.sno}</button></tr>)}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-    )
+     )
 }
 export default AgencyVerify;

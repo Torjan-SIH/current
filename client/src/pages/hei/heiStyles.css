@@ -16,9 +16,9 @@
 .heiDashBoardForm{
     margin-left: 100%;
 }
-.sideBySide{
+/*.sideBySide{
     display: inline-flex;
-}
+}*/
 .heiDashboardDiv{
     font: italic bold 12px/30px Georgia, serif;
 }
@@ -34,5 +34,22 @@ button{
 .search{
     float: left;
 }
+.heiSideBar{
+    display: inline-flex;
+    margin-right: 10%;
+    float: left;
+}
+.heiApply{
+    text-align: left;
+}
+.heiApplying{
+    height: fit-content;
+    width: fit-content;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+
+
 
 

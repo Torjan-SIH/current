@@ -32,18 +32,19 @@ const Home = () =>{
         <div className="illustrations">
           <div className="sideBySideHome">
             <img className="illustrate1" src="https://designstripe-secure.imgix.net/scene-snapshots/40951b2b-d4a7-4213-97ae-da4d222fbc0b/1646878019817/default?auto=format&h=1080&s=7074fd3d0446697132b5646f33fb1535" alt="illustrate"/>
-            <p>Enter any content about HEI</p>
+            <p><h4><b>HEI's analyse the funding requirmensts
+              of Institution.</b></h4></p>
           </div>
           <div className="sideBySideHome">
             <img className="illustrate2" src="https://designstripe-secure.imgix.net/scene-snapshots/67d64904-5447-4f7a-a19f-9a12e14e0a5e/1637162893425/default?auto=format&h=1080&s=8c487a2fcc02c87ca1fc7cbc3d3d8799" alt="illustrate"/>
-            <p>Enter any content about Agencies</p>
+            <p><h4><b>Agencies provide the funding</b></h4></p>
           </div>
         </div>
 
         <div className="sketchs">
           <div className="sketch-1">
-            <h3>Best-in-Class</h3>
-            <h2>--Enter any content--</h2>
+           
+            <h4><b>The institutions should analyse the needs of the institution and  along with the funds to be raised</b></h4>
           </div>
           <div className="sketch-1">
             <img className="sketch1" src="https://storage.googleapis.com/swayam2_central/assets/img/swayam_images/Slider/instructor.png" alt=""/>
@@ -53,8 +54,8 @@ const Home = () =>{
             <img className="sketch2" src="https://storage.googleapis.com/swayam2_central/assets/img/swayam_images/Slider/credits_transfer.png" alt=""/>
           </div>
           <div className="sketch-2">
-            <h2>With knowledge and skills.</h2>
-            <h2>--Enter any content--</h2>
+           
+            <h4><b>The required documenataion must be prepared and submitted in the form of document.</b></h4>
           </div>
         </div>
 
@@ -67,9 +68,7 @@ const Home = () =>{
                 </td>
               </tr>
               <tr>
-                <td>
-                  <img src="https://storage.googleapis.com/swayam2_central/assets/img/swayam_images/NC_logo/AICTE_logo_128.png" alt="Go to AICTE" width="200px" height="200px"></img>
-                </td>
+                
                 <td>
                   <img src="https://storage.googleapis.com/swayam2_central/assets/img/swayam_images/NC_logo/UGC_logo_128.png" alt="Go to UGC" width="200px" height="200px"></img>      
                 </td>
