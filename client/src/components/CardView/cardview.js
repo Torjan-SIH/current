@@ -13,6 +13,21 @@ export const CardHeiExplorer= ()=>{
     sdesc:"useful for hostel students",
     fund:10000
     },
+    {sname:"Hostel Scheme ",
+    sid: 2,
+    sdesc:"useful for hostel students",
+    fund:10000
+    },
+    {sname:"Hostel Scheme ",
+    sid: 3,
+    sdesc:"useful for hostel students",
+    fund:10000
+    },
+    {sname:"Hostel Scheme ",
+    sid: 4,
+    sdesc:"useful for hostel students",
+    fund:10000
+    },
   ];  
 
   const [popupstatus, setPopUpStatus] = useState(false);
@@ -20,9 +35,9 @@ export const CardHeiExplorer= ()=>{
   const HeiCard = (card,index) => {
     return(
          <div>
-          <Row xs={1} md={2} className="g-4">
-      {Array.from({ length: 2 }).map((_, idx) => (
-        <Col>
+          <Row xs={1} md={2} className="g-4"  >
+      {Array.from({ length: 1 }).map((_, idx) => (
+        <Col >
             <Card  style={{ width: "25rem" }} key={index} >
               <Card.Body>
                 <Card.Title><h6>Scheme Name:</h6>{card.sname}</Card.Title>
