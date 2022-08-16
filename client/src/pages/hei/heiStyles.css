@@ -1,0 +1,38 @@
+.heiProfileDiv, .heiExploreDiv{
+    width: 100%;
+    text-align: left;
+}
+.heiProfileForm{
+    margin-left: 100%;
+}
+.sideBySide{
+    display: inline-flex;
+    margin-right: 10%;
+}
+.heiDashBoardDiv{
+    width: 100%;
+    text-align: left;
+}
+.heiDashBoardForm{
+    margin-left: 100%;
+}
+.sideBySide{
+    display: inline-flex;
+}
+.heiDashboardDiv{
+    font: italic bold 12px/30px Georgia, serif;
+}
+.btn{
+    float: right;
+}
+
+button{
+    background-color: navy;
+    color: #bacdd8;
+ }
+
+.search{
+    float: left;
+}
+
+

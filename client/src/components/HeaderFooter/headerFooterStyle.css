@@ -1,0 +1,15 @@
+.footerH4{
+    color: #ececec;
+    font: italic bold 12px/30px Georgia, serif;
+    margin-bottom: 0%;
+}
+.footer{
+    background-image: linear-gradient(rgba(20, 13, 151, 0.582),rgba(20, 13, 151, 0.582)),url(https://images.pexels.com/photos/924824/pexels-photo-924824.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    height: fit-content;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin-bottom: 0%;
+    position: relative;
+    object-position: 0%;
+} 
