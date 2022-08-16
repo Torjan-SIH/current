@@ -312,7 +312,7 @@ export const ViewHeiProposal = () =>{
     return(
         <div className="proposaltable">
             <center><h2>PROPOSALS</h2></center>
-            <table className="listProposalTable" cellPadding={'30'} cellSpacing={'5'} >
+            <table className="listProposalTable" cellPadding={'20'} cellSpacing={'5'} color="blue">
                 
                 <thead>
                     <tr className="listProposalMetaData">

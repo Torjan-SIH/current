@@ -6,7 +6,7 @@ const NavBar = () => {
    return (
     <div className="navBar">
         <ul className="navBarList" >
-            <img class="logo" src='https://www.creditboss.in/wp-content/uploads/2020/10/Process-of-funding.jpg' alt=""/> 
+            <img class="logo" src='logo.png' alt=""/> 
             <Link to="/home" ><li className="navList" id="onof"><h2><b>ONE NATION-ONE FUNDING</b></h2></li></Link>
             <Link to="/home" ><li className="navList"><h2><b>Home</b></h2></li></Link>
             <Link to="/about" ><li className="navList"><h2><b>About</b></h2></li></Link>
