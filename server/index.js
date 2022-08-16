@@ -9,109 +9,113 @@ app.use(express.json());
 const db = mysql.createConnection({
     user:"root",
     host:"localhost",
-    password:'root',
-    database:'onof',
-    port: '8889'
+    password:'',
+    database:'gmk',
+   
     
 });
-// db.connect(function(err) {
-//     if (err) throw err;
-//     console.log("Connected!");
-//   });
-
-
-app.get('/fundscheme',(req,res) => {
-    db.query("select * from info",(err,result)=>{
-        if(err){
-            console.log(err);
-        } else {
-            res.send(result);
-        }
-    });
-});
-
-
-app.get('/funddashboard',(req,res) => {
-    db.query(" ",(err,result)=>{
-        if(err){
-            console.log(err);
-        } else {
-            res.send(result);
-        }
-    });
-});
-
-
-app.get('/fundoeevaluation',(req,res) => {
-    db.query(" ",(err,result)=>{
-        if(err){
-            console.log(err);
-        } else {
-            res.send(result);
-        }
-    });
-});
-
-
-app.get('/oedashboard',(req,res) => {
-    db.query(" ",(err,result)=>{
-        if(err){
-            console.log(err);
-        } else {
-            res.send(result);
-        }
-    });
-});
-
-
-app.post('/loginpage',(req,res)=>{
-    const username = req.body.username; 
-    const password = req.body.password;
-    const role= req.body.role;
+db.connect(function(err) {
+        if (err) throw err;
+        console.log("Connected!");
+      });
     
-
-    db.query("SELECT * FROM login WHERE (username = ? )AND (password=?) AND (login=?)",
-    [username,password,role],
-    (err,result)=>{
-        if(err)
-        {console.log(err);}
-        else{
-            if(result.length>0)
-            {
-                console.log(result);
+    // app.get('/bokk',(req,res)=>{
+    //     db.query("show columns from info",(err,result)=>{
+    //         if(err){
+    //             console.log(err);
+    //         } else {
+    //             res.send(result);
+    //         }
+    //     });
+    // });
+    
+    app.get('/fundscheme',(req,res) => {
+        db.query("select * from info",(err,result)=>{
+            if(err){
+                console.log(err);
+            } else {
                 res.send(result);
             }
-            else{
-                res.send({message:"Wrong username/password combination"});
+        });
+    });
+    
+    
+    app.get('/funddashboard',(req,res) => {
+        db.query(" ",(err,result)=>{
+            if(err){
+                console.log(err);
+            } else {
+                res.send(result);
             }
+        });
+    });
+    
+    
+    app.get('/fundoeevaluation',(req,res) => {
+        db.query(" ",(err,result)=>{
+            if(err){
+                console.log(err);
+            } else {
+                res.send(result);
+            }
+        });
+    });
+    
+    
+    app.get('/oedashboard',(req,res) => {
+        db.query(" ",(err,result)=>{
+            if(err){
+                console.log(err);
+            } else {
+                res.send(result);
+            }
+        });
+    });
+
+    app.post('/loginpage',(req,res)=>{
+        const username = req.body.username; 
+        const password = req.body.password;
+        const role= req.body.role;
+        
+    
+        db.query("SELECT * FROM login WHERE (username = ? )AND (password=?) AND (login=?)",
+        [username,password,role],
+        (err,result)=>{
+            if(err)
+            {console.log(err);}
+            else{
+                if(result.length>0)
+                {
+                    console.log(result);
+                    res.send(result);
+                }
+                else{
+                    res.send({message:"Invalid"});
+                }
+                
+            }
+        })
+
+    
+            // if(err){
+            //     res.send({err: err});
+            //     // res.send({message: "Wrong username/pasword  combination"});
+                
+            // } 
             
-        }
-    })
-});
-
-//---------Register page backend------------
-
-// app.post('/register',(req,res) => {
-//     const NameOfAgency=req.body.NameOfAgency;
-//     const email = req.body.email;
-//     const contactNo = req.body.contactNo;
-//     const address = req.body.address;
-//     const dateOfAut = req.body.dateOfAut;
-//     const passwdRegister = req.body.passwdRegister;
-//     const role = req.body.role;
-
-//     // const sql = "INSERT INTO aregister(aname, aemail, acontact, aaddress, adateaut, arole) VALUES ?";
-//     // const value = [NameOfAgency, email, contactNo, address, dateOfAut, govtAutCert, role];
-//     db.query("INSERT INTO aregister(aname, aemail, acontact, aaddress, adateaut, arole) VALUES (?,?,?,?,?,?)",[NameOfAgency,email,contactNo,address,dateOfAut,role],(err,result) => {
-//         if(err)
-//             console.log(err);
-//         else{
-//             res.send("Row inserted")
-//             console.log(result);
-//         }
-//     })
-// })
-
-app.listen(3001,()=> {
-    console.log("server is running on port 3001");
-});
+            // if(result.length >0 ) {
+            //     res.send(result);
+            //     console.log("in if")
+            
+            // } else{
+            //     res.send({message: "Wrong username/pasword  combination"});
+            //     console.log("in else");
+              
+    
+            // }
+        });
+  
+    
+    app.listen(3001,()=> {
+        console.log("server is running on port 3001");
+    });
