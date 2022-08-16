@@ -1,34 +1,35 @@
-.oeProfileDiv{
+.oeProfileDiv {
     width: 100%;
     text-align: left;
 }
-.sideBySide{
+
+.sideBySide {
     display: inline-flex;
 }
-.oeProfileForm{
+
+.oeProfileForm {
     margin-left: 100%;
 }
 
-button{
+button {
     background-color: navy;
     color: #bacdd8;
- }
+}
 
-.accept
-{
+.accept {
     margin-top: 200px;
-    background-color:black;
+    background-color: black;
     color: white;
-    
+
 
 }
-.reject
-{
+
+.reject {
     margin-top: 100px;
-   background-color: black;
-   color:white;
+    background-color: black;
+    color: white;
 }
-.oeVerify{
+
+.oeVerify {
     align-items: right;
 }
-

@@ -1,35 +1,59 @@
-.fundProfileDiv, .fundsExploreDiv{
+.fundProfileDiv,
+.fundsExploreDiv {
     width: 100%;
     text-align: left;
 }
-.fundProfileForm{
+
+.fundProfileForm {
     margin-left: 70%;
-    
+
 }
-.sideBySide{
+
+.sideBySide {
     display: inline-flex;
     margin-right: 10%;
-   
+
 }
-.heiExplorerDiv{
+
+.heiExplorerDiv {
     font: italic bold 12px/30px Georgia, serif;
 }
+
 .card {
     /* Change background color */
     background-color: white;
-  
+
     /* Add border */
     border: 1px solid #bacdd8;
-  
+
     /* Add space between the border and the content */
     padding: 8px;
-  
+
     border-radius: 12px;
 }
-.btn{
+
+.btn {
     float: right;
 }
- button{
+
+button {
     background-color: navy;
     color: #bacdd8;
- }
+}
+
+/* ------Agency Register Multi-steps page Styling-------*/
+
+.steps {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.registerTable {
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+}
+
+.registerInputField {
+    width: 100%;
+}
