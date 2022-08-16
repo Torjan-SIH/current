@@ -68,7 +68,41 @@ export const PopUpOeDashboard = (props) =>{
         </div>
     ) : "";
 }
-
+export const PopUpHeiDashboard = (props) =>{
+    return (props.trigger) ? (
+        <div className="popup">
+            <div className="popupInner">
+                <button className="popupClose" onClick={() => props.setTrigger(false)}>Close</button>
+                <table>
+                    <tr>
+                        <td>HEI Name</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Scheme ID</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Scheme Name</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Applied Date</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Documents</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><button>Accept</button></td>
+                        <td><button>Reject</button></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    ) : "";
+}
 export const PopUpSelectRoles = (props) =>{
     
     return (props.trigger) ? (
@@ -83,6 +117,16 @@ export const PopUpSelectRoles = (props) =>{
                     <td><button className="roleButton"><Link className="roleButtonLink" to="/oeregister">OE</Link></button></td>
                 </tr>
                 <button className="popupClose" onClick={() => props.setTrigger(false)}>Close</button>
+            </div>
+        </div>
+    ) : "";
+}
+export const PopUpViewHeiProposal = (props) =>{
+    return (props.trigger) ? (
+        <div className="popup">
+            <div className="popupInner">
+                <button className="popupClose" onClick={() => props.setTrigger(false)}>Close</button>
+                {props.data.sname}
             </div>
         </div>
     ) : "";

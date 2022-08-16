@@ -13,7 +13,7 @@
 .popupInner{
     position: relative;
     padding: 32px;
-    width: 100%;
+    width: 100px;
     max-width: 640px;
     background-color: #fff;
 }
@@ -23,8 +23,8 @@
     right: 15px;
     background: black;
     color: #fff;
-    font-size: 15px;
-    height: fit-content;
+    font-size: 15px; 
+    height: 5%;
     border: 0;
     border-radius: 10px;
     text-align: center;
@@ -48,7 +48,7 @@
 .roleButton{
     border: 0;
     margin: 20px 50px 20px 50px;
-    width: 100px;
+    width: 200px;
     padding: 5px 1px 5px 1px;
     text-align: center;
     font-weight: 600;

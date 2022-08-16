@@ -1,0 +1,74 @@
+.popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.popupInner{
+    position: relative;
+    padding: 32px;
+    width: 100%;
+    max-width: 640px;
+    background-color: #fff;
+}
+.popupClose{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: black;
+    color: #fff;
+    font-size: 15px;
+    height: fit-content;
+    border: 0;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.listFundTable{
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+.listFundMetaData{
+    border: 2px solid black;
+    border-collapse: collapse;
+    padding: 10px 40px 10px 40px
+}
+.listFundData{
+    padding: 20px 40px 20px 40px;
+}
+
+
+.roleButton{
+    border: 0;
+    margin: 20px 50px 20px 50px;
+    width: 100px;
+    padding: 5px 1px 5px 1px;
+    text-align: center;
+    font-weight: 600;
+    background: rgba(#929cd0, .8);
+    border: 1px solid black;
+    border-radius: 10px;
+    transform-style: preserve-3d;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    transition: transform 100ms cubic-bezier(0, 0, 1, 1), background 100ms cubic-bezier(0, 0, 1, 1);
+}
+.roleButton:hover {
+    border: 1px solid black;
+    background-color: black;
+    transform: translate(0, 0.25em);
+}
+.roleButtonLink{
+    text-decoration: none;
+    color: white;
+}
+.roleButtonLink:hover{
+    color: white;
+}
+

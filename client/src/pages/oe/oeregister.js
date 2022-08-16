@@ -3,128 +3,153 @@ import { useState, useEffect } from "react";
 import './oeStyles.css';
 
 const OeRegister = () =>{
-
-   const [employeename, setEmployeeName] = useState("");
-   const [companyname, setCompanyName] = useState("");
-   const [companyemail, setCompanyEmail] = useState("");
-   const [companycontact, setCompanyContact] = useState("");
-   const [companyaddress, setCompanyAddress] = useState("");
-   const [state, setState] = useState("");
-   const [city, setCity] = useState("");
-   const [pincode, setPinCode] = useState("");
-   const [employeerole, setEmployeeRole] = useState("");
-   const [verficationcode, setVerificationCode] =useState("");
-   const [agencyname, setAgencyName] =useState("");
-   const [passwd, setPasswd] = useState("");
-   const [cnfrmpasswd, setCnfrmPasswd] = useState("");
-
-
+   
+   const passwdlen = 8;
+ 
+   const [firstName, setFirstName] = useState(null);
+   const [lastName, setLastName] = useState(null);
+   const [email, setEmail] = useState(null);
+   const [roleInput, setRoleInput] = useState(null);
+   const [addressInput, setAddressInput] = useState(null);
+   const [passwdRegister, setPasswdRegister] = useState("");
+   const [passwdConfirm, setPasswdConfirm] = useState("");
+   const [validLength, setValidLength] = useState("");
+   const [hasNumber, setHasNumber] = useState(null);
+   const [upperCase, setUpperCase] = useState(null);
+   const [lowerCase, setLowerCase] = useState(null);
+   const [specialChar, setSpecialChar] = useState(null);
+   const [match, setMatch] = useState(null);
+   const [contactNo,setContactNo]=useState(null);
+   
+   
+   const changeRegisterHandler=(e) =>{
+      const{name} = e.target;
+      if(name === "firstName")
+      setFirstName(e.target.value);
+      if(name === "lastName")
+      setLastName(e.target.value); 
+      if(name === "email")
+      setEmail(e.target.value); 
+      if(name === "address")
+      setAddressInput(e.target.value);
+      if(name === "contactNo")
+      setContactNo(e.target.value);
+      if(name === "role")
+      setRoleInput(e.target.value);
+      if(name === "password")
+      setPasswdRegister(e.target.value);  
+      if(name === "passwordcnfrm")
+      setPasswdConfirm(e.target.value)
+      
+   }
+   const validate=(e) =>{
+      e.preventDefault();
+   }
+ 
+   useEffect(() => {
+      setUpperCase(/[A-Z]/.test(passwdRegister));
+      setLowerCase(/[a-z]/.test(passwdRegister));
+      setHasNumber(/\d/.test(passwdRegister));
+      setMatch(passwdRegister === passwdConfirm);
+      setSpecialChar(/[!@#$&*-_+?,.]/.test(passwdRegister));
+      setValidLength((passwdRegister.length >= 8)? true : false)
+      },[passwdRegister, passwdConfirm, passwdlen]);
 
    return(
-      <div className="registerDiv">
-         <form className="registerForm" >
-            <table className="registerTable">
-               <tbody>
-                  <tr >
-                     <td colSpan={2}>
-                        <input className="registerInputField" type="text" name="employeename" pattern="[A-Za-z]{2,}" required placeholder="Name of Employee" 
-                           onChange = {(e) => setEmployeeName(e.target.value)} />
-                     </td>
-                  </tr>
-                  <tr>
-                     <th>
-                        Employee Role
-                     </th>
-                     <td>
-                        <select name="employeerole" onChange={(e) => setEmployeeRole(e.target.value)}>
-                           <option value="null">-select-</option>
-                           <option value="employee">Employee</option>
-                           <option value="manager">Manager</option>
-                        </select>
-                     </td>
-                  </tr>
-                  <tr >
-                     <td colSpan={2}>
-                        <input className="registerInputField" type="text" name="companyname" pattern="[A-Za-z]{2,}" required placeholder="Name of Company" 
-                           onChange = {(e) => setCompanyName(e.target.value)} />
-                     </td>
-                  </tr>
-                  <tr>
-                     <td>
-                        <input className="registerInputField" type="email" name="companyemail" required placeholder="Company Email" 
-                           onChange = {(e) => setCompanyEmail(e.target.value)} />
-                     </td>
-                     <td>
-                        <input className="registerInputField" type="text" name="companycontact" maxLength={10} minLength={10} pattern="[789][0-9]{9}" required placeholder="Company Contact no." 
-                           onChange = {(e) => setCompanyContact(e.target.value)} />
-                     </td>
-                  </tr>
-                  <tr>
-                     <td colSpan={2}>
-                        <input className="registerInputField" id="addressField" type="text" name="companyaddress" required placeholder="Office Address" 
-                           onChange = {(e) => setCompanyAddress(e.target.value)}/>
-                     </td>
-                  </tr>
-                  <tr>
-                     <td>
-                        <input type="radio" value="india" name="country" defaultChecked disabled/>&nbsp; India
-                     </td>
-                     <td>
-                        <input className="registerInputField" type="text" name="state" placeholder="State" required
-                           onChange = {(e) => setState(e.target.value)}/>
-                     </td> 
-                  </tr>
-                  <tr>
-                     <td>
-                        <input className="registerInputField" type="text" name="city" placeholder="City/Town" required
-                           onChange = {(e) => setCity(e.target.value)}/>
-                     </td>
-                     <td>
-                        <input className="registerInputField" name="pincode" type="text" maxLength={6} minLength={6} pattern="[0-9]{6}" placeholder="Pincode" required
-                           onChange = {(e) => setPinCode(e.target.value)}/>
-                     </td>
-                  </tr>
-                  <tr>
-                     <td>
-                        <input className="registerInputField" type="text" name="verificationcode" maxLength={6} minLength={6} pattern="[0-9]{6}" placeholder="Verfication Code" required
-                           onChange = {(e) => setVerificationCode(e.target.value)}/>
-                     </td>
-                     <td>
-                        <input className="registerInputField" type="text" name="agencyname" pattern="[A-Za-z]{2,}" required placeholder="Name of Agency" 
-                           onChange = {(e) => setAgencyName(e.target.value)} />
-                     </td>
-                  </tr>
-                  <tr>
-                     <td colSpan={2}>
-                        <input type="password" className="registerInputField" placeholder="Create Password" name="passwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                           onChange={(e) => setPasswd(e.target.value)} />
-                     </td>
-                  </tr>
-                  <tr>
-                     <td colSpan={2}>
-                        <input type="password" className="registerInputField" placeholder="Create Password" name="cnfrmpasswd"
-                           onChange={(e) => setCnfrmPasswd(e.target.value)}/>
-                     </td>
-                     <p>{ (passwd !== cnfrmpasswd) ? "Password Doesn't Match" : "" }</p>
-                  </tr>
-               </tbody>
-               <tfoot>
-                  <tr>
-                     <td>
-                        <input type="checkbox" /> .......
-                     </td>
-                  </tr>
-                  <tr>
-                     <td>
-                        <button type="submit" >Submit</button>
-                     </td>
-                  </tr>
-               </tfoot>
-            </table>
-         </form>
-      </div>
+      <div className="oeregister">
+      <form onSubmit={validate} className="oeform">
+         <table className="tableRegister">
+         <tr><th colSpan='2'><center><h2><b>OE REGISTER</b></h2></center></th></tr>
+         <tr className="firstName">
+            <th>
+            <label className="firstNameLabel" for="firstName"><center><h5><b>First Name</b></h5></center></label>
+            </th>
+            <td>
+            <input className="firstNameInput" type="text" name="firstName" id="oereg" placeholder="First Name" value={firstName} required onChange = {(e) => changeRegisterHandler(e)} ></input> 
+            </td>
+         </tr>
+         <tr className="lastName">
+            <th>
+            <label className="lastNameLabel" for="lastName"><center><h5><b>Last Name</b></h5></center></label>
+            </th>
+            <td>
+            <input className="lastNameInput" type="text" name="lastName" id="oereg" placeholder="Last Name" value={lastName} required onChange = {(e) => changeRegisterHandler(e)} ></input> 
+            </td>
+         </tr>
+         <tr className="email">
+            <th>
+            <label className="emailLabel" for="email"><center><h5><b>Email</b></h5></center></label>
+            </th>
+            <td>
+            <input className="emailInput" type="email" name="email" id="oereg" placeholder="Email" value={email} required onChange = {(e) => changeRegisterHandler(e)} ></input> 
+            </td>
+         </tr>
+         <tr className="contactNo">
+            <th>
+            <label className="contactNoLabel" for="contactNo"><center><h5><b>Contact Number</b></h5></center></label>
+            </th>
+            <td>
+            <input className="contactNoInput" type="contactNo" id="oereg" name="contactNo" placeholder="ContactNo" value={contactNo} minlength="10" maxlength="10"  required onChange = {(e) => changeRegisterHandler(e)}  ></input> 
+            </td>
+         </tr>
+         <tr className="address">
+            <th>
+            <label className="addressLabel" for="address"><center><h5><b>Address</b></h5></center></label>
+            </th>
+            <td>
+            <input className="addressInput" type="text" id="oereg" name="address" placeholder="Address" value={addressInput} required onChange = {(e) => changeRegisterHandler(e)} ></input>
+            </td>
+         </tr>
+         <tr className="registerPassword">
+            <th>
+            <label className="registerLabel" for="passwdRegister"><center><h5><b>Password</b></h5></center></label>
+            </th>
+            <td>
+            <input className="registerInput" type="password" id="oereg" name="password" value={passwdRegister} required onChange={(e) => changeRegisterHandler(e)}></input>
+            </td>
+         </tr>
+         <tr className="confirmPassword">
+            <th>
+            <label className="confirmLabel" for="passwdConfirm"><center><h5><b>confirmPassword</b></h5></center></label>
+            </th>
+            <td>
+            <input className="confirmInput" type="password" id="oereg" name="passwordcnfrm" value={passwdConfirm} required onChange={(e) => changeRegisterHandler(e)}></input>
+            </td>
+         </tr>
+         <tr className="passwdWarning"> 
+            <td>
+            <ul>
+               <li className="warn">
+                  {hasNumber ? <span className="valid">Number[0-9]</span> : <span className="invalid">Number[0-9]</span>}
+               </li>
+               <li className="warn">
+                  {upperCase ? <span className="valid">UpperCase[A-Z]</span> : <span className="invalid">UpperCase[A-Z]</span>}
+               </li>
+               <li className="warn">
+                  {lowerCase ? <span className="valid">LowerCase[a-z]</span> : <span className="invalid">LowerCase[a-z]</span>}
+               </li>
+               <li className="warn">{match ? <span className="valid">Password Match</span> : <span className="invalid">Password Match</span>}</li>
+               <li className="warn">
+                  {validLength ? <span className="valid">Password Length </span> : <span className="invalid">Password Length</span>}
+               </li>
+               <li className="warn">
+                  {specialChar ? <span className="valid">Symbols[!@#$&-_+?,.]</span> : <span className="invalid">Symbols[!@#$&-_+?,.]</span>}
+               </li>
+            </ul>
+            </td>
+         </tr><tr className="RegisterSubmit" ><td colSpan='2'>
+         <div className="button" align="center">
+         
+            
+            <button type="submit" align="center "className="RegisterSubmitButton" style={{background:"#191970",color:"#f5fffa"}} colspan="2">Register</button>
+            </div></td>
+         </tr>
+         
+      </table>
+    </form>
+    </div>
+
    )
-   
 }
 
 export default OeRegister

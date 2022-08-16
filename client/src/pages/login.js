@@ -1,27 +1,24 @@
-import  Axios  from "axios";
 import React,{useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import { PopUpSelectRoles } from "../components/ListView/popup";
 import './pagesStyle.css';
 
-
 const Login = () =>{
    
    const [popupstatus, setPopUpStatus] = useState(false);
    
-   const [userLogin, setUserLogin] = useState("");
+   const [userLogin, setUserLogin] = useState(null);
    const [passwdLogin, setPasswdLogin] = useState("");
-   const [roleLogin, setRoleLogin] = useState("");
+   const [roleLogin, setRoleLogin] = useState(null);
    const [validPasswd, setValidPasswd] = useState(null);
-   const[loginstatus,setloginstatus] = useState("");
    
    const changeLoginHandler = (e) =>{
       const{name} = e.target;
-      if(name === "userLogin")
+      if(name === "username")
          setUserLogin(e.target.value);
-      if(name === "passwdLogin")
+      if(name === "password")
          setPasswdLogin(e.target.value);
-      if(name === "roleLogin")
+      if(name === "role")
          setRoleLogin(e.target.value);
       }
    
@@ -31,35 +28,17 @@ const Login = () =>{
 
    const submitLoginHandler = (e) =>{
       e.preventDefault();
-      // console.log(userLogin);
-      Axios.post('http://localhost:3001/loginpage',{
-         username:userLogin,
-         password:passwdLogin,
-         role:roleLogin,
          
-       }).then((response)=>{
-         if(response.data.message)
-         {
-            console.log(response.data.message);
-         }
-         else
-         {
-            console.log(response.data[0].username);
-            // console.log(response.data[1].password);
-            // console.log(response.data[2].role);
-         }
-         
-         
-        
-           
-         
-         
-       });
-     };
-         
+   }
+
    
 
    return(
+      <body className="loginb">
+
+
+
+
       <div class="contactform"><center>
          <form onSubmit={submitLoginHandler} className="myform">
             <table className="loginTable" >
@@ -68,17 +47,17 @@ const Login = () =>{
                </tr>
                <tr className="loginItem" >
                   <td >
-                     <input className="loginInput"  type="email" name="userLogin" placeholder="Username"value={userLogin} required onChange = {(e) => changeLoginHandler(e)} ></input> 
+                     <input className="loginInput"  type="email" name="username" placeholder="Username"value={userLogin} required onChange = {(e) => changeLoginHandler(e)} ></input> 
                   </td>
                </tr>
                <tr className="loginItem">
                   <td >
-                     <input className="loginInput" type="password" placeholder="Password" name="passwdLogin" value={passwdLogin} required onChange = {(e) => changeLoginHandler(e)}></input>
+                     <input className="loginInput" type="password" placeholder="Password" name="password" value={passwdLogin} required onChange = {(e) => changeLoginHandler(e)}></input>
                   </td>
                </tr>
                <tr className="loginItem">
                   <td>
-                     <select className="loginInput" name="roleLogin" value={roleLogin} required onChange={(e) => changeLoginHandler(e)} > 
+                     <select className="loginInput" name="role" value={roleLogin} required onChange={(e) => changeLoginHandler(e)} > 
                      <option name="role" value="">--Role--</option>
                      <option name="role" value="agencies" >Agencies</option>
                      <option name="role" value="hei" >HEI's</option>
@@ -119,8 +98,11 @@ const Login = () =>{
             </table>
          </form> 
       </center>
+
+
       <PopUpSelectRoles trigger={popupstatus} setTrigger={setPopUpStatus}/>
    </div> 
+</body>
    )
    
 }
