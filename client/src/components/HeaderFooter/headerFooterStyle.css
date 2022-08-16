@@ -1,15 +1,18 @@
 .footerH4{
-    color: #ececec;
-    font: italic bold 12px/30px Georgia, serif;
-    margin-bottom: 0%;
+    display: inline-block;
+    list-style-type: none;
+    padding: 20px 30px 30px;
+   font-size: larger;
+    color: black;
 }
 .footer{
-    background-image: linear-gradient(rgba(20, 13, 151, 0.582),rgba(20, 13, 151, 0.582)),url(https://images.pexels.com/photos/924824/pexels-photo-924824.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
-    height: fit-content;
+    background-image: linear-gradient(#e2e2e2,#c9d6ff);
+    height: 100px;
     bottom: 0;
     left: 0;
     width: 100%;
     margin-bottom: 0%;
     position: relative;
+    background-position: center;
     object-position: 0%;
 } 
