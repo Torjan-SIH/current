@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import './heiStyles.css';
 
 const HeiRegister = () => {
 
@@ -210,9 +211,9 @@ const HeiRegister = () => {
    }
 
    return (
-      <div>
-         <form>
-            <table>
+      <div className="registerDiv">
+         <form className="registerForm">
+            <table className="registerTable">
                <thead>
                   <tr>
                      <select name="category" onChange={(e) => setCategroy(e.target.value)} >

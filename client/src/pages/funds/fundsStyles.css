@@ -41,11 +41,10 @@ button {
     color: #bacdd8;
 }
 
-/* ------Agency Register Multi-steps page Styling-------*/
+/* ------Agency Register page Styling-------*/
 
-.steps {
-    display: grid;
-    grid-template-columns: auto auto auto;
+.registerDiv {
+    margin-top: 10%;
 }
 
 .registerTable {

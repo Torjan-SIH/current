@@ -33,3 +33,20 @@ button {
 .oeVerify {
     align-items: right;
 }
+
+
+/* ------OE Register page Styling-------*/
+
+.registerDiv {
+    margin-top: 10%;
+}
+
+.registerTable {
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+}
+
+.registerInputField {
+    width: 100%;
+}
