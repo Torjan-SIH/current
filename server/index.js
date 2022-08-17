@@ -42,7 +42,155 @@ const db = mysql.createConnection({
         });
     });
     
+    //forgotpassword
+    app.post('/forgotpage',(req,res) =>
+    {
+        const email = req.body.email; 
+        const role=req.body.role;
+        
+       
+        if(role==="agencies"){
+            
+        db.query("select password from login where username=?",[email],(err,result) =>     //take password from database
+        {
+            if(err)
+            {
+                console.log(err);
+            }
+            else{
+                if(result.length>0)
+                {
+                    
+                    
+                    var ajson =  JSON.parse(JSON.stringify(result));
+                    
+                    
+                    var nodemailer = require('nodemailer');
+                    var transporter = nodemailer.createTransport({
+                    service: 'outlook',
+                     auth: {
+                     user: 'sumanth.k2019@gmail.com',
+                     pass: 'JEE!mains1'
+                         }
+                    });
+
+                var mailOptions = {
+              from: 'sumanth.k2019@gmail.com',
+                 to: email,
+                 subject: 'Sending mail for forgot password from One Nation One Funding',
+                text: 'Your Password is'+ajson[0].password
+                };
+
+        transporter.sendMail(mailOptions, function(error, info){
+             if (error) {
+                res.send({wrong:'mail not sent'});
+                }         
+                else {
+                 res.send({message:"mail sent"})
+                }
+                });
+                }
+                else
+                {
+                    res.send({noone:'there are no users with this email'});  
+                }
+            }
+
+        })
+    }
+   else if(role==="hei"){
+        db.query("",[],(err,result) =>     //take password from database
+        {
+            if(err)
+            {
+
+                console.log(err);
+            }
+            else{
+                if(result.length>0)
+                {
+                    var hjson =  JSON.parse(JSON.stringify(result));
+                    var nodemailer = require('nodemailer');
+                    var transporter = nodemailer.createTransport({
+                    service: 'outlook',
+                     auth: {
+                     user: 'sumanth.k2019@gmail.com',
+                     pass: 'JEE!mains1'
+                         }
+                    });
+
+                var mailOptions = {
+              from: 'sumanth.k2019@gmail.com',
+                 to: email,
+                 subject: 'Sending mail for forgot password from One Nation One Funding',
+                text: 'Your Password is'+hjson[0].password
+                };
+
+        transporter.sendMail(mailOptions, function(error, info){
+             if (error) {
+                  res.send({wrong:'mail not sent'});
+                }         
+                else {
+                    res.send({message:"mail sent"});
+                }
+                });
+                }
+                else
+                {
+                    res.send({noone:'there are no users with this email'}); 
+                }
+            }
+
+        })
+    }
+    else{
+       
+            db.query("",[],(err,result) =>     //take password from database
+            {
+                if(err)
+                {
+        console.log(err);
+                }
+                else{
+                    if(result.length>0)
+                    {
+                        var ojson =  JSON.parse(JSON.stringify(result));
+                         var nodemailer = require('nodemailer');
+                        var transporter = nodemailer.createTransport({
+                        service: 'outlook',
+                         auth: {
+                         user: 'sumanth.k2019@gmail.com',
+                         pass: 'JEE!mains1'
+                             }
+                        });
     
+                    var mailOptions = {
+                  from: 'sumanth.k2019@gmail.com',
+                     to: email,
+                     subject: 'Sending mail for forgot password from One Nation One Funding',
+                    text: 'Your Password is'+ojson[0].password
+                    };
+    
+            transporter.sendMail(mailOptions, function(error, info){
+                 if (error) {
+                    res.send({wrong:'mail not sent'});
+                    }         
+                    else {
+                        res.send({message:"mail sent"});
+                    }
+                    });
+                    }
+                    else
+                {
+                    res.send({noone:'there are no users with this email'}); 
+                }
+                }
+    
+            })
+        }
+    }
+    )
+//ending of forgot password
     
     
     
