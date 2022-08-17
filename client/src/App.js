@@ -10,25 +10,25 @@ import ForgotPasswd from './pages/forgotpasswd';
 import Footers from './components/HeaderFooter/footer';
 import Heiexplorer from './pages/hei/heiexplorer';
 import Heiprofile from './pages/hei/heiprofile';
-import Fundsexplorer from './pages/funds/fundsexplorer';
-import Fundsprofile from './pages/funds/fundsprofile';
 import Oeprofile from './pages/oe/oeprofile';
-import FUNDsidebar from './components/SideBar/FUNDsidebar';
 import HEIsidebar from './components/SideBar/HEIsidebar';
 import Oesidebar from './components/SideBar/oesidebar';
 import Topbar from './components/TopBar/topbar';
-import Fundsdashboard from './pages/funds/fundsdashboard';
 import Heidashboard from './pages/hei/heidashboard';
 import Oedashboard from './pages/oe/oedashboard';
 import HeiProposal from './pages/hei/heiproposal';
-import Fundsoeevaluation from './pages/funds/fundsoeevaluation';
-import Fundschemes from './pages/funds/fundschemes';
 import Heiapplying from './pages/hei/heiapplying';
 import Oeregister from './pages/oe/oeregister';
 import Heiverify from './pages/stakeholder/heiverify';
 import Agencyverify from './pages/stakeholder/agencyverify';
 import Heiregister from './pages/hei/heiregister';
 import Agencyregister from './pages/funds/agencyregister';
+import FundSideBar from './components/SideBar/FUNDsidebar';
+import FundSchemes from './pages/funds/fundschemes';
+import FundsOeEvaluation from './pages/funds/fundsoeevaluation';
+import FundsDashboard from './pages/funds/fundsdashboard';
+import FundExplorer from './pages/funds/fundsexplorer';
+import FundsProfile from './pages/funds/fundsprofile';
 
 function App() {
   return (
@@ -43,21 +43,21 @@ function App() {
           <Route path='/login' element={<Login/>} />
           <Route path='/forgotpasswd' element={<ForgotPasswd/>} />
           <Route path='/registeredpage' element={<Registeredpage/>} />
+          <Route path='/fundsprofile' element={<FundsProfile/>} />
+          <Route path='/fundsexplorer' element={<FundExplorer/>} />
+          <Route path='/fundsoeevaluation' element={<FundsOeEvaluation/>} />
+          <Route path='/fundschemes' element={<FundSchemes/>} />
+          <Route path='/fundsdashboard' element={<FundsDashboard/>} />
           <Route path='/heiexplorer' element={<Heiexplorer/>} />
           <Route path='/heiprofile' element={<Heiprofile/>} />
-          <Route path='/fundsprofile' element={<Fundsprofile/>} />
-          <Route path='/fundsexplorer' element={<Fundsexplorer/>} />
           <Route path='/oeprofile' element={<Oeprofile/>} />
-          <Route path='/FUNDsidebar' element={<FUNDsidebar/>} />
           <Route path='/HEIsidebar' element={<HEIsidebar/>} />
           <Route path='/oesidebar' element={<Oesidebar/>} />
           <Route path='/topbar' element={<Topbar/>} />
-          <Route path='/fundsdashboard' element={<Fundsdashboard/>} />
           <Route path='/heidashboard' element={<Heidashboard/>} />
           <Route path='/oedashboard' element={<Oedashboard/>} />
           <Route path='/heiproposal' element={<HeiProposal/>} />
-          <Route path='/fundsoeevaluation' element={<Fundsoeevaluation/>} />
-          <Route path='/fundschemes' element={<Fundschemes/>} />
+          <Route path='/FUNDsidebar' element={<FundSideBar/>} />
           <Route path='/heiapplying' element={<Heiapplying/>} />
           <Route path='/oeregister' element={<Oeregister/>} />
           <Route path='/heiverify' element={<Heiverify/>} />

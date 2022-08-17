@@ -1,9 +1,13 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { useNavigate } from 'react-router-dom';
 
 
 const  Registered = () =>{
+
+  const navigate = useNavigate();
+
   return (
    <div className='registeredPage'>
     <Card style={{ width: '20rem' }}>
@@ -14,7 +18,7 @@ const  Registered = () =>{
           Please check your registered email<br></br>
           for email verification
         </Card.Text>
-        <Button variant="primary" style={{backgroundColor: "green"}}>Continue</Button>
+        <Button variant="primary" style={{backgroundColor: "green"}} onClick={() => {navigate('/')}}>Continue</Button>
       </Card.Body>
     </Card>
     </div>

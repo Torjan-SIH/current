@@ -2,6 +2,8 @@ const express=require("express");
 const app=express();
 const mysql=require('mysql');
 const cors = require('cors');
+const { response } = require("express");
+// const { query } = require("express");
 
 app.use(cors());
 app.use(express.json());
@@ -89,28 +91,124 @@ app.post('/loginpage',(req,res)=>{
     })
 });
 
-//---------Register page backend------------
+//---------OE Register page backend------------
 
-// app.post('/register',(req,res) => {
-//     const NameOfAgency=req.body.NameOfAgency;
-//     const email = req.body.email;
-//     const contactNo = req.body.contactNo;
-//     const address = req.body.address;
-//     const dateOfAut = req.body.dateOfAut;
-//     const passwdRegister = req.body.passwdRegister;
-//     const role = req.body.role;
+app.post('/oeregister',(req,res) => {
+    const employeename = req.body.employeename;
+    const companyname =  req.body.companyname;
+    const companyemail = req.body.companyemail;
+    const companycontact = req.body.companycontact;
+    const companyaddress = req.body.companyaddress;
+    const country = req.body.country;
+    const state = req.body.state;
+    const city = req.body.city;
+    const pincode = req.body.pincode
+    const employeerole = req.body.employeerole;
+    const verficationcode = req.body.verficationcode
+    const agencyname = req.body.agencyname;
+    const passwd = req.body.passwd;
+    const dor = req.body.dor;
+    const status = null;
 
-//     // const sql = "INSERT INTO aregister(aname, aemail, acontact, aaddress, adateaut, arole) VALUES ?";
-//     // const value = [NameOfAgency, email, contactNo, address, dateOfAut, govtAutCert, role];
-//     db.query("INSERT INTO aregister(aname, aemail, acontact, aaddress, adateaut, arole) VALUES (?,?,?,?,?,?)",[NameOfAgency,email,contactNo,address,dateOfAut,role],(err,result) => {
-//         if(err)
-//             console.log(err);
-//         else{
-//             res.send("Row inserted")
-//             console.log(result);
-//         }
-//     })
-// })
+    //const query = "INSERT INTO oeregister(ename,cname,cemail,ccontact,caddress) VALUES (?,?,?,?,?)";
+    //const values = [employeename,companyname,companyemail,companycontact,companyaddress];
+    db.query("INSERT INTO oeregister(ename,cname,cemail,ccontact,caddress) VALUES (?,?,?,?,?)",[employeename,companyname,companyemail,companycontact,companyaddress],(err,result) =>{
+        if(err){
+            console.log(err);
+        }
+        else{
+            if(result.affectedRows===1){
+                res.send("inserted1");
+                console.log(result);
+                console.log("Row Inserted")
+            }
+            else{
+                res.send("Error")
+                console.log("Failed to insert");
+            }
+
+        }
+    })
+})
+
+
+//---------Agency Register page backend------------
+
+
+app.post('/agencyregister',(req,res) => {
+    const name = req.body.name;
+    const email =  req.body.email;
+    const contact = req.body.contact;
+    const address = req.body.address;
+    const country = req.body.country;
+    const state = req.body.state;
+    const city = req.body.city;
+    const pincode = req.body.pincode;
+    const estdate = req.body.estdate;
+    const passwd = req.body.passwd;
+    const dor = req.body.dor;
+    const status = null;
+
+    //const query = "INSERT INTO oeregister(ename,cname,cemail,ccontact,caddress) VALUES (?,?,?,?,?)";
+    //const values = [employeename,companyname,companyemail,companycontact,companyaddress];
+    db.query("INSERT INTO oeregister() VALUES ()",[name,email,contact,address,country,state,city,pincode,estdate,passwd,dor],(err,result) =>{
+        if(err){
+            console.log(err);
+        }
+        else{
+            if(result.affectedRows===1){
+                res.send("inserted1");
+                console.log(result);
+                console.log("Row Inserted");
+            }
+            else{
+                res.send("Error")
+                console.log("Failed to insert");
+            }
+
+        }
+    })
+})
+
+
+//---------HEI Register page backend------------
+
+
+app.post('/heiregister',(req,res) => {
+    const category = req.body.category;
+    const name = req.body.name;
+    const email =  req.body.email;
+    const contact = req.body.contact;
+    const address = req.body.address;
+    const country = req.body.country;
+    const state = req.body.state;
+    const city = req.body.city;
+    const pincode = req.body.pincode;
+    const passwd = req.body.passwd;
+    const govtcert = req.body.govtcert;
+    const dor = req.body.dor;
+    const status = null
+
+    //const query = "INSERT INTO oeregister(ename,cname,cemail,ccontact,caddress) VALUES (?,?,?,?,?)";
+    //const values = [employeename,companyname,companyemail,companycontact,companyaddress];
+    db.query("INSERT INTO oeregister() VALUES ()",[category,name,email,contact,address,country,state,city,pincode,govtcert,passwd,dor],(err,result) =>{
+        if(err){
+            console.log(err);
+        }
+        else{
+            if(result.affectedRows===1){
+                res.send("inserted1");
+                console.log(result);
+                console.log("Row Inserted");
+            }
+            else{
+                res.send("Error")
+                console.log("Failed to insert");
+            }
+
+        }
+    })
+})
 
 app.listen(3001,()=> {
     console.log("server is running on port 3001");
