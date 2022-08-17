@@ -111,6 +111,7 @@ export const PopUpSelectRoles = (props) =>{
                 <tr>
                     <td colSpan="2"><h4>Select your role to register</h4></td>
                 </tr>
+               
                 <tr>
                     <td><button className="roleButton" ><Link className="roleButtonLink" to="/agencyregister">Agencies</Link></button></td>
                     <td><button className="roleButton"><Link className="roleButtonLink" to="/heiregister">HEI</Link></button></td>

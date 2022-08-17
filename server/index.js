@@ -56,19 +56,50 @@ const db = mysql.createConnection({
         });
     });
     
-    
-    app.get('/oedashboard',(req,res) => {
-        db.query(" ",(err,result)=>{
-            if(err){
-                console.log(err);
-            } else {
-                res.send(result);
-            }
-        });
-    });
+    app.get('/fundSchemes',(req,res)=>{
+       
+        db.query("",[verifyUser],(err,result)=>{
+            if(err)
+            {console.log(err);}
+            else{res.send(result);}
+        })
+    })
+    app.get('/fundOeEvaluate',(req,res)=>{
+       
+        db.query("",[verifyUser],(err,result)=>{
+            if(err)
+            {console.log(err);}
+            else{res.send(result);}
+        })
+    })
+    app.get('/viewHeiPropo',(req,res)=>{
+       
+        db.query("",[verifyUser],(err,result)=>{
+            if(err)
+            {console.log(err);}
+            else{res.send(result);}
+        })
+    })
+    app.get('/oeDashboard',(req,res)=>{
+       
+        db.query("",[verifyUser],(err,result)=>{
+            if(err)
+            {console.log(err);}
+            else{res.send(result);}
+        })
+    })
+   
     app.get('/fundsDashboard',(req,res)=>{
-        console.log("hiiiiiiiiiiiii");
-        console.log(verifyUser);
+        
+        
+        db.query("",[verifyUser],(err,result)=>{
+            if(err)
+            {console.log(err);}
+            else{res.send(result);}
+        })
+    })
+    app.get('/heiDashboard',(req,res)=>{
+       
         db.query("",[verifyUser],(err,result)=>{
             if(err)
             {console.log(err);}

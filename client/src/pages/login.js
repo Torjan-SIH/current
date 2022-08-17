@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { PopUpSelectRoles } from "../components/ListView/popup";
 import './pagesStyle.css';
 import { useNavigate } from "react-router-dom"; 
-import HeiDashBoard from "./hei/heidashboard";
+
 
 const Login = () =>{
    
@@ -137,7 +137,7 @@ const Login = () =>{
          </form> 
       </center>
       <PopUpSelectRoles trigger={popupstatus} setTrigger={setPopUpStatus}/>
-      <HeiDashBoard />
+      
    </div> 
    )
    
