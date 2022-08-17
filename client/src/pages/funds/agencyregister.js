@@ -1,9 +1,13 @@
 import React from "react";
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom'
 import Axios from 'axios';
 import './fundsStyles.css';
 
 const AgencyRegister = () => {
+   
+   const navigate = useNavigate();
+
    const [name, setName] = useState("");
    const [email, setEmail] = useState("");
    const [contact, setContact] = useState("");
@@ -15,10 +19,38 @@ const AgencyRegister = () => {
    const [estdate, setEstDate] = useState("");
    const [passwd, setPasswd] = useState("");
    const [cnfrmpasswd, setCnfrmPasswd] = useState("");
+   const [dor, setDOR] = useState();
+   const [registerstatus, setRegisterStatus] = useState("");
+
+   const submitValidate = (e) =>{
+      e.preventDefault();
+      setDOR(Date());
+      Axios.post('http://localhost:3001/agencyregister',{
+         name:name,
+         email:email,
+         contact:contact,
+         address:address,
+         country:country,
+         state:state,
+         city:city,
+         pincode:pincode,
+         estdate:estdate,
+         passwd:passwd,
+         dor:dor,
+      }).then((response) => {
+         console.log(response.data);
+         if(response.data==="inserted1")
+            navigate('/registeredpage');
+         else if(response.data==="Error")
+            alert("Technical error Failed to Register");
+         else
+            alert("Something Went Wrong");
+         });
+   }
 
    return (
       <div className="registerDiv">
-         <form className="registerForm" >
+         <form className="registerForm" onSubmit={(e) => submitValidate(e)}>
             <table className="registerTable">
                <tbody>
                   <tr >

@@ -1,10 +1,26 @@
 import React from "react";
 import { useState } from "react";
+import Axios from "axios";
+import { useNavigate } from "react-router-dom";
 import './heiStyles.css';
 
 const HeiRegister = () => {
 
+   const navigate = useNavigate();
    const [category, setCategroy] = useState("");
+
+   const [registerstatus, setRegisterStatus] = useState("");
+   const [name, setName] = useState("");
+   const [email, setEmail] = useState("");
+   const [contact, setContact] = useState("");
+   const [address, setAddress] = useState("");
+   const [country, setCountry] = useState("india");
+   const [state, setState] = useState("");
+   const [city, setCity] = useState("");
+   const [pincode, setPinCode] = useState("");
+   const [passwd, setPasswd] = useState("");
+   const [cnfrmpasswd, setCnfrmPasswd] = useState("");
+   const [govtcert, setGovtCert] = useState(null)
 
    const selectCategory = () => {
       if (category === "individual")
@@ -14,20 +30,30 @@ const HeiRegister = () => {
    }
 
    const RegisterIndividual = () => {
-
-      const [name, setName] = useState("");
-      const [email, setEmail] = useState("");
-      const [contact, setContact] = useState("");
-      const [address, setAddress] = useState("");
-      const [country, setCountry] = useState("india");
-      const [state, setState] = useState("");
-      const [city, setCity] = useState("");
-      const [pincode, setPinCode] = useState("");
-      const [passwd, setPasswd] = useState("");
-      const [cnfrmpasswd, setCnfrmPasswd] = useState("");
-
+      
       const IndividualSubmit = (e) => {
          e.preventDefault();
+         Axios.post('http://localhost:3001/heiregister',{
+               category:category,
+               name:name,
+               email:email,
+               contact:contact,
+               address:address,
+               country:country,
+               state:state,
+               city:city,
+               pincode:pincode,
+               passwd:passwd,
+               govtcert:govtcert,
+         }).then((response) => {
+            console.log(response.data);
+            if(response.data==="inserted1")
+               navigate('/registeredpage');
+            else if(response.data==="Error")
+               alert("Technical error Failed to Register");
+            else
+               alert("Something Went Wrong");
+            });
       }
 
       return (
@@ -108,22 +134,32 @@ const HeiRegister = () => {
       )
    }
 
+
    const RegisterOrganization = () => {
-
-
-      const [name, setName] = useState("");
-      const [email, setEmail] = useState("");
-      const [contact, setContact] = useState("");
-      const [address, setAddress] = useState("");
-      const [country, setCountry] = useState("india");
-      const [state, setState] = useState("");
-      const [city, setCity] = useState("");
-      const [pincode, setPinCode] = useState("");
-      const [passwd, setPasswd] = useState("");
-      const [cnfrmpasswd, setCnfrmPasswd] = useState("");
 
       const OrganizationSubmit = (e) => {
          e.preventDefault();
+         Axios.post('http://localhost:3001/heiregister',{
+               category:category,
+               name:name,
+               email:email,
+               contact:contact,
+               address:address,
+               country:country,
+               state:state,
+               city:city,
+               pincode:pincode,
+               passwd:passwd,
+               govtcert:govtcert,
+         }).then((response) => {
+            console.log(response.data);
+            if(response.data==="inserted1")
+               navigate('/registeredpage');
+            else if(response.data==="Error")
+               alert("Technical error Failed to Register");
+            else
+               alert("Something Went Wrong");
+            });
       }
 
       return (
@@ -175,7 +211,7 @@ const HeiRegister = () => {
                      <tr>
                         <th>Govt. Authorization</th>
                         <td>
-                           <input type="file" />
+                           <input type="file" onChange={(e) => setGovtCert(e.target.value)}/>
                         </td>
                      </tr>
                      <tr>
@@ -227,7 +263,6 @@ const HeiRegister = () => {
                   {selectCategory()}
                </tbody>
             </table>
-
          </form>
       </div>
    )
