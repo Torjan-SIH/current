@@ -1,6 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import Axios from 'axios';
 import './fundsStyles.css';
 
 const AgencyRegister = () => {
@@ -17,9 +16,62 @@ const AgencyRegister = () => {
    const [cnfrmpasswd, setCnfrmPasswd] = useState("");
 
    return (
+      <div className="mainDiv">
+            <div className="termsDiv">
+            <table className="registerTable1">
+                        <th ><h1><b>TERMS AND CONDITIONS</b></h1></th>
+                        <tr><h3><i>
+                           <br></br>
+                        ➢Terms and conditions are part of a that ensure parties understand their<br></br>
+                        contractual rights and obligations.<br></br>
+                        <br></br>
+                        ➢Parties draft them into a legal contract, also called a legal agreement,<br></br>
+                        in accordance with local, state,<br></br>
+                        and federal contract laws.<br></br>
+                        <br></br>
+                        ➢They set important boundaries that all contract principals must uphold.<br></br>
+                        <br></br>
+                        ➢Each User shall only register once.<br></br>
+                        <br></br>
+                        ➢The User shall register online to become a Member of Climanosco.<br></br>
+                        <br></br>
+                        ➢Terms and conditions are part of a that ensure parties understand their<br></br>
+                        contractual rights and obligations.<br></br>
+                        <br></br>
+                        ➢Parties draft them into a legal contract, also called a legal agreement,<br></br>
+                        in accordance with local, state,<br></br>
+                        and federal contract laws.<br></br>
+                        <br></br>
+                        ➢They set important boundaries that all contract principals must uphold.<br></br>
+                        <br></br>
+                        ➢Each User shall only register once.<br></br>
+                        <br></br>
+                        ➢The User shall register online to become a Member of Climanosco.<br></br>
+                        <br></br>
+                        ➢Terms and conditions are part of a that ensure parties understand their<br></br>
+                        contractual rights and obligations.<br></br>
+                        <br></br>
+                        ➢Parties draft them into a legal contract, also called a legal agreement,<br></br>
+                        in accordance with local, state,<br></br>
+                        and federal contract laws.<br></br>
+                        <br></br>
+                        ➢They set important boundaries that all contract principals must uphold.<br></br>
+                        <br></br>
+                        ➢Each User shall only register once.<br></br>
+                        <br></br>
+                        ➢The User shall register online to become a Member of Climanosco.<br></br>
+                        <br></br></i></h3>
+                        </tr>
+               </table>
+            </div>
+      
       <div className="registerDiv">
          <form className="registerForm" >
-            <table className="registerTable">
+            <table className="registerTable" cellPadding={15} >
+               
+               <tr>
+                  <th><center><h1><b>REGISTRATION</b></h1></center></th>
+               </tr>
                <tbody>
                   <tr >
                      <td colSpan={2}>
@@ -32,6 +84,7 @@ const AgencyRegister = () => {
                         <input className="registerInputField" type="email" name="email" required placeholder="Email"
                            onChange={(e) => setEmail(e.target.value)} />
                      </td>
+                     
                      <td>
                         <input className="registerInputField" type="text" name="contact" maxLength={10} minLength={10} pattern="[789][0-9]{9}" required placeholder="Contact no."
                            onChange={(e) => setContact(e.target.value)} />
@@ -44,12 +97,14 @@ const AgencyRegister = () => {
                      </td>
                   </tr>
                   <tr>
-                     <td>
-                        <input type="radio" value="india" name="country" defaultChecked disabled />&nbsp; India
-                     </td>
+                  
                      <td>
                         <input className="registerInputField" type="text" name="state" placeholder="State" required
                            onChange={(e) => setState(e.target.value)} />
+                     </td>
+                     <td>
+                     &nbsp;&nbsp;&nbsp;
+                     <input type="radio" value="india" className="radio" name="country" defaultChecked disabled />&nbsp;&nbsp;&nbsp; India
                      </td>
                   </tr>
                   <tr>
@@ -63,28 +118,32 @@ const AgencyRegister = () => {
                      </td>
                   </tr>
                   <tr>
-                     <th>
+                     <th className="labels">
                         Agency Est. Date
                      </th>
                      <td>
-                        <input type="date" name="estdate"
+                        <input className="registerInputField" type="date" name="estdate" 
                            onChange={(e) => setEstDate(e.target.value)} />
                      </td>
+                     
                   </tr>
                   <tr>
-                     <th>
+                     <th className="labels">
                         Govt. authorised certificate
                      </th>
                      <td>
-                        <input type="file" name="govtcertificate" />
+                        <input  type="file" className="labels" name="govtcertificate" />
                      </td>
                   </tr>
                   <tr>
-                     <th>
+                     <br></br>
+                  </tr>
+                  <tr>
+                     <th className="labels">
                         past 3yrs IT returns doc
                      </th>
                      <td>
-                        <input type="file" name="itreturn" />
+                        <input  className="labels" type="file" name="itreturn" />
                      </td>
                   </tr>
                   <tr>
@@ -103,21 +162,38 @@ const AgencyRegister = () => {
                </tbody>
                <tfoot>
                   <tr>
-                     <td>
-                        <input type="checkbox" /> .......
+                     <td colSpan={2}>
+                     <h3><input className="check" type="checkbox" /> I have read and accept the Terms of Service & Privacy Policy</h3>
                      </td>
                   </tr>
                   <tr>
                      <td>
-                        <button type="submit" >Submit</button>
+                        <br></br>
+                        <button type="submit" className="registerSubmitButton">Submit</button>
                      </td>
                   </tr>
                </tfoot>
             </table>
+
          </form>
-      </div>
+         </div>
+   </div>
    )
 
 }
 
 export default AgencyRegister;
+/*<table className="registerTable1" >
+                  <th ><h1><b>TERMS AND CONDITIONS</b></h1></th>
+                  <tr><h1><i>
+                  ➢Terms and conditions are part of a that ensure parties understand their<br></br>
+                  contractual rights and obligations.<br></br>
+                  ➢Parties draft them into a legal contract, also called a legal agreement,<br></br>
+                  in accordance with local, state,<br></br>
+                  and federal contract laws.<br></br>
+                  ➢They set important boundaries that all contract principals must uphold.<br></br>
+                  ➢Each User shall only register once.<br></br>
+                  ➢The User shall register online to become a Member of Climanosco.<br></br>
+                  <br></br></i></h1>
+                  </tr>
+         </table>*/

@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import './heiStyles.css';
 
 const HeiRegister = () => {
 
@@ -30,9 +31,57 @@ const HeiRegister = () => {
       }
 
       return (
-         <div className="registerDiv">
+         <div className="mainDiv">
+            <div className="termsDiv">
+            <table className="registerTable1">
+                        <th ><h1><b>TERMS AND CONDITIONS</b></h1></th>
+                        <tr><h3><i>
+                           <br></br>
+                        ➢Terms and conditions are part of a that ensure parties understand their<br></br>
+                        contractual rights and obligations.<br></br>
+                        <br></br>
+                        ➢Parties draft them into a legal contract, also called a legal agreement,<br></br>
+                        in accordance with local, state,<br></br>
+                        and federal contract laws.<br></br>
+                        <br></br>
+                        ➢They set important boundaries that all contract principals must uphold.<br></br>
+                        <br></br>
+                        ➢Each User shall only register once.<br></br>
+                        <br></br>
+                        ➢The User shall register online to become a Member of Climanosco.<br></br>
+                        <br></br>
+                        ➢Terms and conditions are part of a that ensure parties understand their<br></br>
+                        contractual rights and obligations.<br></br>
+                        <br></br>
+                        ➢Parties draft them into a legal contract, also called a legal agreement,<br></br>
+                        in accordance with local, state,<br></br>
+                        and federal contract laws.<br></br>
+                        <br></br>
+                        ➢They set important boundaries that all contract principals must uphold.<br></br>
+                        <br></br>
+                        ➢Each User shall only register once.<br></br>
+                        <br></br>
+                        ➢The User shall register online to become a Member of Climanosco.<br></br>
+                        <br></br>
+                        ➢Terms and conditions are part of a that ensure parties understand their<br></br>
+                        contractual rights and obligations.<br></br>
+                        <br></br>
+                        ➢Parties draft them into a legal contract, also called a legal agreement,<br></br>
+                        in accordance with local, state,<br></br>
+                        and federal contract laws.<br></br>
+                        <br></br>
+                        ➢They set important boundaries that all contract principals must uphold.<br></br>
+                        <br></br>
+                        ➢Each User shall only register once.<br></br>
+                        <br></br>
+                        ➢The User shall register online to become a Member of Climanosco.<br></br>
+                        <br></br></i></h3>
+                        </tr>
+               </table>
+            </div>
+            <div className="registerDiv">
             <form className="registerForm" onSubmit={(e) => IndividualSubmit(e)}>
-               <table className="registerTable">
+               <table className="registerTable" cellPadding={15}>
                   <tbody>
                      <tr >
                         <td colSpan={2}>
@@ -58,7 +107,7 @@ const HeiRegister = () => {
                      </tr>
                      <tr>
                         <td>
-                           <input type="radio" value="india" name="country" defaultChecked disabled />&nbsp; India
+                           <input type="radio" className="radio" value="india" name="country" defaultChecked disabled />&nbsp; India
                         </td>
                         <td>
                            <input className="registerInputField" type="text" name="state" placeholder="State" required
@@ -77,13 +126,14 @@ const HeiRegister = () => {
                      </tr>
                      <tr>
                         <td colSpan={2}>
-                           <input type="password" className="registerInputField" name="passwd" placeholder="Create Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                           <input type="password" className="registerInputField" name="passwd" placeholder="Create Password" pattern="(?=.\d)(?=.[a-z])(?=.*[A-Z]).{8,}"
                               onChange={(e) => setPasswd(e.target.value)} />
                         </td>
                      </tr>
                      <tr>
                         <td colSpan={2}>
-                           <input type="password" className="registerInputField" name="cnfrmpasswd" placeholder="Confirm Password"
+
+                     <input type="password" className="registerInputField" name="cnfrmpasswd" placeholder="Confirm Password"
                               onChange={(e) => setCnfrmPasswd(e.target.value)} />
                         </td>
                      </tr>
@@ -91,8 +141,8 @@ const HeiRegister = () => {
                   </tbody>
                   <tfoot>
                      <tr>
-                        <td>
-                           <input type="checkbox" /> .......
+                        <td colSpan={2}>
+                        <h3><input className="check" type="checkbox" /> I have read and accept the Terms of Service & Privacy Policy</h3>
                         </td>
                      </tr>
                      <tr>
@@ -103,6 +153,7 @@ const HeiRegister = () => {
                   </tfoot>
                </table>
             </form>
+            </div>
          </div>
       )
    }
@@ -126,9 +177,57 @@ const HeiRegister = () => {
       }
 
       return (
-         <div className="registerDiv">
+         <div className="mainDiv">
+            <div className="termsDiv">
+            <table className="registerTable1">
+                        <th ><h1><b>TERMS AND CONDITIONS</b></h1></th>
+                        <tr><h3><i>
+                           <br></br>
+                        ➢Terms and conditions are part of a that ensure parties understand their<br></br>
+                        contractual rights and obligations.<br></br>
+                        <br></br>
+                        ➢Parties draft them into a legal contract, also called a legal agreement,<br></br>
+                        in accordance with local, state,<br></br>
+                        and federal contract laws.<br></br>
+                        <br></br>
+                        ➢They set important boundaries that all contract principals must uphold.<br></br>
+                        <br></br>
+                        ➢Each User shall only register once.<br></br>
+                        <br></br>
+                        ➢The User shall register online to become a Member of Climanosco.<br></br>
+                        <br></br>
+                        ➢Terms and conditions are part of a that ensure parties understand their<br></br>
+                        contractual rights and obligations.<br></br>
+                        <br></br>
+                        ➢Parties draft them into a legal contract, also called a legal agreement,<br></br>
+                        in accordance with local, state,<br></br>
+                        and federal contract laws.<br></br>
+                        <br></br>
+                        ➢They set important boundaries that all contract principals must uphold.<br></br>
+                        <br></br>
+                        ➢Each User shall only register once.<br></br>
+                        <br></br>
+                        ➢The User shall register online to become a Member of Climanosco.<br></br>
+                        <br></br>
+                        ➢Terms and conditions are part of a that ensure parties understand their<br></br>
+                        contractual rights and obligations.<br></br>
+                        <br></br>
+                        ➢Parties draft them into a legal contract, also called a legal agreement,<br></br>
+                        in accordance with local, state,<br></br>
+                        and federal contract laws.<br></br>
+                        <br></br>
+                        ➢They set important boundaries that all contract principals must uphold.<br></br>
+                        <br></br>
+                        ➢Each User shall only register once.<br></br>
+                        <br></br>
+                        ➢The User shall register online to become a Member of Climanosco.<br></br>
+                        <br></br></i></h3>
+                        </tr>
+               </table>
+            </div>
+            <div className="registerDiv">
             <form className="registerForm" onSubmit={(e) => OrganizationSubmit(e)}>
-               <table className="registerTable">
+               <table className="registerTable" cellPadding={15}>
                   <tbody>
                      <tr >
                         <td colSpan={2}>
@@ -154,7 +253,7 @@ const HeiRegister = () => {
                      </tr>
                      <tr>
                         <td>
-                           <input type="radio" value="india" name="country" defaultChecked disabled />&nbsp; India
+                           <input type="radio"className="radio" value="india" name="country" defaultChecked disabled />&nbsp; India
                         </td>
                         <td>
                            <input className="registerInputField" type="text" name="state" placeholder="State" required
@@ -171,6 +270,7 @@ const HeiRegister = () => {
                               onChange={(e) => setPinCode(e.target.value)} />
                         </td>
                      </tr>
+
                      <tr>
                         <th>Govt. Authorization</th>
                         <td>
@@ -179,7 +279,7 @@ const HeiRegister = () => {
                      </tr>
                      <tr>
                         <td colSpan={2}>
-                           <input type="password" className="registerInputField" placeholder="Create Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                           <input type="password" className="registerInputField" placeholder="Create Password" pattern="(?=.\d)(?=.[a-z])(?=.*[A-Z]).{8,}"
                               onChange={(e) => setPasswd(e.target.value)} />
                         </td>
                      </tr>
@@ -193,8 +293,8 @@ const HeiRegister = () => {
                   </tbody>
                   <tfoot>
                      <tr>
-                        <td>
-                           <input type="checkbox" /> .......
+                        <td colSpan={2}>
+                        <h3><input className="check" type="checkbox" /> I have read and accept the Terms of Service & Privacy Policy</h3>
                         </td>
                      </tr>
                      <tr>
@@ -205,14 +305,15 @@ const HeiRegister = () => {
                   </tfoot>
                </table>
             </form>
+            </div>
          </div>
       )
    }
 
    return (
-      <div>
-         <form>
-            <table>
+      <div className="registerDiv">
+         <form className="registerForm">
+            <table className="registerTable">
                <thead>
                   <tr>
                      <select name="category" onChange={(e) => setCategroy(e.target.value)} >
@@ -229,6 +330,7 @@ const HeiRegister = () => {
 
          </form>
       </div>
+      
    )
 }
 

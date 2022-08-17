@@ -22,7 +22,55 @@ const OeRegister = () => {
 
 
    return (
-      <div className="registerDiv">
+      <div className="mainDiv">
+         <div className="termsDiv">
+         <table className="registerTable1" >
+         <th ><h1><b>TERMS AND CONDITIONS</b></h1></th>
+                        <tr><h3><i>
+                           <br></br>
+                        ➢Terms and conditions are part of a that ensure parties understand their<br></br>
+                        contractual rights and obligations.<br></br>
+                        <br></br>
+                        ➢Parties draft them into a legal contract, also called a legal agreement,<br></br>
+                        in accordance with local, state,<br></br>
+                        and federal contract laws.<br></br>
+                        <br></br>
+                        ➢They set important boundaries that all contract principals must uphold.<br></br>
+                        <br></br>
+                        ➢Each User shall only register once.<br></br>
+                        <br></br>
+                        ➢The User shall register online to become a Member of Climanosco.<br></br>
+                        <br></br>
+                        ➢Terms and conditions are part of a that ensure parties understand their<br></br>
+                        contractual rights and obligations.<br></br>
+                        <br></br>
+                        ➢Parties draft them into a legal contract, also called a legal agreement,<br></br>
+                        in accordance with local, state,<br></br>
+                        and federal contract laws.<br></br>
+                        <br></br>
+                        ➢They set important boundaries that all contract principals must uphold.<br></br>
+                        <br></br>
+                        ➢Each User shall only register once.<br></br>
+                        <br></br>
+                        ➢The User shall register online to become a Member of Climanosco.<br></br>
+                        <br></br>
+                        ➢Terms and conditions are part of a that ensure parties understand their<br></br>
+                        contractual rights and obligations.<br></br>
+                        <br></br>
+                        ➢Parties draft them into a legal contract, also called a legal agreement,<br></br>
+                        in accordance with local, state,<br></br>
+                        and federal contract laws.<br></br>
+                        <br></br>
+                        ➢They set important boundaries that all contract principals must uphold.<br></br>
+                        <br></br>
+                        ➢Each User shall only register once.<br></br>
+                        <br></br>
+                        ➢The User shall register online to become a Member of Climanosco.<br></br>
+                        <br></br></i></h3>
+                        </tr>        
+         </table>
+         </div>
+         <div className="registerDiv">
          <form className="registerForm" >
             <table className="registerTable">
                <tbody>
@@ -68,7 +116,7 @@ const OeRegister = () => {
                   </tr>
                   <tr>
                      <td>
-                        <input type="radio" value="india" name="country" defaultChecked disabled />&nbsp; India
+                        <input type="radio" className="radio" value="india" name="country" defaultChecked disabled />&nbsp; India
                      </td>
                      <td>
                         <input className="registerInputField" type="text" name="state" placeholder="State" required
@@ -111,18 +159,19 @@ const OeRegister = () => {
                </tbody>
                <tfoot>
                   <tr>
-                     <td>
-                        <input type="checkbox" /> .......
+                     <td colSpan={2}>
+                     <h3><input className="check" type="checkbox" /> I have read and accept the Terms of Service & Privacy Policy</h3>
                      </td>
                   </tr>
                   <tr>
                      <td>
-                        <button type="submit" >Submit</button>
+                     <button type="submit" className="registerSubmitButton">Submit</button>
                      </td>
                   </tr>
                </tfoot>
             </table>
          </form>
+         </div>
       </div>
    )
 
