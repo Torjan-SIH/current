@@ -23,7 +23,7 @@ export const CardHeiExplorer= ()=>{
           <Row xs={1} md={2} className="g-4">
       {Array.from({ length: 2 }).map((_, idx) => (
         <Col>
-            <Card  style={{ width: "25rem" }} key={index} >
+            <Card className="cardExplorer"  style={{ width: "25rem" }} key={index} >
               <Card.Body>
                 <Card.Title><h6>Scheme Name:</h6>{card.sname}</Card.Title>
                 <Card.Text>Scheme ID:{card.sid}</Card.Text>
@@ -54,10 +54,27 @@ export const CardFundExplorer = () =>{
         pdesc:"useful for hostel students",
         rfund:10000
         },
+<<<<<<< HEAD
         {pname:"skjfgsjdgfm.zcxbliu Scheme ",
         pid: 200,
         pdesc:"useful for hostel students",
         rfund:10000
+=======
+        {pname:"VVIT Scheme ",
+        pid: 100,
+        pdesc:"useful for college students",
+        rfund:20000
+        },
+        {pname:"Engineering Scheme ",
+        pid: 100,
+        pdesc:"useful for college students",
+        rfund:20000
+        },
+        {pname:"College Scheme ",
+        pid: 100,
+        pdesc:"useful for college students",
+        rfund:20000
+
         },
      ]; 
     
@@ -65,10 +82,17 @@ export const CardFundExplorer = () =>{
 
     const FundCard = (card,index) => {
           return(
+
              <div>
               <Row xs={1} md={2} className="g-4">
                 {Array.from({ length: 1 }).map((_, idx) => (
         <Col>
+
+             <div className="fundCard">
+             {/* <Row xs={1} md={2} className="g-4">
+      {Array.from({ length: 1 }).map((_, idx) => (
+        <Col>*/}
+
                 <Card  style={{ width: "25rem" }} key={index}>
                   <Card.Body>
                     <Card.Title><h6>Proposal Name:</h6>{card.pname}</Card.Title>
@@ -78,10 +102,14 @@ export const CardFundExplorer = () =>{
                     <Button variant="primary" onClick={() => setPopUpStatus(true)}>View</Button>
                   </Card.Body>
                 </Card>
+
                 </Col>
                 
+
+               {/* </Col>
+
              ))}
-           </Row>
+      </Row>*/}
               </div>
           )
         }
@@ -92,5 +120,3 @@ export const CardFundExplorer = () =>{
         </div>
       );
 }
-  
-

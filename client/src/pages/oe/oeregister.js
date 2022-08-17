@@ -1,10 +1,12 @@
-
+import { Axios } from "axios";
 import React from "react";
 import { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom'
 import './oeStyles.css';
 
 const OeRegister = () => {
 
+   const navigate = useNavigate();
    const [employeename, setEmployeeName] = useState("");
    const [companyname, setCompanyName] = useState("");
    const [companyemail, setCompanyEmail] = useState("");
@@ -19,11 +21,13 @@ const OeRegister = () => {
    const [passwd, setPasswd] = useState("");
    const [cnfrmpasswd, setCnfrmPasswd] = useState("");
 
-
+   const submitValidate = (e) =>{
+      //navigate('/');
+   }
 
    return (
       <div className="registerDiv">
-         <form className="registerForm" >
+         <form className="registerForm" onSubmit={(e) => submitValidate(e)}>
             <table className="registerTable">
                <tbody>
                   <tr >
