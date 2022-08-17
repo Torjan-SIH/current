@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import FundSideBar from "../../components/SideBar/FUNDsidebar";
 import TopBar from "../../components/TopBar/topbar";
 import { ListFundDashboard }from "../../components/ListView/listview";
 
 const FundsDashboard = () =>
 {
+    useEffect(
+        ()=>{
+            
+        }
+    )
     return(
         <div className="fundProfileDiv" >
             <TopBar/>

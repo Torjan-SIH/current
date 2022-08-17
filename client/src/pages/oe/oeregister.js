@@ -62,7 +62,7 @@ const OeRegister = () => {
                <tbody>
                   <tr >
                      <td colSpan={2}>
-                        <input className="registerInputField" type="text" name="employeename" pattern="[A-Za-z]{2,}"  placeholder="Name of Employee"
+                        <input className="registerInputField" type="text" name="employeename" pattern="[A-Za-z]{2,}" required placeholder="Name of Employee" 
                            onChange={(e) => setEmployeeName(e.target.value)} />
                      </td>
                   </tr>
