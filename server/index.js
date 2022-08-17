@@ -5,6 +5,9 @@ const cors = require('cors');
 
 app.use(cors());
 app.use(express.json());
+let verifyUser="";
+let verifyRole="";
+
 
 const db = mysql.createConnection({
     user:"root",
@@ -14,10 +17,10 @@ const db = mysql.createConnection({
    
     
 });
-db.connect(function(err) {
-        if (err) throw err;
-        console.log("Connected!");
-      });
+// db.connect(function(err) {
+//         if (err) throw err;
+//         console.log("Connected!");
+//       });
     
     // app.get('/bokk',(req,res)=>{
     //     db.query("show columns from info",(err,result)=>{
@@ -40,15 +43,7 @@ db.connect(function(err) {
     });
     
     
-    app.get('/funddashboard',(req,res) => {
-        db.query(" ",(err,result)=>{
-            if(err){
-                console.log(err);
-            } else {
-                res.send(result);
-            }
-        });
-    });
+    
     
     
     app.get('/fundoeevaluation',(req,res) => {
@@ -71,12 +66,23 @@ db.connect(function(err) {
             }
         });
     });
+    app.get('/fundsDashboard',(req,res)=>{
+        console.log("hiiiiiiiiiiiii");
+        console.log(verifyUser);
+        db.query("",[verifyUser],(err,result)=>{
+            if(err)
+            {console.log(err);}
+            else{res.send(result);}
+        })
+    })
 
     app.post('/loginpage',(req,res)=>{
         const username = req.body.username; 
+        
         const password = req.body.password;
         const role= req.body.role;
-        
+        verifyUser=username;
+        verifyRole=role;
     
         db.query("SELECT * FROM login WHERE (username = ? )AND (password=?) AND (login=?)",
         [username,password,role],

@@ -3,12 +3,13 @@ import React,{useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import { PopUpSelectRoles } from "../components/ListView/popup";
 import './pagesStyle.css';
-
+import { useNavigate } from "react-router-dom"; 
+import HeiDashBoard from "./hei/heidashboard";
 
 const Login = () =>{
    
    const [popupstatus, setPopUpStatus] = useState(false);
-   
+   const navigate = useNavigate(); 
    const [userLogin, setUserLogin] = useState("");
    const [passwdLogin, setPasswdLogin] = useState("");
    const [roleLogin, setRoleLogin] = useState("");
@@ -44,11 +45,25 @@ const Login = () =>{
 
            alert("Invalid User");
          }
+         
          else
          {
-            console.log(response.data[0].username);
-            console.log(response.data[0].password);
-             console.log(response.data[0].login);
+            if(roleLogin==="agencies")
+            {
+               
+               navigate('/fundsdashboard');
+            }
+            if(roleLogin==="hei")
+            {
+               
+               navigate('/heidashboard');
+            }
+            if(roleLogin==="oe")
+            {
+              
+               navigate('/oedashboard');
+            }
+          
          }
          
          
@@ -122,6 +137,7 @@ const Login = () =>{
          </form> 
       </center>
       <PopUpSelectRoles trigger={popupstatus} setTrigger={setPopUpStatus}/>
+      <HeiDashBoard />
    </div> 
    )
    

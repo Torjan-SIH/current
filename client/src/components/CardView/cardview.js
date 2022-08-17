@@ -54,6 +54,11 @@ export const CardFundExplorer = () =>{
         pdesc:"useful for hostel students",
         rfund:10000
         },
+        {pname:"skjfgsjdgfm.zcxbliu Scheme ",
+        pid: 200,
+        pdesc:"useful for hostel students",
+        rfund:10000
+        },
      ]; 
     
     const [popupstatus, setPopUpStatus] = useState(false);
@@ -62,7 +67,7 @@ export const CardFundExplorer = () =>{
           return(
              <div>
               <Row xs={1} md={2} className="g-4">
-      {Array.from({ length: 2 }).map((_, idx) => (
+                {Array.from({ length: 1 }).map((_, idx) => (
         <Col>
                 <Card  style={{ width: "25rem" }} key={index}>
                   <Card.Body>
@@ -74,6 +79,7 @@ export const CardFundExplorer = () =>{
                   </Card.Body>
                 </Card>
                 </Col>
+                
              ))}
            </Row>
               </div>

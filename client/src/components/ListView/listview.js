@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { PopUpViewScheme,  PopUpVerifyScheme, PopUpOeDashboard , PopUpHeiDashboard ,PopUpViewHeiProposal} from "./popup";
-
+import Axios from 'axios';
 
 export const ListFundScheme = () =>{
     const column = [
@@ -66,26 +66,21 @@ export const ListFundDashboard = () =>{
         {heading: 'Scheme Name'},
         {heading: 'Scheme Date'},
     ]
-    const row = [
-        {
-            sno: 1,
-            sid: 123,
-            sname: 'scheme1',
-            sdate: '1-1-22',
-        },
-        {
-            sno: 2,
-            sid: 124,
-            sname: 'scheme2',
-            sdate: '2-1-22',
-        },
-        {
-            sno: 3,
-            sid: 125,
-            sname: 'scheme3',
-            sdate: '3-1-22',
-        },
-    ]
+    const[row,setRow]=useState([]);
+    
+    useEffect(()=>
+    {
+        
+        Axios.get('http://localhost:3001/fundsDashboard').then((response)=>{
+            console.log("HEllo ")
+            console.log(response.data);
+            setRow(response.data);
+            }).catch(err=>{
+            console.log(err)
+          });
+     
+
+    },[])
 
     const [popupstatus, setPopUpStatus] = useState(false);
     const [popupinfo, setPopUpInfo] = useState();
