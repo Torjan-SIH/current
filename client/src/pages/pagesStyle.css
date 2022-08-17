@@ -530,3 +530,10 @@ h1 {
    text-align: left;
    color: #2980b9;
  }
+
+ .registeredPage{
+   display: inline-flex;
+   text-align: center;
+   margin-top: 10%;
+   margin-bottom: 10%;
+ }

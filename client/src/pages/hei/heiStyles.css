@@ -42,9 +42,16 @@ button {
 .search {
     float: left;
 }
+
 .steps {
     
     grid-template-columns: auto auto auto;
+}
+
+/* ------HEI Register page Styling-------*/
+
+.registerDiv {
+    margin-top: 10%;
 }
 
 .registerTable {
@@ -109,3 +116,13 @@ button {
  .registerTable{
     margin: none;
  }
+
+ .registerDiv{
+    width: 100%;
+    margin: 0%;
+}
+
+.registerInputField {
+    width: 100%;
+}
+

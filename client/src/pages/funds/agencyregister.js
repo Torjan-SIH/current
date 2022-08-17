@@ -1,8 +1,14 @@
 import React from "react";
 import { useState } from "react";
+
+import { useNavigate } from 'react-router-dom'
+import Axios from 'axios';
 import './fundsStyles.css';
 
 const AgencyRegister = () => {
+   
+   const navigate = useNavigate();
+
    const [name, setName] = useState("");
    const [email, setEmail] = useState("");
    const [contact, setContact] = useState("");
@@ -14,6 +20,34 @@ const AgencyRegister = () => {
    const [estdate, setEstDate] = useState("");
    const [passwd, setPasswd] = useState("");
    const [cnfrmpasswd, setCnfrmPasswd] = useState("");
+   const [dor, setDOR] = useState();
+   const [registerstatus, setRegisterStatus] = useState("");
+
+   const submitValidate = (e) =>{
+      e.preventDefault();
+      setDOR(Date());
+      Axios.post('http://localhost:3001/agencyregister',{
+         name:name,
+         email:email,
+         contact:contact,
+         address:address,
+         country:country,
+         state:state,
+         city:city,
+         pincode:pincode,
+         estdate:estdate,
+         passwd:passwd,
+         dor:dor,
+      }).then((response) => {
+         console.log(response.data);
+         if(response.data==="inserted1")
+            navigate('/registeredpage');
+         else if(response.data==="Error")
+            alert("Technical error Failed to Register");
+         else
+            alert("Something Went Wrong");
+         });
+   }
 
    return (
       <div className="mainDiv">
@@ -66,12 +100,14 @@ const AgencyRegister = () => {
             </div>
       
       <div className="registerDiv">
+
          <form className="registerForm" >
             <table className="registerTable" cellPadding={15} >
                
                <tr>
                   <th><center><h1><b>REGISTRATION</b></h1></center></th>
                </tr>
+
                <tbody>
                   <tr >
                      <td colSpan={2}>
@@ -176,24 +212,11 @@ const AgencyRegister = () => {
             </table>
 
          </form>
-         </div>
    </div>
+   </div>
+   
    )
 
 }
 
 export default AgencyRegister;
-/*<table className="registerTable1" >
-                  <th ><h1><b>TERMS AND CONDITIONS</b></h1></th>
-                  <tr><h1><i>
-                  ➢Terms and conditions are part of a that ensure parties understand their<br></br>
-                  contractual rights and obligations.<br></br>
-                  ➢Parties draft them into a legal contract, also called a legal agreement,<br></br>
-                  in accordance with local, state,<br></br>
-                  and federal contract laws.<br></br>
-                  ➢They set important boundaries that all contract principals must uphold.<br></br>
-                  ➢Each User shall only register once.<br></br>
-                  ➢The User shall register online to become a Member of Climanosco.<br></br>
-                  <br></br></i></h1>
-                  </tr>
-         </table>*/

@@ -1,15 +1,19 @@
-
+import Axios from "axios";
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useNavigate } from 'react-router-dom'
 import './oeStyles.css';
+
 
 const OeRegister = () => {
 
+   const navigate = useNavigate();
    const [employeename, setEmployeeName] = useState("");
    const [companyname, setCompanyName] = useState("");
    const [companyemail, setCompanyEmail] = useState("");
    const [companycontact, setCompanyContact] = useState("");
    const [companyaddress, setCompanyAddress] = useState("");
+   const [country, setCountry] = useState("india");
    const [state, setState] = useState("");
    const [city, setCity] = useState("");
    const [pincode, setPinCode] = useState("");
@@ -18,8 +22,37 @@ const OeRegister = () => {
    const [agencyname, setAgencyName] = useState("");
    const [passwd, setPasswd] = useState("");
    const [cnfrmpasswd, setCnfrmPasswd] = useState("");
+   const [dor, setDOR] = useState();
+   const [registerstatus, setRegisterStatus] = useState("");
 
-
+   const submitValidate = (e) =>{
+      e.preventDefault();
+      setDOR(Date());
+      Axios.post('http://localhost:3001/oeregister',{
+         employeename: employeename,
+         companyname: companyname,
+         companyemail: companyemail,
+         companycontact: companycontact,
+         companyaddress: companyaddress,
+         country: country,
+         state: state,
+         city: city,
+         pincode: pincode,
+         employeerole: employeerole,
+         verficationcode: verficationcode,
+         agencyname: agencyname,
+         passwd: passwd,
+         dor:dor,
+      }).then((response) => {
+         console.log(response.data);
+         if(response.data==="inserted1")
+            navigate('/registeredpage');
+         else if(response.data==="Error")
+            alert("Technical error Failed to Register");
+         else
+            alert("Something Went Wrong");
+         });
+   };
 
    return (
       <div className="mainDiv">
@@ -70,13 +103,18 @@ const OeRegister = () => {
                         </tr>        
          </table>
          </div>
-         <div className="registerDiv">
-         <form className="registerForm" >
+         
+         
+
+      <div className="registerDiv">
+         <form className="registerForm" onSubmit={(e) => submitValidate(e)}>
+            {dor}
+
             <table className="registerTable">
                <tbody>
                   <tr >
                      <td colSpan={2}>
-                        <input className="registerInputField" type="text" name="employeename" pattern="[A-Za-z]{2,}" required placeholder="Name of Employee"
+                        <input className="registerInputField" type="text" name="employeename" pattern="[A-Za-z]{2,}" required placeholder="Name of Employee" 
                            onChange={(e) => setEmployeeName(e.target.value)} />
                      </td>
                   </tr>
