@@ -6,7 +6,6 @@ main {
    margin: 16px;
 }
 
-
 .navbar {
    display: flex;
    align-items: center;
@@ -31,15 +30,12 @@ main {
    font-weight: 300;
    top: 0%;
    z-index: 12;
-
    padding-top: 0%;
    width: 100%;
-
 }
 
 .navbar__title {
    margin-right: auto;
-
 }
 
 .navbar__item:hover {
@@ -96,4 +92,71 @@ main {
 
 #lastitem {
    margin-right: 3rem;
+}
+
+
+
+
+.navSmall {
+   position: fixed;
+   align-items: center;
+   height: 60px;
+   background: #687864;
+   color: white;
+   font-weight: 300;
+   top: 0%;
+   z-index: 12;
+   padding-top: 0%;
+   width: 100%;
+}
+
+.navbarSmall {
+   display: flex;
+   align-items: center;
+   height: 60px;
+   background: #24496a;
+   color: white;
+   font-weight: 300;
+   top: 0%;
+   z-index: 12;
+   position: fixed;
+   padding-top: 0%;
+   width: 100%;
+}
+
+.navbar__title_small {
+   margin-right: auto;
+   vertical-align: middle;
+   padding: 0px 18px 0px 18px;
+}
+
+.logoSmall {
+   width: 50px;
+   height: 40px;
+   vertical-align: middle;
+   margin-left: 2rem;
+}
+
+.H_link_small {
+   padding: 0px 16px 0px 16px;
+   text-decoration: none;
+   color: white;
+   font-weight: 700;
+   font-size: 25px;
+}
+
+.H_link_small:hover {
+   padding: 0px 16px 0px 16px;
+   text-decoration: none;
+   color: peru;
+   font-weight: 700;
+   font-size: 25px;
+}
+
+.H_link_small {
+   padding: 0px 16px 0px 16px;
+   text-decoration: none;
+   color: white;
+   font-weight: 700;
+   font-size: 25px;
 }
