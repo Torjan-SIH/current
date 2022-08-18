@@ -55,60 +55,20 @@ const AgencyRegister = () => {
             <NavBarSmall/>
          </div>
          <div className="termsDiv">
-            <table className="registerTable1">
-                        <th ><h1><b>TERMS AND CONDITIONS</b></h1></th>
-                        <tr><h3><i>
-                           <br></br>
-                        ➢Terms and conditions are part of a that ensure parties understand their<br></br>
-                        contractual rights and obligations.<br></br>
-                        <br></br>
-                        ➢Parties draft them into a legal contract, also called a legal agreement,<br></br>
-                        in accordance with local, state,<br></br>
-                        and federal contract laws.<br></br>
-                        <br></br>
-                        ➢They set important boundaries that all contract principals must uphold.<br></br>
-                        <br></br>
-                        ➢Each User shall only register once.<br></br>
-                        <br></br>
-                        ➢The User shall register online to become a Member of Climanosco.<br></br>
-                        <br></br>
-                        ➢Terms and conditions are part of a that ensure parties understand their<br></br>
-                        contractual rights and obligations.<br></br>
-                        <br></br>
-                        ➢Parties draft them into a legal contract, also called a legal agreement,<br></br>
-                        in accordance with local, state,<br></br>
-                        and federal contract laws.<br></br>
-                        <br></br>
-                        ➢They set important boundaries that all contract principals must uphold.<br></br>
-                        <br></br>
-                        ➢Each User shall only register once.<br></br>
-                        <br></br>
-                        ➢The User shall register online to become a Member of Climanosco.<br></br>
-                        <br></br>
-                        ➢Terms and conditions are part of a that ensure parties understand their<br></br>
-                        contractual rights and obligations.<br></br>
-                        <br></br>
-                        ➢Parties draft them into a legal contract, also called a legal agreement,<br></br>
-                        in accordance with local, state,<br></br>
-                        and federal contract laws.<br></br>
-                        <br></br>
-                        ➢They set important boundaries that all contract principals must uphold.<br></br>
-                        <br></br>
-                        ➢Each User shall only register once.<br></br>
-                        <br></br>
-                        ➢The User shall register online to become a Member of Climanosco.<br></br>
-                        <br></br></i></h3>
-                        </tr>
-            </table>
+            <ul className="termsList">
+               <h1>TERMS AND CONDITIONS</h1>
+               <li className="t_c">Terms and conditions are part of a that ensure parties understand theircontractual rights and obligations.</li>
+               <li className="t_c">They set important boundaries that all contract principals must uphold.</li>
+               <li className="t_c">Each User shall only register once.</li>
+               <li className="t_c"> The User shall register online to become a Member of Climanosco.</li>
+               <li className="t_c">Each User shall only register once.</li>
+               <li className="t_c">They set important boundaries that all contract principals must uphold.</li>
+            </ul>
          </div>
          <div className="registerDiv">
             <form className="registerForm" >
-               <table className="registerTable" cellPadding={15} >
-                  
-                  <tr>
-                     <th><center><h1><b>REGISTRATION</b></h1></center></th>
-                  </tr>
-
+            <center><h1>REGISTRATION</h1></center>
+               <table className="registerTable" >
                   <tbody>
                      <tr >
                         <td colSpan={2}>
@@ -134,14 +94,12 @@ const AgencyRegister = () => {
                         </td>
                      </tr>
                      <tr>
-                     
+                        <td>
+                           <input type="radio" value="india" className="radio" name="country" defaultChecked disabled />&nbsp;&nbsp;&nbsp;&nbsp;<b>India</b>
+                        </td>
                         <td>
                            <input className="registerInputField" type="text" name="state" placeholder="State" required
                               onChange={(e) => setState(e.target.value)} />
-                        </td>
-                        <td>
-                        &nbsp;&nbsp;&nbsp;
-                        <input type="radio" value="india" className="radio" name="country" defaultChecked disabled />&nbsp;&nbsp;&nbsp; India
                         </td>
                      </tr>
                      <tr>
@@ -162,7 +120,6 @@ const AgencyRegister = () => {
                            <input className="registerInputField" type="date" name="estdate" 
                               onChange={(e) => setEstDate(e.target.value)} />
                         </td>
-                        
                      </tr>
                      <tr>
                         <th className="labels">
@@ -173,9 +130,6 @@ const AgencyRegister = () => {
                         </td>
                      </tr>
                      <tr>
-                        <br></br>
-                     </tr>
-                     <tr>
                         <th className="labels">
                            past 3yrs IT returns doc
                         </th>
@@ -184,29 +138,29 @@ const AgencyRegister = () => {
                         </td>
                      </tr>
                      <tr>
-                        <td colSpan={2}>
+                        <td>
                            <input type="password" className="registerInputField" name="passwd" placeholder="Create Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                               onChange={(e) => setPasswd(e.target.value)} />
                         </td>
-                     </tr>
-                     <tr>
-                        <td colSpan={2}>
+                        <td>
                            <input type="password" className="registerInputField" name="cnfrmpasswd" placeholder="Confirm Password"
                               onChange={(e) => setCnfrmPasswd(e.target.value)} />
                         </td>
                      </tr>
-                     <p>{(passwd !== cnfrmpasswd) ? "Password Doesn't Match" : ""}</p>
+                        <p>{(passwd !== cnfrmpasswd) ? "Password Doesn't Match" : ""}</p>
                   </tbody>
                   <tfoot>
                      <tr>
                         <td colSpan={2}>
-                        <h3><input className="check" type="checkbox" /> I have read and accept the Terms of Service & Privacy Policy</h3>
+                           <input className="check" type="checkbox"/> I have read and accept the Terms of Service & Privacy Policy
                         </td>
                      </tr>
                      <tr>
                         <td>
-                           <br></br>
-                           <button type="submit" className="registerButton">Submit</button>
+                           <button type="reset" className="formButton">Clear</button>
+                        </td>
+                        <td>
+                           <button type="submit" className="formButton">Submit</button>
                         </td>
                      </tr>
                   </tfoot>

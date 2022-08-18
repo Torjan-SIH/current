@@ -1,4 +1,5 @@
-.fundProfileDiv, .fundsExploreDiv {
+.fundProfileDiv,
+.fundsExploreDiv {
     width: 100%;
     text-align: left;
 }
@@ -8,7 +9,7 @@
     margin-right: 10%;
 }
 
-.fundProfileTable{
+.fundProfileTable {
     margin-right: auto;
     margin-left: auto;
     width: 100%;
@@ -42,88 +43,94 @@
 /* ------Agency Register page Styling-------*/
 
 
-.steps {
-    
-    grid-template-columns: auto auto auto;
-}
-.registerDiv {
-    margin-top: 10%;
-}
-
-
-/* .registerTable {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: left;
-} */
-
 .registerInputField {
-  font-size:xx-large;
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  margin-top: 10%;
-  margin-bottom: 10%;
-  box-sizing: border-box;
-  border: none;
-  border-bottom: 3px solid black;
-}
-.registerButton{
-    width: 185px;
-    height: 90px;
+    font-size: 22px;
+    font-weight: 450;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 5px;
     border: none;
-    margin: 20px 10px 20px 10px;
+    border-bottom: 2px solid black;
+    background: transparent;
+}
+
+.registerInputField:focus {
     outline: none;
+}
+
+.formButton {
+    border: none;
+    margin: 10px;
     background: rgb(0, 128, 77);
     color: #fff;
-    font-size: 22px;
-    border-radius: 40px;
+    font-size: 24px;
+    border-radius: 10px;
     text-align: center;
-    box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    display: inline-block;
-    text-decoration: none;
-    width:max-content;
- }
- .registerSubmitButton{
-    width: 100%;
- }
- .termsDiv{
-    
+    padding: 8px;
+    width: 100px;
+    box-shadow: 0 6px 20px -5px rgba(0, 0, 0, 0.4);
+}
+
+.check {
+    height: 30px;
+    width: 30px;
+}
+
+.radio {
+    height: 30px;
+    width: 30px;
+}
+
+.mainDiv {
+    display: flex;
+}
+
+.termsDiv {
+    margin-top: 7rem;
     align-items: left;
     text-align: left;
- }
- /* .registerDiv{
-    display: inline-flex;
- } */
- .check{
-    height:30px;
-    width: 30px;
- }
- /* .registerForm{
-    width: 100%;
-    font-size: xx-large;
-    display: inline;
- } */
- .radio{
-    height:30px;
-    width: 30px;
- }
- 
- .mainDiv{
-    display: inline-flex;
- }
- .registerTable{
-    margin: none;
- }
-.registerDiv{
-    width: 100%;
-    margin: 0%;
 }
-.btn{
+
+.registerDiv {
+    margin-top: 7rem;
+    padding: 0%;
+    width: 100%;
+}
+
+.registerForm {
+    width: 93%;
+}
+
+.registerTable {
+    font-size: 22px;
+    width: 100%;
+}
+
+.registerTable td,
+.registerTable th {
+    padding: 0px 25px;
+    /* margin: 0px 15px; */
+}
+
+.labels {
+    font-size: 22px;
+    font-weight: 450;
+    padding: 5px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+}
+
+.t_c {
+    font-size: 18px;
+}
+
+
+
+
+
+.btn {
     height: 50px;
     border: none;
     margin: 20px 10px 20px 10px;
@@ -133,14 +140,15 @@
     font-size: 22px;
     border-radius: 40px;
     text-align: center;
-    box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
+    box-shadow: 0 6px 20px -5px rgba(0, 0, 0, 0.4);
     position: relative;
     overflow: hidden;
     cursor: pointer;
     display: inline-block;
     text-decoration: none;
-    width:max-content;
+    width: max-content;
 }
-.inputBox{
+
+.inputBox {
     width: 300%;
 }

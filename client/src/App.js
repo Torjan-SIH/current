@@ -1,13 +1,11 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
 import Login from './pages/login';
 import Home from './pages/home';
 import About from './pages/about';
 import Contact from './pages/contact';
 import Registeredpage from './pages/registeredpage';
 import ForgotPasswd from './pages/forgotpasswd';
-import Footers from './components/HeaderFooter/footer';
 import Heiexplorer from './pages/hei/heiexplorer';
 import Heiprofile from './pages/hei/heiprofile';
 import Oeprofile from './pages/oe/oeprofile';
@@ -29,7 +27,6 @@ import FundsOeEvaluation from './pages/funds/fundsoeevaluation';
 import FundsDashboard from './pages/funds/fundsdashboard';
 import FundExplorer from './pages/funds/fundsexplorer';
 import FundsProfile from './pages/funds/fundsprofile';
-import { NavBar } from './components/Navbar';
 
 function App() {
   return (
@@ -37,7 +34,7 @@ function App() {
       <BrowserRouter>
         {/* <NavBar/> */}
         <Routes>
-          <Route path='/' element={<Home/>} />
+          <Route path='' element={<Home/>} />
           <Route path='/home' element={<Home/>} />
           <Route path='/about' element={<About/>} />
           <Route path='/contact' element={<Contact/>} />

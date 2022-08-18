@@ -9,7 +9,7 @@ main {
 .navbar {
    display: flex;
    align-items: center;
-   height: 60px;
+   height: 80px;
    background: #24496a;
    color: white;
    font-weight: 300;
@@ -24,7 +24,7 @@ main {
    position: fixed;
    display: flex;
    align-items: center;
-   height: 60px;
+   height: 80px;
    background: #687864;
    color: white;
    font-weight: 300;
@@ -32,10 +32,6 @@ main {
    z-index: 12;
    padding-top: 0%;
    width: 100%;
-}
-
-.navbar__title {
-   margin-right: auto;
 }
 
 .navbar__item:hover {
@@ -48,6 +44,12 @@ main {
    color: white;
    font-size: 20px;
    font-weight: 300;
+   position: static;
+}
+
+.navbar__title {
+   margin-right: auto;
+   padding-left: 10px;
 }
 
 .H_link {
@@ -59,11 +61,9 @@ main {
 }
 
 .H_link:hover {
-   padding: 0px 16px 0px 16px;
-   text-decoration: none;
+
    color: peru;
-   font-weight: 700;
-   font-size: 25px;
+
 }
 
 .I_link:hover {
@@ -84,10 +84,13 @@ main {
 }
 
 .logo {
-   width: 50px;
-   height: 40px;
-   vertical-align: middle;
+   width: 65px;
+   height: 65px;
    margin-left: 2rem;
+   margin-top: auto;
+   margin-bottom: auto;
+   top: 0%;
+
 }
 
 #lastitem {
@@ -100,7 +103,7 @@ main {
 .navSmall {
    position: fixed;
    align-items: center;
-   height: 60px;
+   height: 80px;
    background: #687864;
    color: white;
    font-weight: 300;
@@ -113,7 +116,7 @@ main {
 .navbarSmall {
    display: flex;
    align-items: center;
-   height: 60px;
+   height: 80px;
    background: #24496a;
    color: white;
    font-weight: 300;
@@ -128,18 +131,22 @@ main {
    margin-right: auto;
    vertical-align: middle;
    padding: 0px 18px 0px 18px;
+   padding-left: 10px;
 }
 
 .logoSmall {
-   width: 50px;
-   height: 40px;
-   vertical-align: middle;
+   width: 65px;
+   height: 65px;
    margin-left: 2rem;
+   margin-top: auto;
+   margin-bottom: auto;
+   top: 0%;
 }
 
 .H_link_small {
    padding: 0px 16px 0px 16px;
    text-decoration: none;
+   vertical-align: middle;
    color: white;
    font-weight: 700;
    font-size: 25px;
@@ -149,14 +156,6 @@ main {
    padding: 0px 16px 0px 16px;
    text-decoration: none;
    color: peru;
-   font-weight: 700;
-   font-size: 25px;
-}
-
-.H_link_small {
-   padding: 0px 16px 0px 16px;
-   text-decoration: none;
-   color: white;
    font-weight: 700;
    font-size: 25px;
 }
