@@ -205,7 +205,7 @@ const AgencyRegister = () => {
                   <tr>
                      <td>
                         <br></br>
-                        <button type="submit" className="registerSubmitButton">Submit</button>
+                        <button type="submit" className="registerButton">Submit</button>
                      </td>
                   </tr>
                </tfoot>

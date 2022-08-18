@@ -8,7 +8,7 @@ const TopBar = () =>{
             <table className="topBarTable">
                 <tr>
                     <th>Welcome, </th>
-                    <td><div><Link to="/">Logout</Link></div></td>
+                    <td><Link to="/">Logout</Link></td>
                 </tr>
             </table>
         </div>
