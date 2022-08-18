@@ -75,6 +75,10 @@ main {
    font-weight: 350;
 }
 
+.I_link:focus {
+   color: silver;
+}
+
 .I_link {
    text-decoration: none;
    color: white;
