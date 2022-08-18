@@ -1,4 +1,4 @@
-.popup{
+.popup {
     position: fixed;
     top: 0;
     left: 0;
@@ -10,15 +10,17 @@
     justify-content: center;
     align-items: center;
 }
-.popupInner{
+
+.popupInner {
     position: relative;
     padding: 32px;
     width: 100%;
-    
+
     max-width: 640px;
     background-color: #fff;
 }
-.popupClose{
+
+.popupClose {
     position: absolute;
     top: 15px;
     right: 15px;
@@ -33,15 +35,21 @@
 }
 
 
-.cardExplorer{
-    box-shadow:5px 10px 8px #888888;
+.cardExplorer {
+    box-shadow: 5px 10px 8px #888888;
 }
 
-.fundCards{ 
+.fundCards {
     display: inline-block;
     align-items: start;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 20px;
     align-items: start;
-    }
+}
+
+.gridLayout {
+    display: grid;
+    grid-template-columns: auto auto;
+
+}

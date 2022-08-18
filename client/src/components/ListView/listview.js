@@ -4,36 +4,30 @@ import { PopUpViewScheme,  PopUpVerifyScheme, PopUpOeDashboard , PopUpHeiDashboa
 import Axios from 'axios';
 
 export const ListFundScheme = () =>{
-    const column = [
-        {heading: 'S.No'},
-        {heading: 'Scheme ID'},
-        {heading: 'Scheme Name'},
-        {heading: 'Scheme Date'},
-    ]
-    const[row,setRow]=useState([]);
     
-    useEffect(()=>
-    {
-        
+    const[row,setRow]=useState([]);
+    const [popupstatus, setPopUpStatus] = useState(false);
+    const [popupinfo, setPopUpInfo] = useState();
+    
+    useEffect(()=>{
         Axios.get('http://localhost:3001/fundSchemes').then((response)=>{
            
             setRow(response.data);
             }).catch(err=>{
             console.log(err)
           });
-     
-
     },[])
     
-    const [popupstatus, setPopUpStatus] = useState(false);
-    const [popupinfo, setPopUpInfo] = useState();
-
     return(
         <div>
             <table className="listFundTable">
                 <thead>
                     <tr className="listFundMetaData">
                         {/* {column.map((head,index) => <td className="listFundMetaData">{head.heading}</td>)} */}
+                        <th>S.No</th>
+                        <th>Scheme ID</th>
+                        <th>Scheme Name</th>
+                        <th>Scheme Date</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -54,16 +48,12 @@ export const ListFundScheme = () =>{
 //List component for Funds Dashboard page 
 
 export const ListFundDashboard = () =>{
-    const column = [
-        {heading: 'HEI Name'},
-        {heading: 'Scheme ID'},
-        {heading: 'Scheme Name'},
-        {heading: 'Scheme Date'},
-    ]
-    const[row,setRow]=useState([]);
     
-    useEffect(()=>
-    {
+    const[row,setRow]=useState([]);
+    const [popupstatus, setPopUpStatus] = useState(false);
+    const [popupinfo, setPopUpInfo] = useState();
+    
+    useEffect(()=>{
         
         Axios.get('http://localhost:3001/fundsDashboard').then((response)=>{
            
@@ -71,19 +61,18 @@ export const ListFundDashboard = () =>{
             }).catch(err=>{
             console.log(err)
           });
-     
-
     },[])
-
-    const [popupstatus, setPopUpStatus] = useState(false);
-    const [popupinfo, setPopUpInfo] = useState();
 
     return(
         <div>
             <table className="listFundTable">
                 <thead>
                     <tr className="listFundMetaData">
-                        {column.map((head,index) => <td className="listFundMetaData">{head.heading}</td>)}
+                        {/* {column.map((head,index) => <td className="listFundMetaData">{head.heading}</td>)} */}
+                        <th>HEI Name</th>
+                        <th>Scheme ID</th>
+                        <th>Scheme Name</th>
+                        <th>Scheme Date</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -102,26 +91,16 @@ export const ListFundDashboard = () =>{
 }
 
 export const ListFundOeEvaluation = () =>{
-    const column = [
-        {heading: 'HEI Name'},
-        {heading: 'Scheme ID'},
-        {heading: 'Scheme Name'},
-        {heading: 'Scheme Date'},
-        {heading: 'Status'}
-    ]
+
     const[row,setRow]=useState([]);
     
-    useEffect(()=>
-    {
-        
+    useEffect(()=>{
         Axios.get('http://localhost:3001/fundOeEvaluate').then((response)=>{
            
             setRow(response.data);
             }).catch(err=>{
             console.log(err)
           });
-     
-
     },[])
    
     return(
@@ -129,7 +108,12 @@ export const ListFundOeEvaluation = () =>{
             <table className="listFundTable">
                 <thead>
                     <tr className="listFundMetaData">
-                        {column.map((head,index) => <td className="listFundMetaData">{head.heading}</td>)}
+                        {/* {column.map((head,index) => <td className="listFundMetaData">{head.heading}</td>)} */}
+                        <th>HEI Name</th>
+                        <th>Scheme ID</th>
+                        <th>Scheme Name</th>
+                        <th>Scheme Date</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -147,28 +131,18 @@ export const ListFundOeEvaluation = () =>{
 }
 
 export const ListOeDashboard = () =>{
-    const column = [
-        {heading: 'HEI Name'},
-        {heading: 'Scheme ID'},
-        {heading: 'Scheme Name'},
-        {heading: 'Scheme Date'},
-    ]
+    
     const[row,setRow]=useState([]);
-    useEffect(()=>
-    {
-        
+    const [popupstatus, setPopUpStatus] = useState(false);
+    const [popupinfo, setPopUpInfo] = useState();
+
+    useEffect(()=>{    
         Axios.get('http://localhost:3001/oeDashboard').then((response)=>{
-            
             setRow(response.data);
             }).catch(err=>{
             console.log(err)
           });
-     
-
     },[])
-
-    const [popupstatus, setPopUpStatus] = useState(false);
-    const [popupinfo, setPopUpInfo] = useState();
 
     return(
         <div>
@@ -176,6 +150,10 @@ export const ListOeDashboard = () =>{
                 <thead>
                     <tr className="listFundMetaData">
                         {/* {column.map((head,index) => <td className="listFundMetaData">{head.heading}</td>)} */}
+                        <th>HEI Name</th>
+                        <th>Scheme ID</th>
+                        <th>Scheme Name</th>
+                        <th>Scheme Date</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -194,28 +172,19 @@ export const ListOeDashboard = () =>{
 }
 
 export const ListHeiDashboard = () =>{
-    // const column = [
-    //     {heading: 'HEI Name'},
-    //     {heading: 'Scheme ID'},
-    //     {heading: 'Scheme Name'},
-    //     {heading: 'Scheme Date'},
-    // ]
    
     const[row,setRow]=useState([]);
-    useEffect(()=>
-    {
-        
+    const [popupstatus, setPopUpStatus] = useState(false);
+    const [popupinfo, setPopUpInfo] = useState();
+
+    useEffect(()=>{ 
         Axios.get('http://localhost:3001/heiDashboard').then((response)=>{
             
             setRow(response.data);
             }).catch(err=>{
             console.log(err)
-          });
-     
-
+          })
     },[])
-    const [popupstatus, setPopUpStatus] = useState(false);
-    const [popupinfo, setPopUpInfo] = useState();
 
     return(
         <div>
@@ -224,7 +193,10 @@ export const ListHeiDashboard = () =>{
                 <thead>
                     <tr className="listHeiMetaData">
                        {/* {column.map((head,index) => <td className="listHeiMetaData"><h3><b><center>{head.heading}</center></b></h3></td>)} */}
-                    
+                       <th>HEI Name</th>
+                       <th>Scheme ID</th>
+                       <th>Scheme Name</th>
+                       <th>Scheme Date</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -242,29 +214,18 @@ export const ListHeiDashboard = () =>{
     )
 }
 export const ViewHeiProposal = () =>{
-    const column = [
-        {heading: 'HEI Name'},
-        {heading: 'Scheme ID'},
-        {heading: 'Scheme Name'},
-        {heading: 'Scheme Date'},
-    ]
+
     const[row,setRow]=useState([]);
+    const [popupstatus, setPopUpStatus] = useState(false);
+    const [popupinfo, setPopUpInfo] = useState();
     
-    useEffect(()=>
-    {
-        
+    useEffect(()=>{  
         Axios.get('http://localhost:3001/viewHeiPropo').then((response)=>{
-           
             setRow(response.data);
             }).catch(err=>{
             console.log(err)
           });
-     
-
     },[])
-
-    const [popupstatus, setPopUpStatus] = useState(false);
-    const [popupinfo, setPopUpInfo] = useState();
 
     return(
         <div className="proposaltable">
@@ -273,7 +234,11 @@ export const ViewHeiProposal = () =>{
                 
                 <thead>
                     <tr className="listProposalMetaData">
-                        {column.map((head,index) => <td className="listProposalMetaData"><h3><b><center>{head.heading}</center></b></h3></td>)}
+                        {/* {column.map((head,index) => <td className="listProposalMetaData"><h3><b><center>{head.heading}</center></b></h3></td>)} */}
+                        <th>HEI Name</th>
+                        <th>Scheme ID</th>
+                        <th>Scheme Name</th>
+                        <th>Scheme Date</th>
                     </tr>
                 </thead>
                 <tbody>

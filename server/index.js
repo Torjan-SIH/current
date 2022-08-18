@@ -419,7 +419,11 @@ app.post('/heiregister',(req,res) => {
     
             // }
         });
-  
+
+
+//---------------Card view backend------------------
+
+
     
     app.listen(3001,()=> {
         console.log("server is running on port 3001");

@@ -5,11 +5,6 @@ import { ListFundDashboard }from "../../components/ListView/listview";
 
 const FundsDashboard = () =>
 {
-    useEffect(
-        ()=>{
-            
-        }
-    )
     return(
         <div className="fundProfileDiv" >
             <TopBar/>

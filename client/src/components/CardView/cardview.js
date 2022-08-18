@@ -1,19 +1,23 @@
-import { React, useState } from "react";
+import { React, useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { PopUpFundCard, PopUpHeiCard } from "./popupcard";
 import './cardviewstyles.css';
+import { Axios } from "axios";
 
 export const CardHeiExplorer= ()=>{
-  const HeiSchemeInfo=[
-    {sname:"Hostel Scheme ",
-    sid: 1,
-    sdesc:"useful for hostel students",
-    fund:10000
-    },
-  ];  
+  
+  const [heiexplorerinfo, setHeiExploreInfo] = useState("")
+
+  // useEffect(()=>{
+  //   Axios.get('http://localhost:3001/heiexplorer').then((response)=>{  
+  //     setHeiExploreInfo(response.data);
+  //     }).catch(err=>{
+  //     console.log(err)
+  //   });
+  // },[])
 
   const [popupstatus, setPopUpStatus] = useState(false);
 
@@ -21,7 +25,7 @@ export const CardHeiExplorer= ()=>{
     return(
          <div>
           <Row xs={1} md={2} className="g-4">
-      {Array.from({ length: 2 }).map((_, idx) => (
+      {Array.from({ length: 1 }).map((_, idx) => (
         <Col>
             <Card className="cardExplorer"  style={{ width: "25rem" }} key={index} >
               <Card.Body>
@@ -39,8 +43,8 @@ export const CardHeiExplorer= ()=>{
       )
   }
   return (
-    <div className="heiExplorer">
-      {HeiSchemeInfo.map(HeiCard)}
+    <div className="gridLayout">
+      {/* {heiexplorerinfo.map(HeiCard)} */}
       <PopUpHeiCard setTrigger={setPopUpStatus} trigger={popupstatus} />
     </div>
   );
@@ -55,17 +59,17 @@ export const CardFundExplorer = () =>{
         rfund:10000
         },
         {pname:"VVIT Scheme ",
-        pid: 100,
+        pid: 300,
         pdesc:"useful for college students",
         rfund:20000
         },
         {pname:"Engineering Scheme ",
-        pid: 100,
+        pid: 400,
         pdesc:"useful for college students",
         rfund:20000
         },
         {pname:"College Scheme ",
-        pid: 100,
+        pid: 500,
         pdesc:"useful for college students",
         rfund:20000
         },
@@ -76,9 +80,9 @@ export const CardFundExplorer = () =>{
     const FundCard = (card,index) => {
           return(
              <div className="fundCard">
-             {/* <Row xs={1} md={2} className="g-4">
+             <Row xs={1} md={2} className="g-4">
       {Array.from({ length: 1 }).map((_, idx) => (
-        <Col>*/}
+        <Col>
                 <Card  style={{ width: "25rem" }} key={index}>
                   <Card.Body>
                     <Card.Title><h6>Proposal Name:</h6>{card.pname}</Card.Title>
@@ -88,14 +92,14 @@ export const CardFundExplorer = () =>{
                     <Button variant="primary" onClick={() => setPopUpStatus(true)}>View</Button>
                   </Card.Body>
                 </Card>
-               {/* </Col>
+               </Col>
              ))}
-      </Row>*/}
+      </Row>
               </div>
           )
         }
     return (
-        <div className="fundExplorer">
+        <div className="gridLayout">
             {HeiOwnSchemeInfo.map(FundCard)}
             <PopUpFundCard trigger={popupstatus} setTrigger={setPopUpStatus} />
         </div>
