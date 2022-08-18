@@ -1,12 +1,13 @@
-.footerH4{
+.footerH4 {
     display: inline-block;
     list-style-type: none;
     padding: 20px 30px 30px;
-   font-size: larger;
+    font-size: larger;
     color: black;
 }
-.footer{
-    background-image: linear-gradient(#e2e2e2,#c9d6ff);
+
+.footer {
+    background-image: linear-gradient(white, #a2c2df);
     height: 100px;
     bottom: 0;
     left: 0;
@@ -15,4 +16,4 @@
     position: relative;
     background-position: center;
     object-position: 0%;
-} 
+}
