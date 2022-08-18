@@ -31,8 +31,8 @@ const FundsProfile = () =>
                         <td><input type="number" name="oecontact" className="inputBox"></input></td>
                     </tr>
                     <tr>
-                        <th><h5>past 3yrs IT returns doc: </h5></th><br></br>
-                        <td><input type="file" name="itdoc" className="inputBox"></input></td>
+                        <th><h5>IT returns doc(past 3 years): </h5></th><br></br>
+                        <td><button type="file" name="itdoc" className="inputBox">View</button></td>
                     </tr>
                     <tr>
                         <th><h5>Office Address: </h5></th><br></br>
@@ -52,8 +52,8 @@ const FundsProfile = () =>
                     </tr>
                     <br></br>
                     <tr><td></td>
-                    <td><center><button className="btn"><b>Save</b></button></center></td>
-                    <td><center><button className="btn"><b>Reset</b></button></center></td>
+                    <td><center><button className="btn2">Save</button></center></td>
+                    <td><center><button className="btn2">Edit</button></center></td>
                     
                     </tr>
                 </table>

@@ -139,7 +139,7 @@
 
 .myform {
    box-shadow: 4px 10px 14px 4px rgba(57, 17, 69, .2);
-   background-color: antiquewhite;
+   background-color: #89CFF0;;
    padding-top: 5%;
 }
 
@@ -154,7 +154,6 @@
 .loginTable {
    border: 0;
    width: 100%;
-
 }
 
 .loginItem {
@@ -457,7 +456,7 @@ h1 {
    margin-bottom: 10%;
 } */
 .about {
-   background-image: url(https://img.freepik.com/free-vector/geometric-frame-background-green-modern-design-vector_53876-157567.jpg?size=626&ext=jpg&ga=GA1.2.88897579.1660490920);
+   /*background-image: url(https://img.freepik.com/free-vector/geometric-frame-background-green-modern-design-vector_53876-157567.jpg?size=626&ext=jpg&ga=GA1.2.88897579.1660490920);*/
    background-size: cover;
    height: 1200px;
    margin-top: 0%;
@@ -609,4 +608,8 @@ h1 {
    text-align: center;
    margin-top: 10%;
    margin-bottom: 10%;
+}
+body{
+   background-image: url("https://img.freepik.com/free-vector/blue-curve-background_53876-113112.jpg?w=2000");
+   background-size: cover;
 }

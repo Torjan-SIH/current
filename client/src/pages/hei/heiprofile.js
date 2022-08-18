@@ -11,7 +11,7 @@ const HeiProfile = () => {
                 <HeiSideBar/>
                 <form className="heiProfileForm">
                     <h1 className="heiProfileHeading">HEI Profile</h1>
-                    <table className="heiProfileTable" cellPadding={10}>
+                    <table className="heiProfileTable"  cellPadding={10}>
                     <tr>
                             <th>ID: </th>
                             <td><input type="text" name="id"  disabled value="IND001" className="inputBox"></input></td>
@@ -47,8 +47,8 @@ const HeiProfile = () => {
                     
                         <br></br>
                     <tr><td></td>
-                            <td><center><button className="btn"><b>Save</b></button></center></td>
-                            <td><center><button className="btn"><b>Reset</b></button></center></td>
+                            <td><center><button className="btn1">Save</button></center></td>
+                            <td><center><button className="btn1">Edit</button></center></td>
                         </tr>
                     </table>
                 </form>

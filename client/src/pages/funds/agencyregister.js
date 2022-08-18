@@ -176,7 +176,7 @@ const AgencyRegister = () => {
                   </tr>
                   <tr>
                      <th className="labels">
-                        past 3yrs IT returns doc
+                        IT returns doc(past 3yrs )
                      </th>
                      <td>
                         <input  className="labels" type="file" name="itreturn" />

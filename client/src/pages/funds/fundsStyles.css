@@ -4,14 +4,16 @@
 }
 
 .fundProfileForm {
+    
     margin-left: 30%;
     margin-right: 10%;
+    border-radius: 10px;
+    width: 100%;
 }
 
 .fundProfileTable{
-    margin-right: auto;
-    margin-left: auto;
-    width: 100%;
+    margin-right: 40%;
+    
 }
 
 .sideBySide {
@@ -117,19 +119,20 @@
     display: inline-flex;
  }
  .registerTable{
-    margin: none;
+    margin: 100%;
+    width: 100%;
  }
 .registerDiv{
     width: 100%;
     margin: 0%;
 }
-.btn{
+.btn2{
     height: 50px;
     border: none;
     margin: 20px 10px 20px 10px;
     outline: none;
-    background: rgb(55, 118, 118);
-    color: black;
+    background: rgb(55, 118, 247);
+    color: white;
     font-size: 22px;
     border-radius: 40px;
     text-align: center;
@@ -142,5 +145,7 @@
     width:max-content;
 }
 .inputBox{
-    width: 300%;
+    width: 400%;
+    margin-left: 0%;
+    box-sizing: border-box;
 }

@@ -20,7 +20,8 @@ export const ListFundScheme = () =>{
     
     return(
         <div>
-            <table className="listFundTable">
+            <h2>FUNDS SCHEMES</h2>
+            <table className="listFundTable" cellPadding={15}>
                 <thead>
                     <tr className="listFundMetaData">
                         {/* {column.map((head,index) => <td className="listFundMetaData">{head.heading}</td>)} */}
@@ -65,7 +66,8 @@ export const ListFundDashboard = () =>{
 
     return(
         <div>
-            <table className="listFundTable">
+            <h2>FUNDS DASHBOARD</h2>
+            <table className="listFundTable" cellPadding={15}>
                 <thead>
                     <tr className="listFundMetaData">
                         {/* {column.map((head,index) => <td className="listFundMetaData">{head.heading}</td>)} */}
@@ -105,7 +107,8 @@ export const ListFundOeEvaluation = () =>{
    
     return(
         <div>
-            <table className="listFundTable">
+            <h2>OE EVALUATION</h2>
+            <table className="listFundTable" cellPadding={15}>
                 <thead>
                     <tr className="listFundMetaData">
                         {/* {column.map((head,index) => <td className="listFundMetaData">{head.heading}</td>)} */}
@@ -146,7 +149,8 @@ export const ListOeDashboard = () =>{
 
     return(
         <div>
-            <table className="listFundTable">
+            <h2>OE DASHBOARD</h2>
+            <table className="listFundTable" cellPadding={15}>
                 <thead>
                     <tr className="listFundMetaData">
                         {/* {column.map((head,index) => <td className="listFundMetaData">{head.heading}</td>)} */}
@@ -189,7 +193,7 @@ export const ListHeiDashboard = () =>{
     return(
         <div>
             <tr><center><b><h2>HEI DASHBOARD</h2></b></center></tr>
-            <table className="listHeiTable" cellPadding={20} cellSpacing={5}>
+            <table className="listHeiTable" border='2'cellPadding={15} cellSpacing={5}>
                 <thead>
                     <tr className="listHeiMetaData">
                        {/* {column.map((head,index) => <td className="listHeiMetaData"><h3><b><center>{head.heading}</center></b></h3></td>)} */}
@@ -229,8 +233,8 @@ export const ViewHeiProposal = () =>{
 
     return(
         <div className="proposaltable">
-            <center><h2>PROPOSALS</h2></center>
-            <table className="listProposalTable" cellPadding={'20'} cellSpacing={'5'} color="blue">
+            <h2>HEI PROPOSALS</h2>
+            <table className="listProposalTable" border='2'cellPadding={'15'} cellSpacing={'5'} color="blue">
                 
                 <thead>
                     <tr className="listProposalMetaData">

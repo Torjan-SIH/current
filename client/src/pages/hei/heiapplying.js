@@ -4,41 +4,7 @@ import HeiSideBar from "../../components/SideBar/HEIsidebar";
 import TopBar from "../../components/TopBar/topbar";
 
 
-/*const HeiApplying=()=>
-{
-    
-    return(
-    <><TopBar/>
-    <div className="heiSideBar">
-                <HeiSideBar/>
-    </div>
-    <div className="sideBySide">
-        <div className="heiApply">
-            <div className="schemeName">
-                <h6><b>SCHEME NAME:</b></h6>
-            </div>
-            <div className="heiSchemeId">
-                <h6><b>SCHEME ID:</b></h6>
-            </div>
-            <div className="heiScheme">
-                <h6><b>SCHEME DESCRIPTION:</b></h6>
-            </div>
-            {/* <div className="search">
-            <input id="search-input" type="search" class="form-control" />
-            <label class="form-label" for="form1">Search</label>
-            <button id="search-button" type="button" class="btn btn-primary">
-            <i class="fas fa-search"></i>
-            </button>
-            </div> }
-           
-            <button className="accept" >SUBMIT</button>
-           &nbsp; &nbsp; &nbsp; &nbsp;   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            <button className="reject">CANCEL</button>
-          
-        </div>
-        </div></>
-    )
-}*/
+
 const HeiApplying = () =>{
     
     const column = [
@@ -72,12 +38,14 @@ const HeiApplying = () =>{
 
 return(
     
-    <div>
+    <div className="heiApplyDiv">
+        
         <TopBar/>
-        <div className="heiSideBar">
+        
+        <div className="sideBySide">
                 <HeiSideBar/>
-    </div>
-    <table className="heiApplying" border='1' cellPadding={15} cellSpacing={15} align="center">
+      
+    <table className="heiApplying" border='1' cellPadding={5} cellSpacing={5} align="center">
                 <thead>
                     <tr className="agencyVerifyMetaData">
                         {column.map((head,index) => <td className="agencyVerifyMetaData">{head.heading}</td>)}
@@ -90,11 +58,15 @@ return(
                         <td className="agencyVerifyMetaData">{row.map((data,index) => <tr >{data.sno}</tr>)}</td>
                        
                     </tr>
+                    <tr><td></td>
+                            <td><center><button className="btn"><b>Save</b></button></center></td>
+                            <td><center><button className="btn"><b>Reset</b></button></center></td>
+                        </tr>
                 </tbody>
             </table>
-            <button className="accept" >SUBMIT</button>
-           &nbsp; &nbsp; &nbsp; &nbsp;   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            <button className="reject">CANCEL</button>
+            </div>
+            
+            
             </div>
  )
 }

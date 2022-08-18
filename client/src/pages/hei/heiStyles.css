@@ -8,7 +8,9 @@
     margin-left: 50%;
     margin-right: 10%;
 }
-
+.heiApplying{
+    margin-left: 10%;
+}
 .sideBySide {
     display: inline-flex;
     margin-right: 10%;
@@ -44,7 +46,7 @@
 .registerTable {
     margin-left: auto;
     margin-right: auto;
-    width: 100%;
+    width: 200%;
     text-align: left;
 }
 
@@ -65,7 +67,7 @@
     border: none;
     margin: 20px 10px 20px 10px;
     outline: none;
-    background: rgb(0, 128, 77);
+    background: rgb(1, 251, 9);
     color: #fff;
     font-size: 22px;
     border-radius: 40px;
@@ -112,13 +114,13 @@
 .registerInputField {
     width: 100%;
 }
-.btn{
+.btn1{
     height: 50px;
     border: none;
     margin: 20px 10px 20px 10px;
     outline: none;
-    background: rgb(55, 118, 118);
-    color: black;
+    background:rgb(55, 118, 247);
+    color: white;
     font-size: 22px;
     border-radius: 40px;
     text-align: center;
@@ -134,5 +136,12 @@
     width: 400%;
 }
 .heiProfileTable{
-    margin-left: 0%;
+   margin-right: 40%;  
+}
+.heiSideBar{
+    margin-left: 10%;
+    margin-right: 70%;
+}
+.applyDiv{
+    display: inline-flex;
 }
