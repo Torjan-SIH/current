@@ -20,7 +20,8 @@ export const ListFundScheme = () =>{
     
     return(
         <div>
-            <table className="listFundTable">
+            <h3>FUND SCHEME</h3>
+            <table className="listFundTable" cellPadding={15}>
                 <thead>
                     <tr className="listFundMetaData">
                         {/* {column.map((head,index) => <td className="listFundMetaData">{head.heading}</td>)} */}
@@ -65,7 +66,8 @@ export const ListFundDashboard = () =>{
 
     return(
         <div>
-            <table className="listFundTable">
+            <h3>FUND DASHBOARD</h3>
+            <table className="listFundTable" cellPadding={15}>
                 <thead>
                     <tr className="listFundMetaData">
                         {/* {column.map((head,index) => <td className="listFundMetaData">{head.heading}</td>)} */}
@@ -105,7 +107,8 @@ export const ListFundOeEvaluation = () =>{
    
     return(
         <div>
-            <table className="listFundTable">
+            <h3>FUND OE Evaluation</h3>
+            <table className="listFundTable" cellPadding={15}>
                 <thead>
                     <tr className="listFundMetaData">
                         {/* {column.map((head,index) => <td className="listFundMetaData">{head.heading}</td>)} */}
@@ -146,7 +149,8 @@ export const ListOeDashboard = () =>{
 
     return(
         <div>
-            <table className="listFundTable">
+            <h3>OE DASHBOARD</h3>
+            <table className="listFundTable" cellPadding={15}>
                 <thead>
                     <tr className="listFundMetaData">
                         {/* {column.map((head,index) => <td className="listFundMetaData">{head.heading}</td>)} */}
