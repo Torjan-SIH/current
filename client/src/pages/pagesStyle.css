@@ -1,139 +1,174 @@
-.passwdWarning{
+.passwdWarning {
    float: none;
    text-align: left;
 }
-.warn{
+
+.warn {
    list-style-type: none;
    font-family: 'Courier New', Courier, monospace;
    font-size: 15px;
 }
 
-.passwdWarning{
+.passwdWarning {
    width: fit-content;
    margin-left: auto;
    margin-right: auto;
 }
-.valid{
+
+.valid {
    color: rgb(24, 225, 24);
 }
-.invalid{
+
+.invalid {
    color: red;
 }
-.tableRegister{
+
+.tableRegister {
    margin-left: auto;
    margin-right: auto;
 }
-.contact
-{
+
+.contact {
    margin-top: 85px;
    font: italic bold 12px/30px Georgia, serif;
 }
 
-.slideShowHome, .slideShowEvents
-{
+
+.home {
+   margin-top: 3rem;
+}
+
+.slideShowHome,
+.slideShowEvents {
    width: 95%;
    height: fit-content;
    padding: 20px;
    margin-left: auto;
    margin-right: auto;
 }
-.marqueeScrollHome{
+
+.marqueeScrollHome {
    background-color: whitesmoke;
    border: 2px solid gainsboro;
-   box-shadow: 4px 10px 14px 4px rgba(57,17,69,.2);
+   box-shadow: 4px 10px 14px 4px rgba(57, 17, 69, .2);
    border-radius: 50px;
    width: 90%;
    margin-left: auto;
    margin-right: auto;
 }
-.marqueeHome{
+
+.marqueeHome {
    background-color: whitesmoke;
    font-size: 30px;
    color: brown;
    padding: 1px;
 }
-.illustrations{
+
+.illustrations {
    margin-top: 150px;
 }
+
 @keyframes float {
-	0% {
-		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
-		transform: translatey(0px);
-	}
-	50% {
-		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
-		transform: translatey(-30px);
-	}
-	100% {
-		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
-		transform: translatey(0px);
-	}
+   0% {
+      box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+      transform: translatey(0px);
+   }
+
+   50% {
+      box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+      transform: translatey(-30px);
+   }
+
+   100% {
+      box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+      transform: translatey(0px);
+   }
 }
-.illustrate1, .illustrate2{
+
+.illustrate1,
+.illustrate2 {
    height: 500px;
    width: 500px;
    border-radius: 10%;
-   box-shadow: 4px 10px 14px 4px rgba(57,17,69,.2);
+   box-shadow: 4px 10px 14px 4px rgba(57, 17, 69, .2);
    margin: 50px 80px 50px 80px;
    transform: translatey(0px);
-	animation: float 6s ease-in-out infinite;
+   animation: float 6s ease-in-out infinite;
 }
-.sideBySideHome{
+
+.sideBySideHome {
    display: inline-block;
 }
-.sketchs{
+
+.sketchs {
    width: 100%;
+   display: grid;
+   grid-template-columns: auto auto;
 }
-.sketch1, .sketch2{
+
+.sketch1,
+.sketch2 {
    height: 500px;
-   width: 800px;
+   width: 600px;
 }
-.sketch-1, .sketch-2{
+
+.sketch-1,
+.sketch-2 {
    display: inline-block;
+   vertical-align: middle;
+   text-align: center;
 }
-.register{
+
+.register {
    margin-bottom: 5%;
    margin-top: 10%;
 }
-.contact{
+
+.contact {
    margin-top: 30%;
    margin-bottom: 30%;
 }
---------------------------------------------------
---------------------------------------------------
+
+-------------------------------------------------- --------------------------------------------------
+
 /* login page  */
-.login{
+.login {
    margin: 15%;
-   box-sizing: border-box;  
+   box-sizing: border-box;
 }
-.myform{
-   box-shadow: 4px 10px 14px 4px rgba(57,17,69,.2);
-   background-color:antiquewhite;
-   padding-top: 5%;   
+
+.myform {
+   box-shadow: 4px 10px 14px 4px rgba(57, 17, 69, .2);
+   background-color: antiquewhite;
+   padding-top: 5%;
 }
-.contactform h2{
+
+.contactform h2 {
    margin: 0;
    padding: 0 0 20px;
    color: black;
    text-align: center;
    text-transform: uppercase;
 }
-.loginTable{
+
+.loginTable {
    border: 0;
-   width: 100%;  
+   width: 100%;
 
 }
-.loginItem{
+
+.loginItem {
    margin: 0%;
    padding: 0%;
    text-align: center;
    align-items: center;
 }
-.loginInput{
+
+.loginInput {
    border-radius: 70px;
    font-family: sans-serif;
    outline: none;
-   border: 2px solid rgba(57,17,69,.2);
+   border: 2px solid rgba(57, 17, 69, .2);
    /* width: 100%; */
    margin: 15px 10px 15px 10px;
    padding: 15px 5px 15px 5px;
@@ -147,7 +182,7 @@
 
 }
 
-.loginSubmitButton{
+.loginSubmitButton {
    width: 170px;
    height: 50px;
    border: none;
@@ -158,74 +193,87 @@
    font-size: 22px;
    border-radius: 40px;
    text-align: center;
-   box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
+   box-shadow: 0 6px 20px -5px rgba(0, 0, 0, 0.4);
    position: relative;
    overflow: hidden;
    cursor: pointer;
 }
-.contactform{
+
+.contactform {
    /*position: absolute;*/
    margin: auto;
    width: 500px;
-    height: 800px;
-    padding: 80px 40px;
+   height: 800px;
+   padding: 80px 40px;
 }
-------------------------------------------
-------------------------------------------
-.rowstyle {
+
+------------------------------------------ ------------------------------------------ .rowstyle {
    margin: 5% 15%;
    border-bottom: #CCCCCC 1px solid;
 }
-.myform1{
+
+.myform1 {
    margin-bottom: 3.5%;
 }
-marquee{
+
+marquee {
    background-color: black;
 }
+
 .blink {
    animation: blinker 1.5s linear infinite;
    color: red;
    font-family: sans-serif;
 }
+
 @keyframes blinker {
    50% {
-       opacity: 0;
+      opacity: 0;
    }
 }
 
-h1::before {  
-  transform: scaleX(0);
-  transform-origin: bottom right;
+h1::before {
+   transform: scaleX(0);
+   transform-origin: bottom right;
 }
+
 
 /*h1:hover::before {
   transform: scaleX(1);
   transform-origin: bottom left;
 }*/
+h1:hover::before {
+   transform: scaleX(1);
+   transform-origin: bottom left;
+}
+
 
 h1::before {
-  content: " ";
-  display: block;
-  position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
-  inset: 0 0 0 0;
-  background: hsl(200 100% 80%);
-  z-index: -1;
-  transition: transform .3s ease;
+   content: " ";
+   display: block;
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   inset: 0 0 0 0;
+   background: hsl(200 100% 80%);
+   z-index: -1;
+   transition: transform .3s ease;
 }
 
 h1 {
-  position: relative;
-  font-size: 5rem;
+   position: relative;
+   font-size: 5rem;
 }
 
 /* agency register page */
 
-#reg{
+#reg {
    border-radius: 70px;
    font-family: sans-serif;
    outline: none;
-   border: 2px solid rgba(57,17,69,.2);
+   border: 2px solid rgba(57, 17, 69, .2);
    /* width: 100%; */
    margin: 15px 10px 15px 10px;
    padding: 15px 5px 5px 5px;
@@ -240,24 +288,25 @@ h1 {
 
 }
 
-.register{
+.register {
    /*position: absolute;*/
    margin: auto;
    width: 800px;
-    height: 1300px;
-    padding: 20px;
-   
-}
-.regform{
+   height: 1300px;
+   padding: 20px;
 
-   box-shadow: 4px 10px 14px 4px rgba(57,17,69,.2);
-   background-color:antiquewhite;
-   padding-top: 5%; 
+}
+
+.regform {
+
+   box-shadow: 4px 10px 14px 4px rgba(57, 17, 69, .2);
+   background-color: antiquewhite;
+   padding-top: 5%;
    padding-bottom: 5%;
 
 }
 
-.RegisterSubmitButton{
+.RegisterSubmitButton {
    width: 170px;
    height: 50px;
    border: none;
@@ -268,18 +317,18 @@ h1 {
    font-size: 22px;
    border-radius: 40px;
    text-align: center;
-   box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
+   box-shadow: 0 6px 20px -5px rgba(0, 0, 0, 0.4);
    position: relative;
    overflow: hidden;
    cursor: pointer;
 }
 
 /* OE Register */
-#oereg{
+#oereg {
    border-radius: 70px;
    font-family: sans-serif;
    outline: none;
-   border: 2px solid rgba(57,17,69,.2);
+   border: 2px solid rgba(57, 17, 69, .2);
    /* width: 100%; */
    margin: 15px 10px 15px 10px;
    padding: 15px 5px 5px 5px;
@@ -294,22 +343,24 @@ h1 {
 
 }
 
-.oeregister{
+.oeregister {
    /*position: absolute;*/
    margin: auto;
    width: 800px;
-    height: 1300px;
-    padding: 20px;
+   height: 1300px;
+   padding: 20px;
 }
-.oeform{
 
-   box-shadow: 4px 10px 14px 4px rgba(57,17,69,.2);
-   background-color:antiquewhite;
-   padding-top: 5%; 
+.oeform {
+
+   box-shadow: 4px 10px 14px 4px rgba(57, 17, 69, .2);
+   background-color: antiquewhite;
+   padding-top: 5%;
    padding-bottom: 5%;
    margin-top: 10%;
 }
-.RegisterSubmitButton{
+
+.RegisterSubmitButton {
    width: 170px;
    height: 50px;
    border: none;
@@ -320,18 +371,18 @@ h1 {
    font-size: 22px;
    border-radius: 40px;
    text-align: center;
-   box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
+   box-shadow: 0 6px 20px -5px rgba(0, 0, 0, 0.4);
    position: relative;
    overflow: hidden;
    cursor: pointer;
 }
 
 /* HEI Register page */
-#heireg{
+#heireg {
    border-radius: 70px;
    font-family: sans-serif;
    outline: none;
-   border: 2px solid rgba(57,17,69,.2);
+   border: 2px solid rgba(57, 17, 69, .2);
    /* width: 100%; */
    margin: 15px 10px 15px 10px;
    padding: 15px 5px 5px 5px;
@@ -346,23 +397,25 @@ h1 {
 
 }
 
-.heiregister{
+.heiregister {
    /*position: absolute;*/
    margin: auto;
    width: 800px;
-    height: 1300px;
-    padding: 20px;
-    
-}
-.heiform{
+   height: 1300px;
+   padding: 20px;
 
-   box-shadow: 4px 10px 14px 4px rgba(57,17,69,.2);
-   background-color:antiquewhite;
-   padding-top: 5%; 
+}
+
+.heiform {
+
+   box-shadow: 4px 10px 14px 4px rgba(57, 17, 69, .2);
+   background-color: antiquewhite;
+   padding-top: 5%;
    padding-bottom: 5%;
    margin-top: 10%;
 }
-.RegisterSubmitButton{
+
+.RegisterSubmitButton {
    width: 170px;
    height: 50px;
    border: none;
@@ -373,20 +426,28 @@ h1 {
    font-size: 22px;
    border-radius: 40px;
    text-align: center;
-   box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
+   box-shadow: 0 6px 20px -5px rgba(0, 0, 0, 0.4);
    position: relative;
    overflow: hidden;
    cursor: pointer;
 }
 
-.sketchs1,.sketchs2,.sketchs3,.sketchs4{
+.sketchs1,
+.sketchs2,
+.sketchs3,
+.sketchs4 {
    box-shadow: 4px 10px 14px 4px rgba(76, 55, 82, 0.2);
    height: 100px;
    width: 50px;
 }
-.sketch-1,.sketch-2,.sketch-3,.sketch-4{
+
+.sketch-1,
+.sketch-2,
+.sketch-3,
+.sketch-4 {
    display: inline-block;
 }
+
 /* .abouth{
    font-weight: bolder;
    font-size: 50px;
@@ -395,55 +456,61 @@ h1 {
    margin-top: 10%;
    margin-bottom: 10%;
 } */
-.about{
+.about {
    background-image: url(https://img.freepik.com/free-vector/geometric-frame-background-green-modern-design-vector_53876-157567.jpg?size=626&ext=jpg&ga=GA1.2.88897579.1660490920);
    background-size: cover;
    height: 1200px;
    margin-top: 0%;
 }
-.div1{
+
+.div1 {
    height: 400px;
    background-color: beige;
    font-size: 80px;
    font-family: sans-serif;
-   
+
 }
-.about1{
+
+.about1 {
    margin-top: 5%;
 }
-.aboutpara{
+
+.aboutpara {
    font-family: monospace;
    font-size: 25px;
    font-weight: bolder;
 }
----------------------------
----------------------------
+
+--------------------------- ---------------------------
+
 /* forgot password page */
-.forgotPassword
-{
+.forgotPassword {
    margin-top: 5%;
    margin-bottom: 0%;
 }
-.forgotPwd{
-   
-      position: center;
-      margin: auto;
-      width: 500px;
-       height: 630px;
-       padding: 80px 40px;
-   
+
+.forgotPwd {
+
+   position: center;
+   margin: auto;
+   width: 500px;
+   height: 630px;
+   padding: 80px 40px;
+
 }
-.forgottable{
+
+.forgottable {
    border: 0;
-   width: 100%;  
+   width: 100%;
    margin-top: 5%;
 }
-.loginInput2{
+
+.loginInput2 {
    border-radius: 5px;
    font-family: sans-serif;
    outline: none;
-   border: 2px solid rgba(57,17,69,.2);
-   width: 400px; 
+   border: 2px solid rgba(57, 17, 69, .2);
+   width: 400px;
    margin: 15px 10px 15px 10px;
    padding: 15px 5px 15px 5px;
    font-size: 20px;
@@ -456,7 +523,7 @@ h1 {
 
 }
 
-.forgotbutton2{
+.forgotbutton2 {
    width: 170px;
    height: 50px;
    border: none;
@@ -467,14 +534,16 @@ h1 {
    font-size: 22px;
    border-radius: 40px;
    text-align: center;
-   box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
+   box-shadow: 0 6px 20px -5px rgba(0, 0, 0, 0.4);
    position: relative;
    overflow: hidden;
    cursor: pointer;
 }
-.trouble{
+
+.trouble {
    font-size: 40px;
 }
+
 /* flipcards */
 
 .flip-card {
@@ -483,57 +552,61 @@ h1 {
    height: 300px;
    perspective: 1000px;
    display: inline-block;
-   margin-right: 100px; 
+   margin-right: 100px;
    border-radius: 25px;
- }
- 
- .flip-card-inner {
+}
+
+.flip-card-inner {
    position: relative;
    width: 100%;
    height: 100%;
    text-align: center;
    transition: transform 0.6s;
    transform-style: preserve-3d;
-   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
    border-radius: 25px;
- }
- 
- .flip-card:hover .flip-card-inner {
+}
+
+.flip-card:hover .flip-card-inner {
    transform: rotateY(180deg);
- }
- 
- .flip-card-front, .flip-card-back {
+}
+
+.flip-card-front,
+.flip-card-back {
    position: absolute;
    width: 100%;
    height: 100%;
    -webkit-backface-visibility: hidden;
    backface-visibility: hidden;
    border-radius: 25px;
- }
- .flip{
+}
+
+.flip {
    border-radius: 25px;
- }
- /* .flip-card-front {
+}
+
+/* .flip-card-front {
     background-color: #bbb;
    color: black; 
    image: url(https://www.pexels.com/search/building/);
  } */
- 
- .flip-card-back {
+
+.flip-card-back {
    background-color: #2980b9;
    color: white;
    transform: rotateY(180deg);
    border-radius: 25px;
- }
- .success{
+}
+
+.success {
    font-size: 60px;
    text-align: left;
    color: #2980b9;
- }
+}
 
- .registeredPage{
+.registeredPage {
    display: inline-flex;
    text-align: center;
    margin-top: 10%;
    margin-bottom: 10%;
- }
+}

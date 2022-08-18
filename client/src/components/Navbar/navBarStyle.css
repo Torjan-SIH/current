@@ -1,45 +1,95 @@
-.navBar{
-   width: 100%;
-   height: 100px;
-   background-image: linear-gradient(#66CDAA,#e2e2e2);
-   background-position: center;
-   background-size: cover;
-   top: 0%;
+body {
+   margin: 0;
+}
+
+main {
+   margin: 16px;
+}
+
+
+.navbar {
    display: flex;
+   align-items: center;
+   height: 60px;
+   background: #24496a;
+   color: white;
+   font-weight: 300;
+   top: 0%;
+   z-index: 12;
    position: fixed;
+   padding-top: 0%;
+   width: 100%;
+}
+
+.nav {
+   position: fixed;
+   display: flex;
+   align-items: center;
+   height: 60px;
+   background: #687864;
+   color: white;
+   font-weight: 300;
+   top: 0%;
+   z-index: 12;
 
    padding-top: 0%;
-   z-index: 12; 
-  
-
-}
-
-.navList{
-   display: inline-block;
-   list-style-type: none;
-   padding: 20px 30px 30px;
-  font-size: larger;
-   color: black;
-} 
-.navBarList{
    width: 100%;
-   
+
 }
-.logo{
-   margin: 10px 20px 20px 20px;
+
+.navbar__title {
+   margin-right: auto;
+
+}
+
+.navbar__item:hover {
+   color: peru;
+}
+
+.navbar__item {
+   padding: 0px 18px 0px 18px;
+   vertical-align: middle;
+   color: white;
+   font-size: 20px;
+   font-weight: 300;
+}
+
+.H_link {
+   padding: 0px 16px 0px 16px;
+   text-decoration: none;
+   color: white;
+   font-weight: 700;
+   font-size: 25px;
+}
+
+.H_link:hover {
+   padding: 0px 16px 0px 16px;
+   text-decoration: none;
+   color: peru;
+   font-weight: 700;
+   font-size: 25px;
+}
+
+.I_link:hover {
+   color: peru;
+   font-weight: 350;
+}
+
+.I_link {
+   text-decoration: none;
+   color: white;
+   font-size: 20px;
+   font-weight: 350;
+   vertical-align: middle;
+}
+
+.logo {
    width: 50px;
    height: 40px;
+   vertical-align: middle;
+   margin-left: 2rem;
+}
 
-}
-.logo:hover{
-   color:blue;
-}
-.navList:hover{
-   color: blue ;
-}
-#onof{
-   margin-right: 20px;
-   padding-right: 180px;
-   padding-left: 0;
-
+#lastitem {
+   margin-right: 3rem;
 }
