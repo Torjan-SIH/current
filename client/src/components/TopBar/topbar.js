@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import './topBar.css';
 
-const TopBar = () =>{
-    return(
+const TopBar = () => {
+    return (
         <div className="topBarContent">
             <table className="topBarTable">
                 <tr>
