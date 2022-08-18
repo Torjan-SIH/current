@@ -5,7 +5,8 @@
 }
 
 .heiProfileForm {
-    margin-left: 100%;
+    margin-left: 50%;
+    margin-right: 10%;
 }
 
 .sideBySide {
@@ -21,22 +22,8 @@
 .heiDashBoardForm {
     margin-left: 100%;
 }
-
-.sideBySide {
-    display: inline-flex;
-}
-
 .heiDashboardDiv {
     font: italic bold 12px/30px Georgia, serif;
-}
-
-.btn {
-    float: right;
-}
-
-button {
-    background-color: navy;
-    color: #bacdd8;
 }
 
 .search {
@@ -125,4 +112,27 @@ button {
 .registerInputField {
     width: 100%;
 }
-
+.btn{
+    height: 50px;
+    border: none;
+    margin: 20px 10px 20px 10px;
+    outline: none;
+    background: rgb(55, 118, 118);
+    color: black;
+    font-size: 22px;
+    border-radius: 40px;
+    text-align: center;
+    box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    width:max-content;
+}
+.inputBox{
+    width: 400%;
+}
+.heiProfileTable{
+    margin-left: 0%;
+}

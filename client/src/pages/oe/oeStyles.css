@@ -8,14 +8,9 @@
 }
 
 .oeProfileForm {
-    margin-left: 100%;
+    margin-left: 50%;
+    margin-right: 10%;
 }
-
-button {
-    background-color: navy;
-    color: #bacdd8;
-}
-
 .accept {
     margin-top: 200px;
     background-color: black;
@@ -122,4 +117,24 @@ button {
 .registerInputField {
     width: 100%;
 }
-
+.btn{
+    height: 50px;
+    border: none;
+    margin: 20px 10px 20px 10px;
+    outline: none;
+    background: rgb(55, 118, 118);
+    color: black;
+    font-size: 22px;
+    border-radius: 40px;
+    text-align: center;
+    box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    width:max-content;
+}
+.inputBox{
+    width: 300%;
+}

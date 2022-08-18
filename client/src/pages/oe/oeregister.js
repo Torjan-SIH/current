@@ -110,7 +110,7 @@ const OeRegister = () => {
          <form className="registerForm" onSubmit={(e) => submitValidate(e)}>
             {dor}
 
-            <table className="registerTable">
+            <table className="registerTable" cellPadding={15}>
                <tbody>
                   <tr >
                      <td colSpan={2}>

@@ -1,17 +1,23 @@
-.fundProfileDiv,
-.fundsExploreDiv {
+.fundProfileDiv, .fundsExploreDiv {
     width: 100%;
     text-align: left;
 }
 
 .fundProfileForm {
-    margin-left: 70%;
+    margin-left: 30%;
+    margin-right: 10%;
+}
 
+.fundProfileTable{
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
 }
 
 .sideBySide {
     display: inline-flex;
     margin-right: 10%;
+    align-items: center;
 
 }
 
@@ -32,10 +38,6 @@
     border-radius: 12px;
 }
 
-.btn {
-    float: right;
-}
-
 
 /* ------Agency Register page Styling-------*/
 
@@ -46,8 +48,8 @@
 }
 .registerDiv {
     margin-top: 10%;
-
 }
+
 
 /* .registerTable {
     width: 90%;
@@ -67,7 +69,7 @@
   border: none;
   border-bottom: 3px solid black;
 }
-.registerSubmitButton{
+.registerButton{
     width: 185px;
     height: 90px;
     border: none;
@@ -120,4 +122,25 @@
 .registerDiv{
     width: 100%;
     margin: 0%;
+}
+.btn{
+    height: 50px;
+    border: none;
+    margin: 20px 10px 20px 10px;
+    outline: none;
+    background: rgb(55, 118, 118);
+    color: black;
+    font-size: 22px;
+    border-radius: 40px;
+    text-align: center;
+    box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    width:max-content;
+}
+.inputBox{
+    width: 300%;
 }
