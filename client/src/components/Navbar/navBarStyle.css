@@ -54,6 +54,10 @@ main {
    font-weight: 300;
 }
 
+.I_link:focus {
+   color: silver;
+}
+
 .H_link {
    padding: 0px 16px 0px 16px;
    text-decoration: none;

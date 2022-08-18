@@ -8,9 +8,6 @@ const About = () =>{
     
   return(
     <body className="about">
-      <div className="div1" align="center">
-        <center className="centerabout">ABOUT US</center>
-      </div>
     <div>
     <br></br>
       <br></br>
