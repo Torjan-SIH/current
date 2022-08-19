@@ -27,7 +27,9 @@ const AgencyRegister = () => {
 
    const submitValidate = (e) =>{
       e.preventDefault();
-      setDOR(Date());
+      const ist = new Date();
+      const date = `${ist.getFullYear()}/${ist.getMonth()+1}/${ist.getDate()}`;
+      setDOR(date)
       Axios.post('http://localhost:3001/agencyregister',{
          name:name,
          email:email,
@@ -49,6 +51,8 @@ const AgencyRegister = () => {
             navigate('/registeredpage');
          else if(response.data==="Error")
             alert("Technical error Failed to Register");
+         else if(response.data==="exist")
+               alert("mail already exist");
          else
             alert("Something Went Wrong");
          });
@@ -79,7 +83,7 @@ const AgencyRegister = () => {
                   <tbody>
                      <tr >
                         <td colSpan={2}>
-                           <input className="registerInputField" type="text" name="name" pattern="[A-Za-z]{2,}" required placeholder="Name of Agency"
+                           <input className="registerInputField" type="text" name="name" pattern="\[A-Za-z]{2,}" required placeholder="Name of Agency"
                               onChange={(e) => setName(e.target.value)} />
                         </td>
                      </tr>
