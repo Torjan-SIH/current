@@ -20,7 +20,9 @@ export const ListFundScheme = () =>{
     
     return(
         <div>
-            <h2>FUNDS SCHEMES</h2>
+
+            <h3>FUND SCHEME</h3>
+
             <table className="listFundTable" cellPadding={15}>
                 <thead>
                     <tr className="listFundMetaData">
@@ -66,7 +68,9 @@ export const ListFundDashboard = () =>{
 
     return(
         <div>
-            <h2>FUNDS DASHBOARD</h2>
+
+            <h3>FUND DASHBOARD</h3>
+
             <table className="listFundTable" cellPadding={15}>
                 <thead>
                     <tr className="listFundMetaData">
@@ -107,7 +111,8 @@ export const ListFundOeEvaluation = () =>{
    
     return(
         <div>
-            <h2>OE EVALUATION</h2>
+
+            <h3>FUND OE Evaluation</h3>
             <table className="listFundTable" cellPadding={15}>
                 <thead>
                     <tr className="listFundMetaData">
@@ -149,7 +154,9 @@ export const ListOeDashboard = () =>{
 
     return(
         <div>
-            <h2>OE DASHBOARD</h2>
+
+            <h3>OE DASHBOARD</h3>
+
             <table className="listFundTable" cellPadding={15}>
                 <thead>
                     <tr className="listFundMetaData">

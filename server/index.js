@@ -14,7 +14,7 @@ const db = mysql.createConnection({
     user:"root",
     host:"localhost",
     password:'',
-    database:'gmk',
+    database:'onof',
    
     
 });
@@ -52,7 +52,7 @@ const db = mysql.createConnection({
        
         if(role==="agencies"){
             
-        db.query("select password from login where username=?",[email],(err,result) =>     //take password from database
+        db.query("",[email],(err,result) =>     //take password from database
         {
             if(err)
             {
@@ -255,10 +255,13 @@ const db = mysql.createConnection({
             else{res.send(result);}
         })
     })
-    //---------OE Register page backend------------
+
+
+//---------OE Register page backend------------
 
 app.post('/oeregister',(req,res) => {
     const employeename = req.body.employeename;
+    const employeerole = req.body.employeerole;
     const companyname =  req.body.companyname;
     const companyemail = req.body.companyemail;
     const companycontact = req.body.companycontact;
@@ -267,16 +270,15 @@ app.post('/oeregister',(req,res) => {
     const state = req.body.state;
     const city = req.body.city;
     const pincode = req.body.pincode
-    const employeerole = req.body.employeerole;
     const verficationcode = req.body.verficationcode
     const agencyname = req.body.agencyname;
     const passwd = req.body.passwd;
     const dor = req.body.dor;
-    const status = null;
+    const userstatus = req.body.userstatus
 
     //const query = "INSERT INTO oeregister(ename,cname,cemail,ccontact,caddress) VALUES (?,?,?,?,?)";
     //const values = [employeename,companyname,companyemail,companycontact,companyaddress];
-    db.query("INSERT INTO oeregister(ename,cname,cemail,ccontact,caddress) VALUES (?,?,?,?,?)",[employeename,companyname,companyemail,companycontact,companyaddress],(err,result) =>{
+    db.query("INSERT INTO oeuser(oename,oerole,oecomp,compmail,compcontact,compaddress,state,city,pincode,vercode,aname,oepasswd,dor,oestatus) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",[employeename,employeerole,companyname,companyemail,companycontact,companyaddress,state,city,pincode,verficationcode,agencyname,passwd,dor,userstatus],(err,result) =>{
         if(err){
             console.log(err);
         }
@@ -309,13 +311,15 @@ app.post('/agencyregister',(req,res) => {
     const city = req.body.city;
     const pincode = req.body.pincode;
     const estdate = req.body.estdate;
+    const govtcert = req.body.govtcert;
+    const itcert = req.body.itcert;
     const passwd = req.body.passwd;
     const dor = req.body.dor;
-    const status = null;
+    const userstatus = req.body.userstatus;
 
     //const query = "INSERT INTO oeregister(ename,cname,cemail,ccontact,caddress) VALUES (?,?,?,?,?)";
     //const values = [employeename,companyname,companyemail,companycontact,companyaddress];
-    db.query("INSERT INTO oeregister() VALUES ()",[name,email,contact,address,country,state,city,pincode,estdate,passwd,dor],(err,result) =>{
+    db.query("INSERT INTO agencyuser(aname,amail,acontact,aaddress,state,city,pincode,estdate,govtcert,itcert,apasswd,dor,astatus) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",[name,email,contact,address,state,city,pincode,estdate,govtcert,itcert,passwd,dor,userstatus],(err,result) =>{
         if(err){
             console.log(err);
         }
@@ -351,11 +355,11 @@ app.post('/heiregister',(req,res) => {
     const passwd = req.body.passwd;
     const govtcert = req.body.govtcert;
     const dor = req.body.dor;
-    const status = null
+    const userstatus = req.body.userstsa
 
     //const query = "INSERT INTO oeregister(ename,cname,cemail,ccontact,caddress) VALUES (?,?,?,?,?)";
     //const values = [employeename,companyname,companyemail,companycontact,companyaddress];
-    db.query("INSERT INTO oeregister() VALUES ()",[category,name,email,contact,address,country,state,city,pincode,govtcert,passwd,dor],(err,result) =>{
+    db.query("INSERT INTO heiuser(cat,hname,hmail,hcontact,haddress,state,city,pincode,govtcert,hpasswd,dor,hstatus) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",[category,name,email,contact,address,state,city,pincode,govtcert,passwd,dor,userstatus],(err,result) =>{
         if(err){
             console.log(err);
         }
@@ -375,50 +379,50 @@ app.post('/heiregister',(req,res) => {
 })
 
 
-    app.post('/loginpage',(req,res)=>{
-        const username = req.body.username; 
-        
-        const password = req.body.password;
-        const role= req.body.role;
-        verifyUser=username;
-        verifyRole=role;
+app.post('/loginpage',(req,res)=>{
+    const username = req.body.username; 
     
-        db.query("SELECT * FROM login WHERE (username = ? )AND (password=?) AND (login=?)",
-        [username,password,role],
-        (err,result)=>{
-            if(err)
-            {console.log(err);}
-            else{
-                if(result.length>0)
-                {
-                    console.log(result);
-                    res.send(result);
-                }
-                else{
-                    res.send({message:"Invalid"});
-                }
-                
-            }
-        })
+    const password = req.body.password;
+    const role= req.body.role;
+    verifyUser=username;
+    verifyRole=role;
 
-    
-            // if(err){
-            //     res.send({err: err});
-            //     // res.send({message: "Wrong username/pasword  combination"});
-                
-            // } 
+    db.query("SELECT * FROM  WHERE (username = ? )AND (password=?) AND (login=?)", //insert table name here to execute query
+    [username,password,role],
+    (err,result)=>{
+        if(err)
+        {console.log(err);}
+        else{
+            if(result.length>0)
+            {
+                console.log(result);
+                res.send(result);
+            }
+            else{
+                res.send({message:"Invalid"});
+            }
             
-            // if(result.length >0 ) {
-            //     res.send(result);
-            //     console.log("in if")
+        }
+    })
+
+
+        // if(err){
+        //     res.send({err: err});
+        //     // res.send({message: "Wrong username/pasword  combination"});
             
-            // } else{
-            //     res.send({message: "Wrong username/pasword  combination"});
-            //     console.log("in else");
-              
-    
-            // }
-        });
+        // } 
+        
+        // if(result.length >0 ) {
+        //     res.send(result);
+        //     console.log("in if")
+        
+        // } else{
+        //     res.send({message: "Wrong username/pasword  combination"});
+        //     console.log("in else");
+            
+
+        // }
+    });
 
 
 //---------------Card view backend------------------
