@@ -9,19 +9,6 @@ const HeiRegister = () => {
 
    const navigate = useNavigate();
    const [category, setCategroy] = useState("");
-   const [name, setName] = useState("");
-   const [email, setEmail] = useState("");
-   const [contact, setContact] = useState("");
-   const [address, setAddress] = useState("");
-   const [country, setCountry] = useState("india");
-   const [state, setState] = useState("");
-   const [city, setCity] = useState("");
-   const [pincode, setPinCode] = useState("");
-   const [passwd, setPasswd] = useState("");
-   const [cnfrmpasswd, setCnfrmPasswd] = useState("");
-   const [govtcert, setGovtCert] = useState(null)
-   const [dor, setDOR] = useState("");
-   const [userstatus, setUserStatus] = useState("");
 
    const selectCategory = () => {
       if (category === "individual")
@@ -31,6 +18,20 @@ const HeiRegister = () => {
    }
 
    const RegisterIndividual = () => {
+
+      const [name, setName] = useState("");
+      const [email, setEmail] = useState("");
+      const [contact, setContact] = useState("");
+      const [address, setAddress] = useState("");
+      const [country, setCountry] = useState("india");
+      const [state, setState] = useState("");
+      const [city, setCity] = useState("");
+      const [pincode, setPinCode] = useState("");
+      const [passwd, setPasswd] = useState("");
+      const [cnfrmpasswd, setCnfrmPasswd] = useState("");
+      const [govtcert, setGovtCert] = useState(null)
+      const [dor, setDOR] = useState("");
+      const [userstatus, setUserStatus] = useState("");
       
       const IndividualSubmit = (e) => {
          e.preventDefault();
@@ -191,7 +192,22 @@ const HeiRegister = () => {
 
    const RegisterOrganization = () => {
 
+      const [name, setName] = useState("");
+      const [email, setEmail] = useState("");
+      const [contact, setContact] = useState("");
+      const [address, setAddress] = useState("");
+      const [country, setCountry] = useState("india");
+      const [state, setState] = useState("");
+      const [city, setCity] = useState("");
+      const [pincode, setPinCode] = useState("");
+      const [passwd, setPasswd] = useState("");
+      const [cnfrmpasswd, setCnfrmPasswd] = useState("");
+      const [govtcert, setGovtCert] = useState(null)
+      const [dor, setDOR] = useState("");
+      const [userstatus, setUserStatus] = useState("");
+
       const OrganizationSubmit = (e) => {
+         setDOR(Date());
          e.preventDefault();
          Axios.post('http://localhost:3001/heiregister',{
                category:category,

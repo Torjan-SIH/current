@@ -278,7 +278,7 @@ app.post('/oeregister',(req,res) => {
 
     //const query = "INSERT INTO oeregister(ename,cname,cemail,ccontact,caddress) VALUES (?,?,?,?,?)";
     //const values = [employeename,companyname,companyemail,companycontact,companyaddress];
-    db.query("INSERT INTO oeuser() VALUES ()",[employeename,employeerole,companyname,companyemail,companycontact,companyaddress,country,state,city,pincode,verficationcode,agencyname,passwd,dor,userstatus],(err,result) =>{
+    db.query("INSERT INTO oeuser(oename,oerole,oecomp,compmail,compcontact,compaddress,state,city,pincode,vercode,aname,oepasswd,dor,oestatus) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",[employeename,employeerole,companyname,companyemail,companycontact,companyaddress,state,city,pincode,verficationcode,agencyname,passwd,dor,userstatus],(err,result) =>{
         if(err){
             console.log(err);
         }
@@ -311,13 +311,15 @@ app.post('/agencyregister',(req,res) => {
     const city = req.body.city;
     const pincode = req.body.pincode;
     const estdate = req.body.estdate;
+    const govtcert = req.body.govtcert;
+    const itcert = req.body.itcert;
     const passwd = req.body.passwd;
     const dor = req.body.dor;
     const userstatus = req.body.userstatus;
 
     //const query = "INSERT INTO oeregister(ename,cname,cemail,ccontact,caddress) VALUES (?,?,?,?,?)";
     //const values = [employeename,companyname,companyemail,companycontact,companyaddress];
-    db.query("INSERT INTO agencyuser() VALUES ()",[name,email,contact,address,country,state,city,pincode,estdate,passwd,dor,userstatus],(err,result) =>{
+    db.query("INSERT INTO agencyuser(aname,amail,acontact,aaddress,state,city,pincode,estdate,govtcert,itcert,apasswd,dor,astatus) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",[name,email,contact,address,state,city,pincode,estdate,govtcert,itcert,passwd,dor,userstatus],(err,result) =>{
         if(err){
             console.log(err);
         }
@@ -357,7 +359,7 @@ app.post('/heiregister',(req,res) => {
 
     //const query = "INSERT INTO oeregister(ename,cname,cemail,ccontact,caddress) VALUES (?,?,?,?,?)";
     //const values = [employeename,companyname,companyemail,companycontact,companyaddress];
-    db.query("INSERT INTO heiuser() VALUES ()",[category,name,email,contact,address,country,state,city,pincode,govtcert,passwd,dor,userstatus],(err,result) =>{
+    db.query("INSERT INTO heiuser(cat,hname,hmail,hcontact,haddress,state,city,pincode,govtcert,hpasswd,dor,hstatus) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",[category,name,email,contact,address,state,city,pincode,govtcert,passwd,dor,userstatus],(err,result) =>{
         if(err){
             console.log(err);
         }

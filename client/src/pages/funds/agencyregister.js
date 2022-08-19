@@ -18,6 +18,8 @@ const AgencyRegister = () => {
    const [city, setCity] = useState("");
    const [pincode, setPinCode] = useState("");
    const [estdate, setEstDate] = useState("");
+   const [govtcert, setGovtCert] = useState();
+   const [itcert, setItCert] = useState();
    const [passwd, setPasswd] = useState("");
    const [cnfrmpasswd, setCnfrmPasswd] = useState("");
    const [dor, setDOR] = useState();
@@ -36,6 +38,8 @@ const AgencyRegister = () => {
          city:city,
          pincode:pincode,
          estdate:estdate,
+         govtcert:govtcert,
+         itcert:itcert,
          passwd:passwd,
          dor:dor,
          userstatus:userstatus,
@@ -127,7 +131,7 @@ const AgencyRegister = () => {
                            Govt. authorised certificate
                         </th>
                         <td>
-                           <input  type="file" className="labels" name="govtcertificate" />
+                           <input  type="file" className="labels" name="govtcertificate" onChange={(e) => setGovtCert(e.target.value)}/>
                         </td>
                      </tr>
                      <tr>
@@ -135,7 +139,7 @@ const AgencyRegister = () => {
                            past 3yrs IT returns doc
                         </th>
                         <td>
-                           <input  className="labels" type="file" name="itreturn" />
+                           <input  className="labels" type="file" name="itreturn" onChange={(e) => setItCert(e.target.value)}/>
                         </td>
                      </tr>
                      <tr>
