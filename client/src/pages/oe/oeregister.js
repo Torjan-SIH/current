@@ -28,7 +28,9 @@ const OeRegister = () => {
 
    const submitValidate = (e) =>{
       e.preventDefault();
-      setDOR(Date());
+      const ist = new Date();
+      const date = `${ist.getFullYear()}/${ist.getMonth()+1}/${ist.getDate()}`;
+      setDOR(date)
       Axios.post('http://localhost:3001/oeregister',{
          employeename: employeename,
          employeerole: employeerole,

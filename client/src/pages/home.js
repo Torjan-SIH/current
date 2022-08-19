@@ -12,11 +12,11 @@ const Home = () => {
   return (
     <div>
       <div>
-        <NavBar/>
+        <NavBar />
       </div>
       <div className="home">
         <div className="slideShowHome">
-          <img className="d-block w-100" src="https://www.creditboss.in/wp-content/uploads/2020/10/Process-of-funding.jpg" height="500" alt="First slide" />
+          <img className="d-block w-100" src="fundingrf.jpg" height="500" alt="First slide" />
         </div>
 
         <div className="marqueeScrollHome">
@@ -27,12 +27,12 @@ const Home = () => {
 
         <div className="illustrations">
           <div className="sideBySideHome">
-            <img className="illustrate1" src="https://designstripe-secure.imgix.net/scene-snapshots/40951b2b-d4a7-4213-97ae-da4d222fbc0b/1646878019817/default?auto=format&h=1080&s=7074fd3d0446697132b5646f33fb1535" alt="illustrate" />
+            <img className="illustrate1" src="3.jpg" alt="illustrate" />
             <p><h4><b>HEI's analyse the funding requirmensts
               of Institution.</b></h4></p>
           </div>
           <div className="sideBySideHome">
-            <img className="illustrate2" src="https://designstripe-secure.imgix.net/scene-snapshots/67d64904-5447-4f7a-a19f-9a12e14e0a5e/1637162893425/default?auto=format&h=1080&s=8c487a2fcc02c87ca1fc7cbc3d3d8799" alt="illustrate" />
+            <img className="illustrate2" src="IMG_1174.PNG" />
             <p><h4><b>Agencies provide the funding</b></h4></p>
           </div>
         </div>
@@ -76,7 +76,7 @@ const Home = () => {
         </center>
       </div>
       <div>
-        <Footers/>
+        <Footers />
       </div>
     </div>
   )

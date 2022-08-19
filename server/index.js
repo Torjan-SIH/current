@@ -277,7 +277,7 @@ app.post('/oeregister',(req,res) => {
 
     //const query = "INSERT INTO oeregister(ename,cname,cemail,ccontact,caddress) VALUES (?,?,?,?,?)";
     //const values = [employeename,companyname,companyemail,companycontact,companyaddress];
-    db.query("INSERT INTO oeuser(oename,oerole,oecomp,compmail,compcontact,compaddress,state,city,vercode,aname,oepasswd,dor,status) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",[employeename,employeerole,companyname,companyemail,companycontact,companyaddress,state,city,verficationcode,agencyname,passwd,dor,userstatus],(err,result) =>{
+    db.query("INSERT INTO oeuser(oerole,oename,oecomp,compmail,compcontact,compaddress,state,city,vercode,aname,oepasswd,dor,status) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",[employeerole,employeename,companyname,companyemail,companycontact,companyaddress,state,city,verficationcode,agencyname,passwd,dor,userstatus],(err,result) =>{
         if(err){
             console.log(err);
         }

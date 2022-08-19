@@ -35,7 +35,9 @@ const HeiRegister = () => {
       
       const IndividualSubmit = (e) => {
          e.preventDefault();
-         setDOR(Date());
+         const ist = new Date();
+         const date = `${ist.getFullYear()}/${ist.getMonth()+1}/${ist.getDate()}`;
+         setDOR(date)
          Axios.post('http://localhost:3001/heiregister',{
                category:category,
                name:name,
@@ -159,7 +161,9 @@ const HeiRegister = () => {
       const [userstatus, setUserStatus] = useState("");
 
       const OrganizationSubmit = (e) => {
-         setDOR(Date());
+         const ist = new Date();
+         const date = `${ist.getFullYear()}/${ist.getMonth()+1}/${ist.getDate()}`;
+         setDOR(date)
          e.preventDefault();
          Axios.post('http://localhost:3001/heiregister',{
                category:category,
