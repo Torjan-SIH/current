@@ -21,7 +21,7 @@ const AgencyRegister = () => {
    const [passwd, setPasswd] = useState("");
    const [cnfrmpasswd, setCnfrmPasswd] = useState("");
    const [dor, setDOR] = useState();
-   const [registerstatus, setRegisterStatus] = useState("");
+   const [userstatus, setUserStatus] = useState("");
 
    const submitValidate = (e) =>{
       e.preventDefault();
@@ -38,6 +38,7 @@ const AgencyRegister = () => {
          estdate:estdate,
          passwd:passwd,
          dor:dor,
+         userstatus:userstatus,
       }).then((response) => {
          console.log(response.data);
          if(response.data==="inserted1")
@@ -66,7 +67,7 @@ const AgencyRegister = () => {
             </ul>
          </div>
          <div className="registerDiv">
-            <form className="registerForm" >
+            <form className="registerForm" onSubmit={(e) => submitValidate(e)}>
             <center><h1>REGISTRATION</h1></center>
                <table className="registerTable" >
                   <tbody>

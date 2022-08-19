@@ -8,8 +8,7 @@ import './heiStyles.css';
 const HeiRegister = () => {
 
    const navigate = useNavigate();
-   const [category, setCategroy] = useState("");
-   const [registerstatus, setRegisterStatus] = useState("");
+   const [userstatus, setUserStatus] = useState("");
    const [name, setName] = useState("");
    const [email, setEmail] = useState("");
    const [contact, setContact] = useState("");
@@ -21,6 +20,8 @@ const HeiRegister = () => {
    const [passwd, setPasswd] = useState("");
    const [cnfrmpasswd, setCnfrmPasswd] = useState("");
    const [govtcert, setGovtCert] = useState(null)
+   const [dor, setDOR] = useState("");
+   const [category, setCategroy] = useState("");
 
    const selectCategory = () => {
       if (category === "individual")
@@ -33,6 +34,7 @@ const HeiRegister = () => {
       
       const IndividualSubmit = (e) => {
          e.preventDefault();
+         setDOR(Date());
          Axios.post('http://localhost:3001/heiregister',{
                category:category,
                name:name,
@@ -45,6 +47,8 @@ const HeiRegister = () => {
                pincode:pincode,
                passwd:passwd,
                govtcert:govtcert,
+               dor:dor,
+               userstatus:userstatus,
          }).then((response) => {
             console.log(response.data);
             if(response.data==="inserted1")
@@ -201,6 +205,8 @@ const HeiRegister = () => {
                pincode:pincode,
                passwd:passwd,
                govtcert:govtcert,
+               dor:dor,
+               userstatus:userstatus,
          }).then((response) => {
             console.log(response.data);
             if(response.data==="inserted1")

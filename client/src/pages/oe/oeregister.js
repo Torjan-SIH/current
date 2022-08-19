@@ -10,6 +10,7 @@ const OeRegister = () => {
 
    const navigate = useNavigate();
    const [employeename, setEmployeeName] = useState("");
+   const [employeerole, setEmployeeRole] = useState("");
    const [companyname, setCompanyName] = useState("");
    const [companyemail, setCompanyEmail] = useState("");
    const [companycontact, setCompanyContact] = useState("");
@@ -18,19 +19,19 @@ const OeRegister = () => {
    const [state, setState] = useState("");
    const [city, setCity] = useState("");
    const [pincode, setPinCode] = useState("");
-   const [employeerole, setEmployeeRole] = useState("");
    const [verficationcode, setVerificationCode] = useState("");
    const [agencyname, setAgencyName] = useState("");
    const [passwd, setPasswd] = useState("");
    const [cnfrmpasswd, setCnfrmPasswd] = useState("");
    const [dor, setDOR] = useState();
-   const [registerstatus, setRegisterStatus] = useState("");
+   const [userstatus, setUserStatus] = useState("");
 
    const submitValidate = (e) =>{
       e.preventDefault();
       setDOR(Date());
       Axios.post('http://localhost:3001/oeregister',{
          employeename: employeename,
+         employeerole: employeerole,
          companyname: companyname,
          companyemail: companyemail,
          companycontact: companycontact,
@@ -39,11 +40,11 @@ const OeRegister = () => {
          state: state,
          city: city,
          pincode: pincode,
-         employeerole: employeerole,
          verficationcode: verficationcode,
          agencyname: agencyname,
          passwd: passwd,
          dor:dor,
+         userstatus:userstatus,
       }).then((response) => {
          console.log(response.data);
          if(response.data==="inserted1")
