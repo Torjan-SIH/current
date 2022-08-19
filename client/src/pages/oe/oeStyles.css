@@ -11,6 +11,7 @@
     margin-left: 50%;
     margin-right: 10%;
 }
+
 .accept {
     margin-top: 200px;
     background-color: black;
@@ -30,94 +31,20 @@
 }
 
 .steps {
-    
+
     grid-template-columns: auto auto auto;
 
 }
 
 /* ------OE Register page Styling-------*/
 
-.registerDiv {
-    margin-top: 10%;
-
-}
-
-.registerTable {
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
-    text-align: left;
-}
-
-.registerInputField {
-    font-size:xx-large;
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  margin-top: 10%;
-  margin-bottom: 10%;
-  box-sizing: border-box;
-  border: none;
-  border-bottom: 3px solid black;
-}
-.registerSubmitButton{
-    width: 185px;
-    height: 90px;
-    border: none;
-    margin: 20px 10px 20px 10px;
-    outline: none;
-    background: rgb(0, 128, 77);
-    color: #fff;
-    font-size: 30px;
-    border-radius: 40px;
-    text-align: center;
-    box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    display: inline-block;
-    text-decoration: none;
-    width:max-content;
- }
-
- .registerDiv{
-    display: inline-flex;
-    width: 100%;
-    margin: 0%;
- }
- .registerSubmitButton{
-    width: 100%;
- }
- .termsDiv{
-    
-    align-items: left;
-    text-align: left;
- }
- .check{
-    height:30px;
-    width: 30px;
- }
- .radio{
-    height:30px;
-    width: 30px;
- }
- 
- .mainDiv{
-    display: inline-flex;
- }
- .registerTable{
-    margin: none;
- }
- .registerDiv{
-    width: 100%;
-    margin: 0%;
-}
-
+/* OE register page styles are overrided by fundsStyles.css page*/
 
 .registerInputField {
     width: 100%;
 }
-.btn{
+
+.btn {
     height: 50px;
     border: none;
     margin: 20px 10px 20px 10px;
@@ -127,14 +54,15 @@
     font-size: 22px;
     border-radius: 40px;
     text-align: center;
-    box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
+    box-shadow: 0 6px 20px -5px rgba(0, 0, 0, 0.4);
     position: relative;
     overflow: hidden;
     cursor: pointer;
     display: inline-block;
     text-decoration: none;
-    width:max-content;
+    width: max-content;
 }
-.inputBox{
+
+.inputBox {
     width: 300%;
 }

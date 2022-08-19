@@ -13,10 +13,10 @@ const AgencyRegister = () => {
    const [email, setEmail] = useState("");
    const [contact, setContact] = useState("");
    const [address, setAddress] = useState("");
-   const [country, setCountry] = useState("india");
+   // const [country, setCountry] = useState("india");
    const [state, setState] = useState("");
    const [city, setCity] = useState("");
-   const [pincode, setPinCode] = useState("");
+   // const [pincode, setPinCode] = useState("");
    const [estdate, setEstDate] = useState("");
    const [govtcert, setGovtCert] = useState();
    const [itcert, setItCert] = useState();
@@ -33,10 +33,10 @@ const AgencyRegister = () => {
          email:email,
          contact:contact,
          address:address,
-         country:country,
+         // country:country,
          state:state,
          city:city,
-         pincode:pincode,
+         // pincode:pincode,
          estdate:estdate,
          govtcert:govtcert,
          itcert:itcert,
@@ -60,19 +60,21 @@ const AgencyRegister = () => {
             <NavBarSmall/>
          </div>
          <div className="termsDiv">
-            <ul className="termsList">
-               <h1>TERMS AND CONDITIONS</h1>
-               <li className="t_c">Terms and conditions are part of a that ensure parties understand theircontractual rights and obligations.</li>
-               <li className="t_c">They set important boundaries that all contract principals must uphold.</li>
-               <li className="t_c">Each User shall only register once.</li>
-               <li className="t_c"> The User shall register online to become a Member of Climanosco.</li>
-               <li className="t_c">Each User shall only register once.</li>
-               <li className="t_c">They set important boundaries that all contract principals must uphold.</li>
-            </ul>
+            <div className="termsBox">
+               <center><h3 className="t_c_head">TERMS AND CONDITIONS</h3></center>
+               <ul className="termsList">
+                  <li className="t_c">Terms and conditions are part of a that ensure parties understand theircontractual rights and obligations.</li>
+                  <li className="t_c">They set important boundaries that all contract principals must uphold.</li>
+                  <li className="t_c">Each User shall only register once.</li>
+                  <li className="t_c"> The User shall register online to become a Member of Climanosco.</li>
+                  <li className="t_c">Each User shall only register once.</li>
+                  <li className="t_c">They set important boundaries that all contract principals must uphold.</li>
+               </ul>
+            </div>
          </div>
          <div className="registerDiv">
             <form className="registerForm" onSubmit={(e) => submitValidate(e)}>
-            <center><h1>REGISTRATION</h1></center>
+            <center><h1>AGENCY REGISTRATION</h1></center>
                <table className="registerTable" >
                   <tbody>
                      <tr >
@@ -82,7 +84,7 @@ const AgencyRegister = () => {
                         </td>
                      </tr>
                      <tr>
-                        <td>
+                        <td >
                            <input className="registerInputField" type="email" name="email" required placeholder="Email"
                               onChange={(e) => setEmail(e.target.value)} />
                         </td>
@@ -99,30 +101,30 @@ const AgencyRegister = () => {
                         </td>
                      </tr>
                      <tr>
-                        <td>
+                        {/* <td>
                            <input type="radio" value="india" className="radio" name="country" defaultChecked disabled />&nbsp;&nbsp;&nbsp;&nbsp;<b>India</b>
-                        </td>
+                        </td> */}
                         <td>
                            <input className="registerInputField" type="text" name="state" placeholder="State" required
                               onChange={(e) => setState(e.target.value)} />
                         </td>
-                     </tr>
-                     <tr>
                         <td>
                            <input className="registerInputField" type="text" name="city" placeholder="City/Town" required
                               onChange={(e) => setCity(e.target.value)} />
                         </td>
-                        <td>
+                        {/* <td>
                            <input className="registerInputField" name="pincode" type="text" maxLength={6} minLength={6} pattern="[0-9]{6}" placeholder="Pincode" required
                               onChange={(e) => setPinCode(e.target.value)} />
-                        </td>
+                        </td> */}
+                     </tr>
+                     <tr>
                      </tr>
                      <tr>
                         <th className="labels">
                            Agency Est. Date
                         </th>
                         <td>
-                           <input className="registerInputField" type="date" name="estdate" 
+                           <input className="registerInputField" type="date" name="estdate"
                               onChange={(e) => setEstDate(e.target.value)} />
                         </td>
                      </tr>
@@ -131,7 +133,9 @@ const AgencyRegister = () => {
                            Govt. authorised certificate
                         </th>
                         <td>
-                           <input  type="file" className="labels" name="govtcertificate" onChange={(e) => setGovtCert(e.target.value)}/>
+                           <div class='file-input'>
+                              <input  type="file" className="labels" name="govtcertificate" onChange={(e) => setGovtCert(e.target.value)}/>
+                           </div>
                         </td>
                      </tr>
                      <tr>
@@ -139,7 +143,9 @@ const AgencyRegister = () => {
                            past 3yrs IT returns doc
                         </th>
                         <td>
-                           <input  className="labels" type="file" name="itreturn" onChange={(e) => setItCert(e.target.value)}/>
+                           <div>
+                              <input  className="labels" type="file" name="itreturn" onChange={(e) => setItCert(e.target.value)}/>
+                           </div>
                         </td>
                      </tr>
                      <tr>

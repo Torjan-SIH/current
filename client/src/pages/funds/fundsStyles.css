@@ -92,10 +92,30 @@
     text-align: left;
 }
 
+.termsBox {
+    border: 0px solid black;
+    background-color: #fff;
+    text-align: start;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.25);
+    width: 90%;
+    height: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 8px;
+    /* top: 50%; */
+    transform: translateY(25%);
+}
+
 .registerDiv {
     margin-top: 7rem;
     padding: 0%;
     width: 100%;
+}
+
+.registerForm h1 {
+    margin-bottom: 50px;
 }
 
 .registerForm {
@@ -111,6 +131,7 @@
 .registerTable th {
     padding: 0px 25px;
     /* margin: 0px 15px; */
+    text-align: start;
 }
 
 .labels {
@@ -122,8 +143,14 @@
 
 }
 
+.t_c_head {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .t_c {
-    font-size: 18px;
+    font-size: 16px;
+    padding: 5px 2px 5px 2px;
 }
 
 
