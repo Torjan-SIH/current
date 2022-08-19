@@ -8,7 +8,7 @@ import './heiStyles.css';
 const HeiRegister = () => {
 
    const navigate = useNavigate();
-   const [userstatus, setUserStatus] = useState("");
+   const [category, setCategroy] = useState("");
    const [name, setName] = useState("");
    const [email, setEmail] = useState("");
    const [contact, setContact] = useState("");
@@ -21,7 +21,7 @@ const HeiRegister = () => {
    const [cnfrmpasswd, setCnfrmPasswd] = useState("");
    const [govtcert, setGovtCert] = useState(null)
    const [dor, setDOR] = useState("");
-   const [category, setCategroy] = useState("");
+   const [userstatus, setUserStatus] = useState("");
 
    const selectCategory = () => {
       if (category === "individual")
