@@ -14,7 +14,7 @@ const db = mysql.createConnection({
     user:"root",
     host:"localhost",
     password:'',
-    database:'gmk',
+    database:'onof',
    
     
 });
@@ -52,7 +52,7 @@ const db = mysql.createConnection({
        
         if(role==="agencies"){
             
-        db.query("select password from login where username=?",[email],(err,result) =>     //take password from database
+        db.query("",[email],(err,result) =>     //take password from database
         {
             if(err)
             {
@@ -387,7 +387,7 @@ app.post('/loginpage',(req,res)=>{
     verifyUser=username;
     verifyRole=role;
 
-    db.query("SELECT * FROM login WHERE (username = ? )AND (password=?) AND (login=?)",
+    db.query("SELECT * FROM  WHERE (username = ? )AND (password=?) AND (login=?)", //insert table name here to execute query
     [username,password,role],
     (err,result)=>{
         if(err)
