@@ -277,15 +277,40 @@ app.post('/oeregister',(req,res) => {
 
     //const query = "INSERT INTO oeregister(ename,cname,cemail,ccontact,caddress) VALUES (?,?,?,?,?)";
     //const values = [employeename,companyname,companyemail,companycontact,companyaddress];
+
     db.query("INSERT INTO oeuser(oerole,oename,oecomp,compmail,compcontact,compaddress,state,city,vercode,aname,oepasswd,dor,status) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",[employeerole,employeename,companyname,companyemail,companycontact,companyaddress,state,city,verficationcode,agencyname,passwd,dor,userstatus],(err,result) =>{
+
         if(err){
             console.log(err);
         }
         else{
             if(result.affectedRows===1){
                 res.send("inserted1");
-                console.log(result);
-                console.log("Row Inserted")
+                
+                var nodemailer = require('nodemailer');
+               var transporter = nodemailer.createTransport({
+               service: 'outlook',
+                auth: {
+                user: 'sumanth.k2019@gmail.com',
+                pass: 'JEE!mains1'
+                    }
+               });
+
+           var mailOptions = {
+           from: 'sumanth.k2019@gmail.com',
+           to: email,
+           subject: 'Registratation for One Nation One Funding',
+           text: employeename+',Thank you for registering one nation one funding as a funding agency.we will intimate you about the activation of your account.username'+companyemail
+           };
+
+   transporter.sendMail(mailOptions, function(error, info){
+        if (error) {
+           res.send({wrong:'mail not sent'});
+           }         
+           else {
+               res.send({message:"mail sent"});
+           }
+           });
             }
             else{
                 res.send("Error")
@@ -313,26 +338,65 @@ app.post('/agencyregister',(req,res) => {
     const passwd = req.body.passwd;
     const dor = req.body.dor;
     const userstatus = req.body.userstatus;
+   
 
     //const query = "INSERT INTO oeregister(ename,cname,cemail,ccontact,caddress) VALUES (?,?,?,?,?)";
     //const values = [employeename,companyname,companyemail,companycontact,companyaddress];
-    db.query("INSERT INTO agencyuser(aname,amail,acontact,aaddress,state,city,estdate,govtcert,itcert,apasswd,dor,status) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",[name,email,contact,address,state,city,estdate,govtcert,itcert,passwd,dor,userstatus],(err,result) =>{
-        if(err){
-            console.log(err);
-        }
-        else{
-            if(result.affectedRows===1){
-                res.send("inserted1");
-                console.log(result);
-                console.log("Row Inserted");
+    db.query("select * from agencyuser where amail=? ",[email],(err,result)=>{
+        if(err)
+        {console.log(err);}
+        else
+        {
+            if(result.length>0)
+            {
+                res.send("exist");
             }
-            else{
-                res.send("Error")
-                console.log("Failed to insert");
+            else
+            {
+                db.query("INSERT INTO agencyuser(aname,amail,acontact,aaddress,state,city,estdate,govtcert,itcert,apasswd,dor,status) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",[name,email,contact,address,state,city,estdate,govtcert,itcert,passwd,dor,userstatus],(err,result) =>{
+                    if(err){
+                        console.log(err);
+                    }
+                    else{
+                        if(result.affectedRows===1){
+                            res.send("inserted1");
+                          
+                            var nodemailer = require('nodemailer');
+                           var transporter = nodemailer.createTransport({
+                           service: 'outlook',
+                            auth: {
+                            user: 'sumanth.k2019@gmail.com',
+                            pass: 'JEE!mains1'
+                                }
+                           });
+       
+                       var mailOptions = {
+                       from: 'sumanth.k2019@gmail.com',
+                       to: email,
+                       subject: 'Registratation for One Nation One Funding',
+                       text:  name+',Thank you for registering one nation one funding as a funding agency.we will intimate you about the activation of your account.username'+email
+                       };
+       
+               transporter.sendMail(mailOptions, function(error, info){
+                    if (error) {
+                       res.send({wrong:'mail not sent'});
+                       }         
+                       else {
+                           res.send({message:"mail sent"});
+                       }
+                       });
+                        }
+                        else{
+                            res.send("Error")
+                            console.log("Failed to insert");
+                        }
+            
+                    }
+                })
             }
-
         }
     })
+    
 })
 
 
@@ -354,23 +418,62 @@ app.post('/heiregister',(req,res) => {
 
     //const query = "INSERT INTO oeregister(ename,cname,cemail,ccontact,caddress) VALUES (?,?,?,?,?)";
     //const values = [employeename,companyname,companyemail,companycontact,companyaddress];
-    db.query("INSERT INTO heiuser(cat,hname,hmail,hcontact,haddress,state,city,govtcert,hpasswd,dor,status) VALUES (?,?,?,?,?,?,?,?,?,?,?)",[category,name,email,contact,address,state,city,govtcert,passwd,dor,userstatus],(err,result) =>{
-        if(err){
-            console.log(err);
-        }
-        else{
-            if(result.affectedRows===1){
-                res.send("inserted1");
-                console.log(result);
-                console.log("Row Inserted");
+    db.query("select * from heiuser where amail=? ",[email],(err,result)=>{
+        if(err)
+        {console.log(err);}
+        else
+        {
+            if(result.length>0)
+            {
+                res.send("exist");
             }
-            else{
-                res.send("Error")
-                console.log("Failed to insert");
+            else
+            {
+                db.query("INSERT INTO heiuser(cat,hname,hmail,hcontact,haddress,state,city,govtcert,hpasswd,dor,status) VALUES (?,?,?,?,?,?,?,?,?,?,?)",[category,name,email,contact,address,state,city,govtcert,passwd,dor,userstatus],(err,result) =>{
+                    if(err){
+                        console.log(err);
+                    }
+                    else{
+                        if(result.affectedRows===1){
+                            res.send("inserted1");
+                            
+                            var nodemailer = require('nodemailer');
+                           var transporter = nodemailer.createTransport({
+                           service: 'outlook',
+                            auth: {
+                            user: 'sumanth.k2019@gmail.com',
+                            pass: 'JEE!mains1'
+                                }
+                           });
+       
+                       var mailOptions = {
+                       from: 'sumanth.k2019@gmail.com',
+                       to: email,
+                       subject: 'Registratation for One Nation One Funding',
+                       text: name+',Thank you for registering one nation one funding as a hei.we will intimate you about the activation of your account.username'+email
+                       };
+       
+               transporter.sendMail(mailOptions, function(error, info){
+                    if (error) {
+                       res.send({wrong:'mail not sent'});
+                       }         
+                       else {
+                           res.send({message:"mail sent"});
+                       }
+                       });
+                          
+                        }
+                        else{
+                            res.send("Error")
+                            console.log("Failed to insert");
+                        }
+            
+                    }
+                })
             }
-
         }
     })
+  
 })
 
 
@@ -424,6 +527,6 @@ app.post('/loginpage',(req,res)=>{
 
 
     
-    app.listen(3001,()=> {
-        console.log("server is running on port 3001");
-    });
+app.listen(3001,()=> {
+    console.log("server is running on port 3001");
+});

@@ -58,6 +58,8 @@ const HeiRegister = () => {
                navigate('/registeredpage');
             else if(response.data==="Error")
                alert("Technical error Failed to Register");
+            else if(response.data==="exist")
+                  alert("mail already exist");
             else
                alert("Something Went Wrong");
             });
