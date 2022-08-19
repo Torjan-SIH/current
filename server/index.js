@@ -13,8 +13,9 @@ let verifyRole="";
 const db = mysql.createConnection({
     user:"root",
     host:"localhost",
-    password:'',
+    password:'root',
     database:'onof',
+    port: '8889'
    
     
 });
@@ -276,7 +277,7 @@ app.post('/oeregister',(req,res) => {
 
     //const query = "INSERT INTO oeregister(ename,cname,cemail,ccontact,caddress) VALUES (?,?,?,?,?)";
     //const values = [employeename,companyname,companyemail,companycontact,companyaddress];
-    db.query("INSERT INTO oeuser(oename,oerole,oecomp,compmail,compcontact,compaddress,state,city,vercode,aname,oepasswd,dor,oestatus) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",[employeename,employeerole,companyname,companyemail,companycontact,companyaddress,state,city,verficationcode,agencyname,passwd,dor,userstatus],(err,result) =>{
+    db.query("INSERT INTO oeuser(oename,oerole,oecomp,compmail,compcontact,compaddress,state,city,vercode,aname,oepasswd,dor,status) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",[employeename,employeerole,companyname,companyemail,companycontact,companyaddress,state,city,verficationcode,agencyname,passwd,dor,userstatus],(err,result) =>{
         if(err){
             console.log(err);
         }
@@ -315,7 +316,7 @@ app.post('/agencyregister',(req,res) => {
 
     //const query = "INSERT INTO oeregister(ename,cname,cemail,ccontact,caddress) VALUES (?,?,?,?,?)";
     //const values = [employeename,companyname,companyemail,companycontact,companyaddress];
-    db.query("INSERT INTO agencyuser(aname,amail,acontact,aaddress,state,city,estdate,govtcert,itcert,apasswd,dor,astatus) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",[name,email,contact,address,state,city,estdate,govtcert,itcert,passwd,dor,userstatus],(err,result) =>{
+    db.query("INSERT INTO agencyuser(aname,amail,acontact,aaddress,state,city,estdate,govtcert,itcert,apasswd,dor,status) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",[name,email,contact,address,state,city,estdate,govtcert,itcert,passwd,dor,userstatus],(err,result) =>{
         if(err){
             console.log(err);
         }
@@ -353,7 +354,7 @@ app.post('/heiregister',(req,res) => {
 
     //const query = "INSERT INTO oeregister(ename,cname,cemail,ccontact,caddress) VALUES (?,?,?,?,?)";
     //const values = [employeename,companyname,companyemail,companycontact,companyaddress];
-    db.query("INSERT INTO heiuser(cat,hname,hmail,hcontact,haddress,state,city,govtcert,hpasswd,dor,hstatus) VALUES (?,?,?,?,?,?,?,?,?,?,?)",[category,name,email,contact,address,state,city,govtcert,passwd,dor,userstatus],(err,result) =>{
+    db.query("INSERT INTO heiuser(cat,hname,hmail,hcontact,haddress,state,city,govtcert,hpasswd,dor,status) VALUES (?,?,?,?,?,?,?,?,?,?,?)",[category,name,email,contact,address,state,city,govtcert,passwd,dor,userstatus],(err,result) =>{
         if(err){
             console.log(err);
         }
