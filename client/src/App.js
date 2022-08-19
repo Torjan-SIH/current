@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './pages/login';
 import Home from './pages/home';
 import About from './pages/about';
-import Contact from './pages/contact';
 import Registeredpage from './pages/registeredpage';
 import ForgotPasswd from './pages/forgotpasswd';
 import Heiexplorer from './pages/hei/heiexplorer';
@@ -34,34 +33,33 @@ function App() {
       <BrowserRouter>
         {/* <NavBar/> */}
         <Routes>
-          <Route path='' element={<Home/>} />
-          <Route path='/home' element={<Home/>} />
-          <Route path='/about' element={<About/>} />
-          <Route path='/contact' element={<Contact/>} />
-          <Route path='/login' element={<Login/>} />
-          <Route path='/agencyregister' element={<Agencyregister/>} />
-          <Route path='/forgotpasswd' element={<ForgotPasswd/>} />
-          <Route path='/registeredpage' element={<Registeredpage/>} />
-          <Route path='/heiregister' element={<Heiregister/>} />
-          <Route path='/oeregister' element={<Oeregister/>} />
-          <Route path='/fundsprofile' element={<FundsProfile/>} />
-          <Route path='/fundsexplorer' element={<FundExplorer/>} />
-          <Route path='/fundsoeevaluation' element={<FundsOeEvaluation/>} />
-          <Route path='/fundschemes' element={<FundSchemes/>} />
-          <Route path='/fundsdashboard' element={<FundsDashboard/>} />
-          <Route path='/heidashboard' element={<Heidashboard/>} />
-          <Route path='/heiexplorer' element={<Heiexplorer/>} />
-          <Route path='/heiprofile' element={<Heiprofile/>} />
-          <Route path='/HEIsidebar' element={<HEIsidebar/>} />
-          <Route path='/oeprofile' element={<Oeprofile/>} />
-          <Route path='/oesidebar' element={<Oesidebar/>} />
-          <Route path='/topbar' element={<Topbar/>} />
-          <Route path='/oedashboard' element={<Oedashboard/>} />
-          <Route path='/heiproposal' element={<HeiProposal/>} />
-          <Route path='/FUNDsidebar' element={<FundSideBar/>} />
-          <Route path='/heiapplying' element={<Heiapplying/>} />
-          <Route path='/heiverify' element={<Heiverify/>} />
-          <Route path='/agencyverify' element={<Agencyverify/>} />
+          <Route path='' element={<Home />} />
+          <Route path='/home' element={<Home />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/agencyregister' element={<Agencyregister />} />
+          <Route path='/forgotpasswd' element={<ForgotPasswd />} />
+          <Route path='/registeredpage' element={<Registeredpage />} />
+          <Route path='/heiregister' element={<Heiregister />} />
+          <Route path='/oeregister' element={<Oeregister />} />
+          <Route path='/fundsprofile' element={<FundsProfile />} />
+          <Route path='/fundsexplorer' element={<FundExplorer />} />
+          <Route path='/fundsoeevaluation' element={<FundsOeEvaluation />} />
+          <Route path='/fundschemes' element={<FundSchemes />} />
+          <Route path='/fundsdashboard' element={<FundsDashboard />} />
+          <Route path='/heidashboard' element={<Heidashboard />} />
+          <Route path='/heiexplorer' element={<Heiexplorer />} />
+          <Route path='/heiprofile' element={<Heiprofile />} />
+          <Route path='/HEIsidebar' element={<HEIsidebar />} />
+          <Route path='/oeprofile' element={<Oeprofile />} />
+          <Route path='/oesidebar' element={<Oesidebar />} />
+          <Route path='/topbar' element={<Topbar />} />
+          <Route path='/oedashboard' element={<Oedashboard />} />
+          <Route path='/heiproposal' element={<HeiProposal />} />
+          <Route path='/FUNDsidebar' element={<FundSideBar />} />
+          <Route path='/heiapplying' element={<Heiapplying />} />
+          <Route path='/heiverify' element={<Heiverify />} />
+          <Route path='/agencyverify' element={<Agencyverify />} />
         </Routes>
       </BrowserRouter>
       {/* <Footers/> */}
