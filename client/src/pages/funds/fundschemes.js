@@ -12,14 +12,14 @@ const FundSchemes = () =>
     return(
         <div className="fundProfileDiv" >
             <TopBar/>
-            <div className="btn">
-            <button onClick={() => setPopUpStatus(true)} >New Scheme</button>
-            </div>
             <div className="sideBySide">
                 <FundSideBar/>
             </div>
             <div className="sideBySide">
                 <ListFundScheme/>
+            </div>
+            <div className="sideBySide">
+                <button onClick={() => setPopUpStatus(true)} >New Scheme</button>
             </div>
             <PopUpNewScheme trigger={popupstatus} setTrigger={setPopUpStatus}>New Scheme Data</PopUpNewScheme>
         </div>

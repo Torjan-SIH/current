@@ -31,7 +31,7 @@ const HeiRegister = () => {
       const [cnfrmpasswd, setCnfrmPasswd] = useState("");
       const [govtcert, setGovtCert] = useState(null)
       const [dor, setDOR] = useState("");
-      const [userstatus, setUserStatus] = useState("");
+      const [userstatus, setUserStatus] = useState("accepted");
       
       const IndividualSubmit = (e) => {
          e.preventDefault();
@@ -160,7 +160,7 @@ const HeiRegister = () => {
       const [cnfrmpasswd, setCnfrmPasswd] = useState("");
       const [govtcert, setGovtCert] = useState(null)
       const [dor, setDOR] = useState("");
-      const [userstatus, setUserStatus] = useState("");
+      const [userstatus, setUserStatus] = useState("accepted");
 
       const OrganizationSubmit = (e) => {
          const ist = new Date();

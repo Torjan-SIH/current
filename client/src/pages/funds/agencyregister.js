@@ -23,7 +23,7 @@ const AgencyRegister = () => {
    const [passwd, setPasswd] = useState("");
    const [cnfrmpasswd, setCnfrmPasswd] = useState("");
    const [dor, setDOR] = useState();
-   const [userstatus, setUserStatus] = useState("");
+   const [userstatus, setUserStatus] = useState("accepted");
 
    const submitValidate = (e) =>{
       e.preventDefault();

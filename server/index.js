@@ -484,7 +484,7 @@ app.post('/loginpage',(req,res)=>{
     verifyUser=username;
     verifyRole=role;
     if(role==='agencies'){
-        db.query("SELECT * FROM agencyuseer WHERE (username = ? )AND (password=?) AND status='accepted'", 
+        db.query("SELECT * FROM agencyuser WHERE (amail = ? )AND (apasswd = ?) AND status='accepted'", 
     [username,password],
     (err,result)=>{
         if(err)
@@ -505,7 +505,7 @@ app.post('/loginpage',(req,res)=>{
     }
     else if(role==='hei')
     {
-        db.query("SELECT * FROM heiuseer WHERE (username = ? )AND (password=?) AND status='accepted'", 
+        db.query("SELECT * FROM heiuser WHERE (hmail = ? )AND (hpasswd = ?) AND status='accepted'", 
         [username,password],
         (err,result)=>{
             if(err)
@@ -525,7 +525,7 @@ app.post('/loginpage',(req,res)=>{
     }
     else{
 
-        db.query("SELECT * FROM oeuseer WHERE (username = ? )AND (password=?) AND status='accepted'", 
+        db.query("SELECT * FROM oeuser WHERE (compmail = ? )AND (oepasswd = ?) AND status='accepted'", 
                [username,password],
         (err,result)=>{
             if(err)
