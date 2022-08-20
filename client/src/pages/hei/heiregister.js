@@ -31,7 +31,7 @@ const HeiRegister = () => {
       const [cnfrmpasswd, setCnfrmPasswd] = useState("");
       const [govtcert, setGovtCert] = useState(null)
       const [dor, setDOR] = useState("");
-      const [userstatus, setUserStatus] = useState("");
+      const [userstatus, setUserStatus] = useState("accepted");
       
       const IndividualSubmit = (e) => {
          e.preventDefault();
@@ -73,7 +73,7 @@ const HeiRegister = () => {
                   <tbody>
                      <tr >
                         <td colSpan={2}>
-                           <input className="registerInputField" type="text" name="name" pattern="[A-Za-z]{2,}" required placeholder="Name"
+                           <input className="registerInputField" type="text" name="name" pattern="[A-Za-z\s]{2,}" required placeholder="Name"
                               onChange={(e) => setName(e.target.value)} />
                         </td>
                      </tr>
@@ -111,7 +111,7 @@ const HeiRegister = () => {
                      </tr> */}
                      <tr>
                         <td>
-                           <input type="password" className="registerInputField" name="passwd" placeholder="Create Password" pattern="(?=.\d)(?=.[a-z])(?=.*[A-Z]).{8,}"
+                           <input type="password" className="registerInputField" name="passwd" placeholder="Create Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                               onChange={(e) => setPasswd(e.target.value)} />
                         </td>
                         <td >
@@ -160,10 +160,12 @@ const HeiRegister = () => {
       const [cnfrmpasswd, setCnfrmPasswd] = useState("");
       const [govtcert, setGovtCert] = useState(null)
       const [dor, setDOR] = useState("");
-      const [userstatus, setUserStatus] = useState("");
+      const [userstatus, setUserStatus] = useState("accepted");
 
       const OrganizationSubmit = (e) => {
-         setDOR(Date());
+         const ist = new Date();
+         const date = `${ist.getFullYear()}/${ist.getMonth()+1}/${ist.getDate()}`;
+         setDOR(date)
          e.preventDefault();
          Axios.post('http://localhost:3001/heiregister',{
                category:category,
@@ -198,7 +200,7 @@ const HeiRegister = () => {
                      <tbody>
                         <tr >
                            <td colSpan={2}>
-                              <input className="registerInputField" type="text" name="name" pattern="[A-Za-z]{2,}" required placeholder="Name"
+                              <input className="registerInputField" type="text" name="name" pattern="[A-Za-z\s]{2,}" required placeholder="Name"
                                  onChange={(e) => setName(e.target.value)} />
                            </td>
                         </tr>
@@ -242,7 +244,7 @@ const HeiRegister = () => {
                         </tr>
                         <tr>
                            <td >
-                              <input type="password" className="registerInputField" placeholder="Create Password" pattern="(?=.\d)(?=.[a-z])(?=.*[A-Z]).{8,}"
+                              <input type="password" className="registerInputField" placeholder="Create Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                                  onChange={(e) => setPasswd(e.target.value)} />
                            </td>
                            <td >

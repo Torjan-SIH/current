@@ -13,8 +13,9 @@ let verifyRole="";
 const db = mysql.createConnection({
     user:"root",
     host:"localhost",
-    password:'',
+    password:'root',
     database:'onof',
+    port: '8889'
    
     
 });
@@ -276,6 +277,7 @@ app.post('/oeregister',(req,res) => {
 
     //const query = "INSERT INTO oeregister(ename,cname,cemail,ccontact,caddress) VALUES (?,?,?,?,?)";
     //const values = [employeename,companyname,companyemail,companycontact,companyaddress];
+
     db.query("INSERT INTO oeuser(,oeroleoename,oecomp,compmail,compcontact,compaddress,state,city,vercode,aname,oepasswd,dor,status) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",[employeerole,employeename,companyname,companyemail,companycontact,companyaddress,state,city,verficationcode,agencyname,passwd,dor,userstatus],(err,result) =>{
         if(err){
             console.log(err);
@@ -350,7 +352,6 @@ app.post('/agencyregister',(req,res) => {
             }
             else
             {
-                
                 db.query("INSERT INTO agencyuser(aname,amail,acontact,aaddress,state,city,estdate,govtcert,itcert,apasswd,dor,status) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",[name,email,contact,address,state,city,estdate,govtcert,itcert,passwd,dor,userstatus],(err,result) =>{
                     if(err){
                         console.log(err);
@@ -412,11 +413,11 @@ app.post('/heiregister',(req,res) => {
     const passwd = req.body.passwd;
     const govtcert = req.body.govtcert;
     const dor = req.body.dor;
-    const userstatus = req.body.userstsa
+    const userstatus = req.body.userstatus;
 
     //const query = "INSERT INTO oeregister(ename,cname,cemail,ccontact,caddress) VALUES (?,?,?,?,?)";
     //const values = [employeename,companyname,companyemail,companycontact,companyaddress];
-    db.query("select * from heiuser where amail=? ",[email],(err,result)=>{
+    db.query("select * from heiuser where hmail=? ",[email],(err,result)=>{
         if(err)
         {console.log(err);}
         else
@@ -427,7 +428,6 @@ app.post('/heiregister',(req,res) => {
             }
             else
             {
-                
                 db.query("INSERT INTO heiuser(cat,hname,hmail,hcontact,haddress,state,city,govtcert,hpasswd,dor,status) VALUES (?,?,?,?,?,?,?,?,?,?,?)",[category,name,email,contact,address,state,city,govtcert,passwd,dor,userstatus],(err,result) =>{
                     if(err){
                         console.log(err);
@@ -484,7 +484,7 @@ app.post('/loginpage',(req,res)=>{
     verifyUser=username;
     verifyRole=role;
     if(role==='agencies'){
-        db.query("SELECT * FROM agencyuseer WHERE (username = ? )AND (password=?) AND status='accepted'", 
+        db.query("SELECT * FROM agencyuser WHERE (amail = ? )AND (apasswd = ?) AND status='accepted'", 
     [username,password],
     (err,result)=>{
         if(err)
@@ -505,7 +505,7 @@ app.post('/loginpage',(req,res)=>{
     }
     else if(role==='hei')
     {
-        db.query("SELECT * FROM heiuseer WHERE (username = ? )AND (password=?) AND status='accepted'", 
+        db.query("SELECT * FROM heiuser WHERE (hmail = ? )AND (hpasswd = ?) AND status='accepted'", 
         [username,password],
         (err,result)=>{
             if(err)
@@ -525,7 +525,7 @@ app.post('/loginpage',(req,res)=>{
     }
     else{
 
-        db.query("SELECT * FROM oeuseer WHERE (username = ? )AND (password=?) AND status='accepted'", 
+        db.query("SELECT * FROM oeuser WHERE (compmail = ? )AND (oepasswd = ?) AND status='accepted'", 
                [username,password],
         (err,result)=>{
             if(err)
@@ -554,6 +554,6 @@ app.post('/loginpage',(req,res)=>{
 
 
     
-    app.listen(3001,()=> {
-        console.log("server is running on port 3001");
-    });
+app.listen(3001,()=> {
+    console.log("server is running on port 3001");
+});

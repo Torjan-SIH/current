@@ -119,6 +119,11 @@
    text-align: center;
 }
 
+.sketch-1-content,
+.sketch-2-content {
+   margin-top: 30%;
+}
+
 .register {
    margin-bottom: 5%;
    margin-top: 10%;
