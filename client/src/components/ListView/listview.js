@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { PopUpViewScheme,  PopUpVerifyScheme, PopUpOeDashboard , PopUpHeiDashboard ,PopUpViewHeiProposal} from "./popup";
+import { PopUpViewScheme,  PopUpVerifyScheme, PopUpOeDashboard , PopUpHeiDashboard } from "./popup";
 import Axios from 'axios';
 
 export const ListFundScheme = () =>{
@@ -224,7 +224,7 @@ export const ListHeiDashboard = () =>{
         </div>
     )
 }
-export const ViewHeiProposal = () =>{
+/*export const ViewHeiProposal = () =>{
 
     const[row,setRow]=useState([]);
     const [popupstatus, setPopUpStatus] = useState(false);
@@ -245,7 +245,7 @@ export const ViewHeiProposal = () =>{
                 
                 <thead>
                     <tr className="listProposalMetaData">
-                        {/* {column.map((head,index) => <td className="listProposalMetaData"><h3><b><center>{head.heading}</center></b></h3></td>)} */}
+                        {column.map((head,index) => <td className="listProposalMetaData"><h3><b><center>{head.heading}</center></b></h3></td>)} 
                         <th>HEI Name</th>
                         <th>Scheme ID</th>
                         <th>Scheme Name</th>
@@ -266,4 +266,4 @@ export const ViewHeiProposal = () =>{
             <PopUpViewHeiProposal trigger={popupstatus} setTrigger={setPopUpStatus} data={popupinfo}>this is popup</PopUpViewHeiProposal>
         </div>
     )
-}
+}*/

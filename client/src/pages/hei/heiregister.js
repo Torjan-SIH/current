@@ -35,7 +35,9 @@ const HeiRegister = () => {
       
       const IndividualSubmit = (e) => {
          e.preventDefault();
-         setDOR(Date());
+         const ist = new Date();
+         const date = `${ist.getFullYear()}/${ist.getMonth()+1}/${ist.getDate()}`;
+         setDOR(date)
          Axios.post('http://localhost:3001/heiregister',{
                category:category,
                name:name,
@@ -56,6 +58,8 @@ const HeiRegister = () => {
                navigate('/registeredpage');
             else if(response.data==="Error")
                alert("Technical error Failed to Register");
+            else if(response.data==="exist")
+                  alert("mail already exist");
             else
                alert("Something Went Wrong");
             });
