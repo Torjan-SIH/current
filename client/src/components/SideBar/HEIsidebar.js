@@ -15,11 +15,11 @@ const HeiSideBar = () =>{
                 </Menu>
             </ProSidebar> */}
             <nav className="heiNav">
-            <Link to="/heiexplorer" className="active"><h3><b>Explore</b></h3></Link>
+            <Link to="/heiexplorer" className="linkItem"><h3><b>Explore</b></h3></Link>
             <br></br>
-            <Link to="/heidashboard" className="active"><h3><b>Dashboard</b></h3></Link>
+            <Link to="/heidashboard" className="linkItem"><h3><b>Dashboard</b></h3></Link>
             <br></br>
-            <Link to="/heiprofile" className="active"><h3><b>Profile</b></h3></Link>
+            <Link to="/heiprofile" className="linkItem"><h3><b>Profile</b></h3></Link>
             
             </nav>
         </div>

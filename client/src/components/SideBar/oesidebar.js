@@ -13,9 +13,9 @@ const OeSideBar = () =>{
                 </Menu>
             </ProSidebar> */}
             <nav className="oeNav">
-            <Link to="/oedashboard" className="active"><h3><b>Dashboard</b></h3></Link>
+            <Link to="/oedashboard" className="linkItem"><h3><b>Dashboard</b></h3></Link>
             <br></br>
-            <Link to="/oeprofile" className="active"><h3><b>Profile</b></h3></Link>
+            <Link to="/oeprofile" className="linkItem"><h3><b>Profile</b></h3></Link>
             </nav>
         </div>
     )

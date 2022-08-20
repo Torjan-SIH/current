@@ -8,9 +8,9 @@ export const NavBar = () => {
             < nav className='navbar' >
                 <img className='logo' src='onofLogo.png' alt="" />
                 <div className='navbar__title navbar__item'><Link to="/home" className="H_link">ONE NATION-ONE FUNDING</Link></div>
-                <div className='navbar__item'><Link to="/home" className="I_link">Home</Link></div>
-                <div className='navbar__item'><Link to="/about" className="I_link">About Us</Link></div>
-                <div id="lastitem" className='navbar__item'><Link to="/login" className="I_link">Login</Link></div>
+                <div className='navbar__item'><Link to="/home" className="I_link"><b>Home</b></Link></div>
+                <div className='navbar__item'><Link to="/about" className="I_link"><b>About Us</b></Link></div>
+                <div id="lastitem" className='navbar__item'><Link to="/login" className="I_link"><b>Login</b></Link></div>
             </nav >
         </div>
 
