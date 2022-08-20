@@ -13,11 +13,7 @@
    display:grid;
    grid-template-columns: auto;   
 }
-nav a:hover
-{
-   color: red;
-   background-color: blue;
-}
+
 
 .sideBarElement{
    padding: 10px;
