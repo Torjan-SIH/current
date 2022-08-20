@@ -13,7 +13,6 @@ import Oesidebar from './components/SideBar/oesidebar';
 import Topbar from './components/TopBar/topbar';
 import Heidashboard from './pages/hei/heidashboard';
 import Oedashboard from './pages/oe/oedashboard';
-import Heiapplying from './pages/hei/heiapplying';
 import Oeregister from './pages/oe/oeregister';
 import Heiverify from './pages/stakeholder/heiverify';
 import Agencyverify from './pages/stakeholder/agencyverify';
@@ -53,7 +52,6 @@ function App() {
           <Route path='/topbar' element={<Topbar />} />
           <Route path='/oedashboard' element={<Oedashboard />} />
           <Route path='/FUNDsidebar' element={<FundSideBar />} />
-          <Route path='/heiapplying' element={<Heiapplying />} />
           <Route path='/heiverify' element={<Heiverify />} />
           <Route path='/agencyverify' element={<Agencyverify />} />
         </Routes>
