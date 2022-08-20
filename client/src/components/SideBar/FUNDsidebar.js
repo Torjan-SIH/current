@@ -6,15 +6,21 @@ import './sideBarStyle.css';
 const FundSideBar = () =>{
     return(
         <div className="sideBarDiv">
-            <ProSidebar>
+            {/* <ProSidebar>
                 <Menu iconShape='square' className="sideBar">
                     <MenuItem className="sideBarElement"><Link to="/fundsdashboard">Dashboard</Link></MenuItem>
                     <MenuItem className="sideBarElement"><Link to="/fundsoeevaluation">OE Evaluation</Link></MenuItem>
                     <MenuItem className="sideBarElement"><Link to="/fundschemes">Schemes</Link></MenuItem>
-                    <MenuItem className="sideBarElement"><Link to="/fundsexplorer">Explore</Link></MenuItem>
                     <MenuItem className="sideBarElement"><Link to="/fundsprofile">Profile</Link></MenuItem>
                 </Menu>
-            </ProSidebar>
+            </ProSidebar> */}
+            <nav className="fundNav">
+            <Link to="/fundsdashboard">Dashboard</Link>
+            <Link to="/fundsoeevaluation">OE Evaluation</Link>
+            <Link to="/fundschemes">Schemes</Link>
+            <Link to="/fundsprofile">Profile</Link>
+                
+            </nav>
         </div>
     )
 }

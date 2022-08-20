@@ -13,7 +13,6 @@ import Oesidebar from './components/SideBar/oesidebar';
 import Topbar from './components/TopBar/topbar';
 import Heidashboard from './pages/hei/heidashboard';
 import Oedashboard from './pages/oe/oedashboard';
-import HeiProposal from './pages/hei/heiproposal';
 import Heiapplying from './pages/hei/heiapplying';
 import Oeregister from './pages/oe/oeregister';
 import Heiverify from './pages/stakeholder/heiverify';
@@ -24,7 +23,6 @@ import FundSideBar from './components/SideBar/FUNDsidebar';
 import FundSchemes from './pages/funds/fundschemes';
 import FundsOeEvaluation from './pages/funds/fundsoeevaluation';
 import FundsDashboard from './pages/funds/fundsdashboard';
-import FundExplorer from './pages/funds/fundsexplorer';
 import FundsProfile from './pages/funds/fundsprofile';
 
 function App() {
@@ -43,7 +41,6 @@ function App() {
           <Route path='/heiregister' element={<Heiregister />} />
           <Route path='/oeregister' element={<Oeregister />} />
           <Route path='/fundsprofile' element={<FundsProfile />} />
-          <Route path='/fundsexplorer' element={<FundExplorer />} />
           <Route path='/fundsoeevaluation' element={<FundsOeEvaluation />} />
           <Route path='/fundschemes' element={<FundSchemes />} />
           <Route path='/fundsdashboard' element={<FundsDashboard />} />
@@ -55,7 +52,6 @@ function App() {
           <Route path='/oesidebar' element={<Oesidebar />} />
           <Route path='/topbar' element={<Topbar />} />
           <Route path='/oedashboard' element={<Oedashboard />} />
-          <Route path='/heiproposal' element={<HeiProposal />} />
           <Route path='/FUNDsidebar' element={<FundSideBar />} />
           <Route path='/heiapplying' element={<Heiapplying />} />
           <Route path='/heiverify' element={<Heiverify />} />

@@ -122,13 +122,4 @@ export const PopUpSelectRoles = (props) =>{
         </div>
     ) : "";
 }
-export const PopUpViewHeiProposal = (props) =>{
-    return (props.trigger) ? (
-        <div className="popup">
-            <div className="popupInner">
-                <button className="popupClose" onClick={() => props.setTrigger(false)}>Close</button>
-                {props.data.sname}
-            </div>
-        </div>
-    ) : "";
-}
+
