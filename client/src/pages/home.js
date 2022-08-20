@@ -42,13 +42,12 @@ const Home = () => {
             <img className="sketch1" src="https://storage.googleapis.com/swayam2_central/assets/img/swayam_images/Slider/instructor.png" alt="" />
           </div>
           <div className="sketch-1">
-            <h4 className="sketch-1">The institutions should analyse the needs of the institution and  along with the funds to be raised</h4>
+            <h4 className="sketch-1-content">The institutions should analyse the needs of the institution and  along with the funds to be raised</h4>
           </div>
+
           <div className="sketch-2">
-
-            <h4><b>The required documenataion must be prepared and submitted in the form of document.</b></h4>
+            <h4 className="sketch-2-content"><b>The required documenataion must be prepared and submitted in the form of document.</b></h4>
           </div>
-
           <div className="sketch-2">
             <img className="sketch2" src="https://storage.googleapis.com/swayam2_central/assets/img/swayam_images/Slider/credits_transfer.png" alt="" />
           </div>

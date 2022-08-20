@@ -414,11 +414,11 @@ app.post('/heiregister',(req,res) => {
     const passwd = req.body.passwd;
     const govtcert = req.body.govtcert;
     const dor = req.body.dor;
-    const userstatus = req.body.userstsa
+    const userstatus = req.body.userstatus;
 
     //const query = "INSERT INTO oeregister(ename,cname,cemail,ccontact,caddress) VALUES (?,?,?,?,?)";
     //const values = [employeename,companyname,companyemail,companycontact,companyaddress];
-    db.query("select * from heiuser where amail=? ",[email],(err,result)=>{
+    db.query("select * from heiuser where hmail=? ",[email],(err,result)=>{
         if(err)
         {console.log(err);}
         else

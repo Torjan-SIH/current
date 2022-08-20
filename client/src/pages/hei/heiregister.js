@@ -73,7 +73,7 @@ const HeiRegister = () => {
                   <tbody>
                      <tr >
                         <td colSpan={2}>
-                           <input className="registerInputField" type="text" name="name" pattern="[A-Za-z]{2,}" required placeholder="Name"
+                           <input className="registerInputField" type="text" name="name" pattern="[A-Za-z\s]{2,}" required placeholder="Name"
                               onChange={(e) => setName(e.target.value)} />
                         </td>
                      </tr>
@@ -111,7 +111,7 @@ const HeiRegister = () => {
                      </tr> */}
                      <tr>
                         <td>
-                           <input type="password" className="registerInputField" name="passwd" placeholder="Create Password" pattern="(?=.\d)(?=.[a-z])(?=.*[A-Z]).{8,}"
+                           <input type="password" className="registerInputField" name="passwd" placeholder="Create Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                               onChange={(e) => setPasswd(e.target.value)} />
                         </td>
                         <td >
@@ -200,7 +200,7 @@ const HeiRegister = () => {
                      <tbody>
                         <tr >
                            <td colSpan={2}>
-                              <input className="registerInputField" type="text" name="name" pattern="[A-Za-z]{2,}" required placeholder="Name"
+                              <input className="registerInputField" type="text" name="name" pattern="[A-Za-z\s]{2,}" required placeholder="Name"
                                  onChange={(e) => setName(e.target.value)} />
                            </td>
                         </tr>
@@ -244,7 +244,7 @@ const HeiRegister = () => {
                         </tr>
                         <tr>
                            <td >
-                              <input type="password" className="registerInputField" placeholder="Create Password" pattern="(?=.\d)(?=.[a-z])(?=.*[A-Z]).{8,}"
+                              <input type="password" className="registerInputField" placeholder="Create Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                                  onChange={(e) => setPasswd(e.target.value)} />
                            </td>
                            <td >

@@ -95,13 +95,13 @@ const OeRegister = () => {
                      </tr>
                      <tr >
                         <td colSpan={2}>
-                           <input className="registerInputField" type="text" name="employeename" pattern="[A-Za-z]{2,}" required placeholder="Name of Employee" 
+                           <input className="registerInputField" type="text" name="employeename" pattern="[A-Za-z\s]{2,}" required placeholder="Name of Employee" 
                               onChange={(e) => setEmployeeName(e.target.value)} />
                         </td>
                      </tr>
                      <tr >
                         <td colSpan={2}>
-                           <input className="registerInputField" type="text" name="companyname" pattern="[A-Za-z]{2,}" required placeholder="Name of Company"
+                           <input className="registerInputField" type="text" name="companyname" pattern="[A-Za-z\s]{2,}" required placeholder="Name of Company"
                               onChange={(e) => setCompanyName(e.target.value)} />
                         </td>
                      </tr>
@@ -143,7 +143,7 @@ const OeRegister = () => {
                               onChange={(e) => setVerificationCode(e.target.value)} />
                         </td>
                         <td>
-                           <input className="registerInputField" type="text" name="agencyname" pattern="[A-Za-z]{2,}" required placeholder="Name of Agency"
+                           <input className="registerInputField" type="text" name="agencyname" pattern="[A-Za-z\s]{2,}" required placeholder="Name of Agency"
                               onChange={(e) => setAgencyName(e.target.value)} />
                         </td>
                      </tr>

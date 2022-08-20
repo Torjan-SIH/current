@@ -83,7 +83,7 @@ const AgencyRegister = () => {
                   <tbody>
                      <tr >
                         <td colSpan={2}>
-                           <input className="registerInputField" type="text" name="name" pattern="\[A-Za-z]{2,}" required placeholder="Name of Agency"
+                           <input className="registerInputField" type="text" name="name" pattern="[A-Za-z\s]{2,}" required placeholder="Name of Agency"
                               onChange={(e) => setName(e.target.value)} />
                         </td>
                      </tr>
