@@ -278,8 +278,7 @@ app.post('/oeregister',(req,res) => {
     //const query = "INSERT INTO oeregister(ename,cname,cemail,ccontact,caddress) VALUES (?,?,?,?,?)";
     //const values = [employeename,companyname,companyemail,companycontact,companyaddress];
 
-    db.query("INSERT INTO oeuser(oerole,oename,oecomp,compmail,compcontact,compaddress,state,city,vercode,aname,oepasswd,dor,status) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",[employeerole,employeename,companyname,companyemail,companycontact,companyaddress,state,city,verficationcode,agencyname,passwd,dor,userstatus],(err,result) =>{
-
+    db.query("INSERT INTO oeuser(,oeroleoename,oecomp,compmail,compcontact,compaddress,state,city,vercode,aname,oepasswd,dor,status) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",[employeerole,employeename,companyname,companyemail,companycontact,companyaddress,state,city,verficationcode,agencyname,passwd,dor,userstatus],(err,result) =>{
         if(err){
             console.log(err);
         }
@@ -484,9 +483,9 @@ app.post('/loginpage',(req,res)=>{
     const role= req.body.role;
     verifyUser=username;
     verifyRole=role;
-
-    db.query("SELECT * FROM  WHERE (username = ? )AND (password=?) AND (login=?)", //insert table name here to execute query
-    [username,password,role],
+    if(role==='agencies'){
+        db.query("SELECT * FROM agencyuseer WHERE (username = ? )AND (password=?) AND status='accepted'", 
+    [username,password],
     (err,result)=>{
         if(err)
         {console.log(err);}
@@ -503,23 +502,51 @@ app.post('/loginpage',(req,res)=>{
         }
     })
 
+    }
+    else if(role==='hei')
+    {
+        db.query("SELECT * FROM heiuseer WHERE (username = ? )AND (password=?) AND status='accepted'", 
+        [username,password],
+        (err,result)=>{
+            if(err)
+            {console.log(err);}
+            else{
+                if(result.length>0)
+                {
+                    console.log(result);
+                    res.send(result);
+                }
+                else{
+                    res.send({message:"Invalid"});
+                }
+                
+            }
+        })
+    }
+    else{
 
-        // if(err){
-        //     res.send({err: err});
-        //     // res.send({message: "Wrong username/pasword  combination"});
-            
-        // } 
-        
-        // if(result.length >0 ) {
-        //     res.send(result);
-        //     console.log("in if")
-        
-        // } else{
-        //     res.send({message: "Wrong username/pasword  combination"});
-        //     console.log("in else");
-            
+        db.query("SELECT * FROM oeuseer WHERE (username = ? )AND (password=?) AND status='accepted'", 
+               [username,password],
+        (err,result)=>{
+            if(err)
+            {console.log(err);}
+            else{
+                if(result.length>0)
+                {
+                    console.log(result);
+                    res.send(result);
+                }
+                else{
+                    res.send({message:"Invalid"});
+                }
+                
+            }
+        })
+    }
 
-        // }
+    
+
+
     });
 
 
