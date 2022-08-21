@@ -23,6 +23,7 @@ import FundSchemes from './pages/funds/fundschemes';
 import FundsOeEvaluation from './pages/funds/fundsoeevaluation';
 import FundsDashboard from './pages/funds/fundsdashboard';
 import FundsProfile from './pages/funds/fundsprofile';
+import AdminDash from './pages/stakeholder/admindashboard'
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
           <Route path='/fundsoeevaluation' element={<FundsOeEvaluation />} />
           <Route path='/fundschemes' element={<FundSchemes />} />
           <Route path='/fundsdashboard' element={<FundsDashboard />} />
+          <Route path='/FUNDsidebar' element={<FundSideBar/>} />
           <Route path='/heidashboard' element={<Heidashboard />} />
           <Route path='/heiexplorer' element={<Heiexplorer />} />
           <Route path='/heiprofile' element={<Heiprofile />} />
@@ -54,6 +56,7 @@ function App() {
           <Route path='/FUNDsidebar' element={<FundSideBar />} />
           <Route path='/heiverify' element={<Heiverify />} />
           <Route path='/agencyverify' element={<Agencyverify />} />
+          <Route path='/admindashboard' element={<AdminDash />}/>
         </Routes>
       </BrowserRouter>
       {/* <Footers/> */}

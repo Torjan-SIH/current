@@ -3,11 +3,14 @@ const express=require("express");
 const app=express();
 const mysql=require('mysql');
 const cors = require('cors');
+const { response } = require("express");
 
 app.use(cors());
 app.use(express.json());
-let verifyUser="";
-let verifyRole="";
+let mail = "";
+let name = "";
+let passwd = "";
+let role = "";
 
 
 const db = mysql.createConnection({
@@ -33,18 +36,145 @@ const db = mysql.createConnection({
     //         }
     //     });
     // });
+
+
+    //-------------TopBar---------------
+
+    app.get('/topbar',(req,res)=>{
+        res.send(mail)
+    })
+
+//---------------Funds Dashboard------------------
+
+app.get('/funddashboard',(req,res)=>{
+    res.send(mail)
+})
+
+app.get('/funddashboardlist',(req,res)=>{
     
-    app.get('/fundscheme',(req,res) => {
-        db.query("select * from info",(err,result)=>{
-            if(err){
-                console.log(err);
-            } else {
-                res.send(result);
-            }
-        });
-    });
+    db.query("select * from heiapply where amail=?",[mail],(err,result)=>{
+        if(err){
+            console.log(err);
+        }
+        else{
+            res.send(result);
+        }
+    })
+})
+
+app.post('/verifyscheme',(req,res)=>{
+    const sid = req.body.sid;
+    const amail = mail;
+    db.query("UPDATE heiapply SET sstatus='verifying' WHERE (amail = ? ) AND (sid = ?)",[amail,sid],(err,result)=>{
+        if(err){
+            console.log(err);
+        }
+        else{
+            console.log(result);
+            if(result.changedRows === 1)
+                res.send("updated");
+            else
+                res.send("already");
+        }
+    })
+})
+
+
+
+//---------------Funds Scheme------------------
+
+app.get('/fundscheme',(req,res)=>{
+    res.send(mail)
+})
+app.get('/fundschemelist',(req,res)=>{
     
-    //forgotpassword
+    db.query("select * from agencyscheme where amail=?",[mail],(err,result)=>{
+        if(err){
+            console.log(err);
+        }
+        else{
+            res.send(result);
+        }
+    })
+})
+
+app.post('/fundnewscheme',(req,res)=>{
+    const aname = req.body.aname;
+    const amail = req.body.amail;
+    const sname = req.body.sname;
+    const sdesc = req.body.sdesc;
+    const sdoc = req.body.sdoc;
+    const sdate = req.body.sdate;
+    db.query("insert into agencyscheme(sname,aname,amail,sdesc,sdoc,sdate) values (?,?,?,?,?,?)",[sname,aname,amail,sdesc,sdoc,sdate],(err,result)=>{
+        if(err){
+            console.log(err);
+        }
+        else{
+            if(result.affectedRows === 1)
+                res.send("inserted");
+        }
+    })
+})
+//---------------Funds OE evalutation------------------
+
+app.get('/fundoe',(req,res)=>{
+    res.send(mail)
+})
+
+app.get('/fundoelist',(req,res)=>{
+    
+    db.query("select * from heiapply where amail=?",[mail],(err,result)=>{
+        if(err){
+            console.log(err);
+        }
+        else{
+            res.send(result);
+        }
+    })
+})
+
+
+
+app.get('/viewHeiPropo',(req,res)=>{
+    
+    db.query("",[mail],(err,result)=>{
+        if(err)
+        {console.log(err);}
+        else{res.send(result);}
+    })
+})
+app.get('/oeDashboard',(req,res)=>{
+    
+    db.query("",[mail],(err,result)=>{
+        if(err)
+        {console.log(err);}
+        else{res.send(result);}
+    })
+})
+
+app.get('/fundsDashboard',(req,res)=>{
+    
+    
+    db.query("",[mail],(err,result)=>{
+        if(err)
+        {console.log(err);}
+        else{res.send(result);}
+    })
+})
+app.get('/heiDashboard',(req,res)=>{
+    
+    db.query("",[mail],(err,result)=>{
+        if(err)
+        {console.log(err);}
+        else{res.send(result);}
+    })
+})
+    
+
+
+//-----------------forgotpassword--------------------
+
+
     app.post('/forgotpage',(req,res) =>
     {
         const email = req.body.email; 
@@ -149,9 +279,8 @@ const db = mysql.createConnection({
        
             db.query("",[],(err,result) =>     //take password from database
             {
-                if(err)
-                {
-        console.log(err);
+                if(err){
+                    console.log(err);
                 }
                 else{
                     if(result.length>0)
@@ -196,66 +325,7 @@ const db = mysql.createConnection({
     
     
     
-    app.get('/fundoeevaluation',(req,res) => {
-        db.query(" ",(err,result)=>{
-            if(err){
-                console.log(err);
-            } else {
-                res.send(result);
-            }
-        });
-    });
     
-    app.get('/fundSchemes',(req,res)=>{
-       
-        db.query("",[verifyUser],(err,result)=>{
-            if(err)
-            {console.log(err);}
-            else{res.send(result);}
-        })
-    })
-    app.get('/fundOeEvaluate',(req,res)=>{
-       
-        db.query("",[verifyUser],(err,result)=>{
-            if(err)
-            {console.log(err);}
-            else{res.send(result);}
-        })
-    })
-    app.get('/viewHeiPropo',(req,res)=>{
-       
-        db.query("",[verifyUser],(err,result)=>{
-            if(err)
-            {console.log(err);}
-            else{res.send(result);}
-        })
-    })
-    app.get('/oeDashboard',(req,res)=>{
-       
-        db.query("",[verifyUser],(err,result)=>{
-            if(err)
-            {console.log(err);}
-            else{res.send(result);}
-        })
-    })
-   
-    app.get('/fundsDashboard',(req,res)=>{
-        
-        
-        db.query("",[verifyUser],(err,result)=>{
-            if(err)
-            {console.log(err);}
-            else{res.send(result);}
-        })
-    })
-    app.get('/heiDashboard',(req,res)=>{
-       
-        db.query("",[verifyUser],(err,result)=>{
-            if(err)
-            {console.log(err);}
-            else{res.send(result);}
-        })
-    })
 
 
 //---------OE Register page backend------------
@@ -475,14 +545,14 @@ app.post('/heiregister',(req,res) => {
   
 })
 
+//---------------------login backend----------------------
 
 app.post('/loginpage',(req,res)=>{
     const username = req.body.username; 
-    
     const password = req.body.password;
     const role= req.body.role;
-    verifyUser=username;
-    verifyRole=role;
+    mail=username;
+    passwd = password;
     if(role==='agencies'){
         db.query("SELECT * FROM agencyuser WHERE (amail = ? )AND (apasswd = ?) AND status='accepted'", 
     [username,password],
@@ -543,14 +613,67 @@ app.post('/loginpage',(req,res)=>{
             }
         })
     }
-
-    
-
-
-    });
+});
 
 
-//---------------Card view backend------------------
+//---------------admin dashboard-------------------
+app.get('/admindashboard',(req,res)=>
+{
+    data ={
+        a:0,
+        h:0,
+        o:0
+    }   
+    db.query('select count(*) as count from agencyuser where status="accepted"',(err,result)=>
+    {
+        if(err){
+            console.log(err);
+        }
+        else{
+           var temp= JSON.parse(JSON.stringify(result));
+           data.a=temp[0].count;
+        }
+    }
+    )
+    db.query('select count(*) as count1 from heiuser where status="accepted"',(err,result)=>
+    {
+        if(err){
+            console.log(err);
+        }
+        else{
+           var temp1= JSON.parse(JSON.stringify(result));
+           data.h=temp1[0].count1;
+        }
+    }
+    )
+    db.query('select count(*) as count2 from agencyuser where status="accepted"',(err,result)=>
+    {
+        if(err){
+            console.log(err);
+        }
+        else{
+           var temp2= JSON.parse(JSON.stringify(result));
+           data.o=temp2[0].count2;
+           res.send(data);
+        }
+    }
+    )
+})
+
+
+//---------------Admin AgencyVerify Backend------------------
+
+app.get('/agencyverify',(req,res)=>{
+
+    db.query('select govtcert from agencyuser',(err,result) => {
+        if(err){
+            console.log(err);
+        }
+        else{
+
+        }
+    })
+})
 
 
     

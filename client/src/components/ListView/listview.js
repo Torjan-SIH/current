@@ -7,14 +7,13 @@ export const ListFundScheme = () =>{
     
     const[row,setRow]=useState([]);
     const [popupstatus, setPopUpStatus] = useState(false);
-    const [popupinfo, setPopUpInfo] = useState();
+    const [popupdata, setPopUpData] = useState();
     
     useEffect(()=>{
-        Axios.get('http://localhost:3001/fundSchemes').then((response) => {
-           
-            setRow(response.data);
+        Axios.get('http://localhost:3001/fundschemelist').then((response) => {
+                setRow(response.data);
             }).catch(err=>{
-            console.log(err)
+                console.log(err)
           });
     },[])
     
@@ -25,7 +24,6 @@ export const ListFundScheme = () =>{
                 <thead>
                     <tr className="listFundMetaData">
                         {/* {column.map((head,index) => <td className="listFundMetaData">{head.heading}</td>)} */}
-                        <th>S.No</th>
                         <th>Scheme ID</th>
                         <th>Scheme Name</th>
                         <th>Scheme Date</th>
@@ -36,12 +34,11 @@ export const ListFundScheme = () =>{
                         <td className="listFundData">{row.map((data,index) => <tr >{data.sid}</tr>)}</td>
                         <td className="listFundData">{row.map((data,index) => <tr >{data.sname}</tr>)}</td>
                         <td className="listFundData">{row.map((data,index) => <tr >{data.sdate}</tr>)}</td>
-                        <td className="listFundData">{row.map((data,index) => <tr >{data.sno}</tr>)}</td>
-                        <td className="listFundData">{row.map((data,index) => <tr ><button key={index} onClick={() => {setPopUpStatus(true); setPopUpInfo(data)}}>view{data.sno}</button></tr>)}</td>
+                        <td className="listFundData">{row.map((data,index) => <tr ><button key={index} onClick={() => {setPopUpStatus(true); setPopUpData(data)}}>view{index+1}</button></tr>)}</td>
                     </tr>
                 </tbody>
             </table>
-            <PopUpViewScheme trigger={popupstatus} setTrigger={setPopUpStatus} data={popupinfo}>this is popup</PopUpViewScheme>
+            <PopUpViewScheme trigger={popupstatus} setTrigger={setPopUpStatus} data={popupdata}>this is popup</PopUpViewScheme>
         </div>
      )
 }
@@ -52,16 +49,15 @@ export const ListFundDashboard = () =>{
     
     const[row,setRow]=useState([]);
     const [popupstatus, setPopUpStatus] = useState(false);
-    const [popupinfo, setPopUpInfo] = useState();
+    const [popupdata, setPopUpData] = useState([]);
     
     useEffect(()=>{
         
-        Axios.get('http://localhost:3001/fundsDashboard').then((response)=>{
-           
-            setRow(response.data);
+        Axios.get('http://localhost:3001/funddashboardlist').then((response)=>{
+                setRow(response.data);
             }).catch(err=>{
-            console.log(err)
-          });
+                console.log(err)
+            });
     },[])
 
     return(
@@ -71,23 +67,25 @@ export const ListFundDashboard = () =>{
                 <thead>
                     <tr className="listFundMetaData">
                         {/* {column.map((head,index) => <td className="listFundMetaData">{head.heading}</td>)} */}
-                        <th>HEI Name</th>
                         <th>Scheme ID</th>
                         <th>Scheme Name</th>
-                        <th>Scheme Date</th>
+                        <th>HEI Name</th>
+                        <th>Applied Date</th>
+                        <th>status</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td className="listFundData">{row.map((data,index) => <tr >{data.sid}</tr>)}</td>
                         <td className="listFundData">{row.map((data,index) => <tr >{data.sname}</tr>)}</td>
-                        <td className="listFundData">{row.map((data,index) => <tr >{data.sdate}</tr>)}</td>
-                        <td className="listFundData">{row.map((data,index) => <tr >{data.sno}</tr>)}</td>
-                        <td className="listFundData">{row.map((data,index) => <tr ><button key={index} onClick={() => {setPopUpStatus(true); setPopUpInfo(data)}}>view{data.sno}</button></tr>)}</td>
+                        <td className="listFundData">{row.map((data,index) => <tr >{data.hname}</tr>)}</td>
+                        <td className="listFundData">{row.map((data,index) => <tr >{data.adate}</tr>)}</td>
+                        <td className="listFundData">{row.map((data,index) => <tr >{data.sstatus}</tr>)}</td>
+                        <td className="listFundData">{row.map((data,index) => <tr ><button key={index} onClick={() => {setPopUpStatus(true); setPopUpData(data)}}>view{index+1}</button></tr>)}</td>
                     </tr>
                 </tbody>
             </table>
-            <PopUpVerifyScheme trigger={popupstatus} setTrigger={setPopUpStatus} data={popupinfo}>this is popup</PopUpVerifyScheme>
+            <PopUpVerifyScheme trigger={popupstatus} setTrigger={setPopUpStatus} data={popupdata}></PopUpVerifyScheme>
         </div>
     )
 }
@@ -97,11 +95,10 @@ export const ListFundOeEvaluation = () =>{
     const[row,setRow]=useState([]);
     
     useEffect(()=>{
-        Axios.get('http://localhost:3001/fundOeEvaluate').then((response)=>{
-           
-            setRow(response.data);
+        Axios.get('http://localhost:3001/fundoelist').then((response)=>{
+                setRow(response.data);
             }).catch(err=>{
-            console.log(err)
+                console.log(err)
           });
     },[])
    
@@ -112,9 +109,9 @@ export const ListFundOeEvaluation = () =>{
                 <thead>
                     <tr className="listFundMetaData">
                         {/* {column.map((head,index) => <td className="listFundMetaData">{head.heading}</td>)} */}
-                        <th>HEI Name</th>
                         <th>Scheme ID</th>
                         <th>Scheme Name</th>
+                        <th>HEI Name</th>
                         <th>Scheme Date</th>
                         <th>Status</th>
                     </tr>
@@ -123,9 +120,9 @@ export const ListFundOeEvaluation = () =>{
                     <tr>
                         <td className="listFundData">{row.map((data,index) => <tr >{data.sid}</tr>)}</td>
                         <td className="listFundData">{row.map((data,index) => <tr >{data.sname}</tr>)}</td>
-                        <td className="listFundData">{row.map((data,index) => <tr >{data.sdate}</tr>)}</td>
-                        <td className="listFundData">{row.map((data,index) => <tr >{data.sno}</tr>)}</td>
-                        <td className="listFundData">{row.map((data,index) => <tr >{data.status}</tr>)}</td>
+                        <td className="listFundData">{row.map((data,index) => <tr >{data.hname}</tr>)}</td>
+                        <td className="listFundData">{row.map((data,index) => <tr >{data.adate}</tr>)}</td>
+                        <td className="listFundData">{row.map((data,index) => <tr >{data.sstatus}</tr>)}</td>
                     </tr>
                 </tbody>
             </table>
