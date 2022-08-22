@@ -23,9 +23,10 @@
 }
 nav a:hover
 {
-   color: blue;
+   color: aliceblue;
    background-color: orange;
 }
+
 .sideBarElement{
    padding: 10px;
    font-weight: bolder;
@@ -51,11 +52,9 @@ nav a:hover
    border-style:double;
    width:200px;
    height: 250px;
-   background-color: #24496a;
-   margin-right: 10%;
+   background-color:  #24496a;
 }
-
-.sideBar li:hover{
+/*.sideBarDiv li:hover{
    background-color:#e15d05;
    padding:12px;
    color:#fff;
@@ -65,7 +64,7 @@ nav a:hover
    border-bottom-left-radius: 20px;
    border-bottom-right-radius: 20px;
     
-}
+}*/
 /*.sideBar li:hover:active::after{
    background-color:#e15d05;
    padding:12px;

@@ -13,9 +13,9 @@ let verifyRole="";
 const db = mysql.createConnection({
     user:"root",
     host:"localhost",
-    password:'root',
+    password:'',
     database:'onof',
-    port: '8889'
+    
    
     
 });
