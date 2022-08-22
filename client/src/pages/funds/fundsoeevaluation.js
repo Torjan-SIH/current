@@ -1,11 +1,20 @@
-import React from "react";
+import { React, useState, useEffect} from "react";
 import FundSideBar from "../../components/SideBar/FUNDsidebar";
 import { ListFundOeEvaluation }from "../../components/ListView/listview";
 import TopBar from "../../components/TopBar/topbar";
+import Axios from 'axios'
 import './fundsStyles.css';
 
-const FundsOeEvaluation = () =>
-{
+const FundsOeEvaluation = () =>{
+
+    const [name, setName] = useState("blank");
+
+    useEffect(() => {
+        Axios.get('http://localhost:3001/fundoe').then((response)=>{
+            setName(response.data)
+        })
+    },[name])
+    
     return(
         <div className="fundProfileDiv" >
             <TopBar/>

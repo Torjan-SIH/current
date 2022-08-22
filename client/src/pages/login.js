@@ -1,6 +1,6 @@
 import Axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { createSearchParams, Link } from "react-router-dom";
 import { PopUpSelectRoles } from "../components/ListView/popup";
 import { useNavigate } from "react-router-dom";
 import { NavBarSmall } from "../components/Navbar";
@@ -33,7 +33,6 @@ const Login = () => {
 
    const submitLoginHandler = (e) => {
       e.preventDefault();
-      // console.log(userLogin);
       Axios.post('http://localhost:3001/loginpage', {
          username: userLogin,
          password: passwdLogin,
@@ -46,13 +45,13 @@ const Login = () => {
          }
          else {
             if (roleLogin === "agencies") {
-               navigate('/fundsdashboard');
+               navigate('/fundsdashboard')
             }
             if (roleLogin === "hei") {
-               navigate('/heidashboard');
+               navigate('/heidashboard')
             }
             if (roleLogin === "oe") {
-               navigate('/oedashboard');
+               navigate('/oedashboard')
             }
          }
       });

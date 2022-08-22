@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
+import Axios from "axios";
 import './holderstyles.css'
 
  const AgencyVerify = () =>{
@@ -46,6 +47,16 @@ import './holderstyles.css'
     const [popupstatus, setPopUpStatus] = useState(false);
     const [popupinfo, setPopUpInfo] = useState();
 
+
+    useEffect(() =>{
+        Axios.get('http://localhost:3001/agencyverify',{
+
+        }).then((response) =>{
+            
+        })
+    },[])
+
+
     return(
         <div>
             <table className="agencyVerify" border='1' cellPadding={15} cellSpacing={15} align="center">
@@ -67,6 +78,10 @@ import './holderstyles.css'
                     </tr>
                 </tbody>
             </table>
+
+            <div>
+
+            </div>
         </div>
      )
 }

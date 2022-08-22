@@ -157,7 +157,7 @@
 
 
 
-.btn {
+.btn1 {
     height: 50px;
     border: none;
     margin: 20px 10px 20px 10px;
@@ -165,7 +165,7 @@
     background:rgb(55, 118, 247);
     color: white;
     background: rgb(73, 134, 255);
-    color: black;
+    color: white;
     font-size: 22px;
     border-radius: 40px;
     text-align: center;
