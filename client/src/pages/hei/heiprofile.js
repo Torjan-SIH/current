@@ -2,11 +2,15 @@ import React from "react";
 import HeiSideBar from "../../components/SideBar/HEIsidebar";
 import TopBar from "../../components/TopBar/topbar";
 import './heiStyles.css';
+import { NavBarMedium} from "../../components/Navbar/index";
 
 const HeiProfile = () => {
     return(  
         <div className="heiProfileDiv">
             <TopBar/>
+            <div>
+                <NavBarMedium/>
+            </div>
             <div className="sideBySide">
                 <HeiSideBar/>
                 <form className="heiProfileForm">

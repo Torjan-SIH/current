@@ -220,3 +220,54 @@
 .inputBox {
     width: 300%;
 }
+
+body {
+    margin: 0;
+ }
+ 
+ main {
+    margin: 16px;
+ }
+ 
+ .navMedium {
+    position: fixed;
+    align-items: center;
+    height: 80px;
+    background: #687864;
+    color: white;
+    font-weight: 300;
+    top: 0%;
+    z-index: 12;
+    padding-top: 0%;
+    width: 100%;
+ }
+ 
+ .navbarMedium{
+    display: flex;
+    align-items: center;
+    height: 80px;
+    background: #24496a;
+    color: white;
+    font-weight: 300;
+    top: 0%;
+    z-index: 12;
+    position: fixed;
+    padding-top: 0%;
+    width: 100%;
+ }
+ 
+ .navbar__title_medium {
+    margin-right: auto;
+    vertical-align: middle;
+    padding: 0px 18px 0px 18px;
+    padding-left: 10px;
+ }
+ 
+ .logoSmall {
+    width: 65px;
+    height: 65px;
+    margin-left: 2rem;
+    margin-top: auto;
+    margin-bottom: auto;
+    top: 0%;
+ }

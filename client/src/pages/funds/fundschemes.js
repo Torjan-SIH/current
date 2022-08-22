@@ -5,6 +5,7 @@ import FundSideBar from "../../components/SideBar/FUNDsidebar";
 import TopBar from "../../components/TopBar/topbar";
 import Axios from 'axios';
 import './fundsStyles.css';
+import { NavBarMedium } from "../../components/Navbar";
 
 const FundSchemes = () =>
 {
@@ -20,6 +21,10 @@ const FundSchemes = () =>
     return(
         <div className="fundProfileDiv" >
             <TopBar/>
+            <div>
+                <NavBarMedium/>
+            </div>
+            
             <div className="sideBySide">
                 <FundSideBar/>
             </div>

@@ -1,23 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import FundSideBar from "../../components/SideBar/FUNDsidebar";
 import TopBar from "../../components/TopBar/topbar";
 import { ListFundDashboard }from "../../components/ListView/listview";
-import { useSearchParams } from "react-router-dom";
-import Axios from "axios";
+import './fundsStyles.css';
+import { NavBarMedium } from "../../components/Navbar";
 
-const FundsDashboard = () =>{
-    
-    const [name, setName] = useState("blank");
-
-    useEffect(() => {
-        Axios.get('http://localhost:3001/funddashboard').then((response)=>{
-            setName(response.data)
-        })
-    },[name])
-
+const FundsDashboard = () =>
+{
     return(
+        <div className="fundMainDiv">
         <div className="fundProfileDiv" >
             <TopBar/>
+            <div>
+                <NavBarMedium/>
+            </div>
             <div className="sideBySide">
                 <FundSideBar/>
             </div>
@@ -25,6 +21,7 @@ const FundsDashboard = () =>{
                 <ListFundDashboard/>
             </div>
         </div>
+    </div>
     )
 }
 export default FundsDashboard;

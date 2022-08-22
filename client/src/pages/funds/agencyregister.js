@@ -16,7 +16,7 @@ const AgencyRegister = () => {
    // const [country, setCountry] = useState("india");
    const [state, setState] = useState("");
    const [city, setCity] = useState("");
-   const [pincode, setPinCode] = useState("");
+   // const [pincode, setPinCode] = useState("");
    const [estdate, setEstDate] = useState("");
    const [govtcert, setGovtCert] = useState();
    const [itcert, setItCert] = useState();
@@ -75,124 +75,114 @@ const AgencyRegister = () => {
                   <li className="t_c">They set important boundaries that all contract principals must uphold.</li>
                </ul>
             </div>
-
-      
-            <div className="registerDiv">
-         <form className="registerForm" >
-            <table className="registerTable" cellPadding={15} >
-               
-               <tr>
-                  <th><center><h1><b>REGISTRATION</b></h1></center></th>
-               </tr>
-
-               <tbody>
-                  <tr >
-                     <td colSpan={2}>
-                        <input className="registerInputField" type="text" name="name" pattern="[A-Za-z]{2,}" required placeholder="Name of Agency"
-                           onChange={(e) => setName(e.target.value)} />
-                     </td>
-                  </tr>
-                  <tr>
-                     <td>
-                        <input className="registerInputField" type="email" name="email" required placeholder="Email"
-                           onChange={(e) => setEmail(e.target.value)} />
-                     </td>
-                     
-                     <td>
-                        <input className="registerInputField" type="text" name="contact" maxLength={10} minLength={10} pattern="[789][0-9]{9}" required placeholder="Contact no."
-                           onChange={(e) => setContact(e.target.value)} />
-                     </td>
-                  </tr>
-                  <tr>
-                     <td colSpan={2}>
-                        <input className="registerInputField" id="addressField" type="text" name="address" required placeholder="Office Address"
-                           onChange={(e) => setAddress(e.target.value)} />
-                     </td>
-                  </tr>
-                  <tr>
-                  
-                     <td>
-                        <input className="registerInputField" type="text" name="state" placeholder="State" required
-                           onChange={(e) => setState(e.target.value)} />
-                     </td>
-                     <td>
-                     &nbsp;&nbsp;&nbsp;
-                     <input type="radio" value="india" className="radio" name="country" defaultChecked disabled />&nbsp;&nbsp;&nbsp; India
-                     </td>
-                  </tr>
-                  <tr>
-                     <td>
-                        <input className="registerInputField" type="text" name="city" placeholder="City/Town" required
-                           onChange={(e) => setCity(e.target.value)} />
-                     </td>
-                     <td>
-                        <input className="registerInputField" name="pincode" type="text" maxLength={6} minLength={6} pattern="[0-9]{6}" placeholder="Pincode" required
-                           onChange={(e) => setPinCode(e.target.value)} />
-                     </td>
-                  </tr>
-                  <tr>
-                     <th className="labels">
-                        Agency Est. Date
-                     </th>
-                     <td>
-                        <input className="registerInputField" type="date" name="estdate" 
-                           onChange={(e) => setEstDate(e.target.value)} />
-                     </td>
-                     
-                  </tr>
-                  <tr>
-                     <th className="labels">
-                        Govt. authorised certificate
-                     </th>
-                     <td>
-                        <input  type="file" className="labels" name="govtcertificate" />
-                     </td>
-                  </tr>
-                  <tr>
-                     <br></br>
-                  </tr>
-                  <tr>
-                     <th className="labels">
-                        IT returns doc(past 3yrs )
-                     </th>
-                     <td>
-                        <input  className="labels" type="file" name="itreturn" />
-                     </td>
-                  </tr>
-                  <tr>
-                     <td colSpan={2}>
-                        <input type="password" className="registerInputField" name="passwd" placeholder="Create Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                           onChange={(e) => setPasswd(e.target.value)} />
-                     </td>
-                  </tr>
-                  <tr>
-                     <td colSpan={2}>
-                        <input type="password" className="registerInputField" name="cnfrmpasswd" placeholder="Confirm Password"
-                           onChange={(e) => setCnfrmPasswd(e.target.value)} />
-                     </td>
-                  </tr>
-                  <p>{(passwd !== cnfrmpasswd) ? "Password Doesn't Match" : ""}</p>
-               </tbody>
-               <tfoot>
-                  <tr>
-                     <td colSpan={2}>
-                     <h3><input className="check" type="checkbox" /> I have read and accept the Terms of Service & Privacy Policy</h3>
-                     </td>
-                  </tr>
-                  <tr>
-                     <td>
-                        <br></br>
-                        <button type="submit" className="registerButton">Submit</button>
-                     </td>
-                  </tr>
-               </tfoot>
-            </table>
-
-         </form>
-   </div>
-   </div>
-</div>
-         
+         </div>
+         <div className="registerDiv">
+            <form className="registerForm" onSubmit={(e) => submitValidate(e)}>
+            <center><h1>AGENCY REGISTRATION</h1></center>
+               <table className="registerTable" >
+                  <tbody>
+                     <tr >
+                        <td colSpan={2}>
+                           <input className="registerInputField" type="text" name="name" pattern="[A-Za-z\s]{2,}" required placeholder="Name of Agency"
+                              onChange={(e) => setName(e.target.value)} />
+                        </td>
+                     </tr>
+                     <tr>
+                        <td >
+                           <input className="registerInputField" type="email" name="email" required placeholder="Email"
+                              onChange={(e) => setEmail(e.target.value)} />
+                        </td>
+                        
+                        <td>
+                           <input className="registerInputField" type="text" name="contact" maxLength={10} minLength={10} pattern="[789][0-9]{9}" required placeholder="Contact no."
+                              onChange={(e) => setContact(e.target.value)} />
+                        </td>
+                     </tr>
+                     <tr>
+                        <td colSpan={2}>
+                           <input className="registerInputField" id="addressField" type="text" name="address" required placeholder="Office Address"
+                              onChange={(e) => setAddress(e.target.value)} />
+                        </td>
+                     </tr>
+                     <tr>
+                        {/* <td>
+                           <input type="radio" value="india" className="radio" name="country" defaultChecked disabled />&nbsp;&nbsp;&nbsp;&nbsp;<b>India</b>
+                        </td> */}
+                        <td>
+                           <input className="registerInputField" type="text" name="state" placeholder="State" required
+                              onChange={(e) => setState(e.target.value)} />
+                        </td>
+                        <td>
+                           <input className="registerInputField" type="text" name="city" placeholder="City/Town" required
+                              onChange={(e) => setCity(e.target.value)} />
+                        </td>
+                        {/* <td>
+                           <input className="registerInputField" name="pincode" type="text" maxLength={6} minLength={6} pattern="[0-9]{6}" placeholder="Pincode" required
+                              onChange={(e) => setPinCode(e.target.value)} />
+                        </td> */}
+                     </tr>
+                     <tr>
+                     </tr>
+                     <tr>
+                        <th className="labels">
+                           Agency Est. Date
+                        </th>
+                        <td>
+                           <input className="registerInputField" type="date" name="estdate"
+                              onChange={(e) => setEstDate(e.target.value)} />
+                        </td>
+                     </tr>
+                     <tr>
+                        <th className="labels">
+                           Govt. authorised certificate
+                        </th>
+                        <td>
+                           <div class='file-input'>
+                              <input  type="file" className="labels" name="govtcertificate" onChange={(e) => setGovtCert(e.target.value)}/>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <th className="labels">
+                           past 3yrs IT returns doc
+                        </th>
+                        <td>
+                           <div>
+                              <input  className="labels" type="file" name="itreturn" onChange={(e) => setItCert(e.target.value)}/>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <input type="password" className="registerInputField" name="passwd" placeholder="Create Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                              onChange={(e) => setPasswd(e.target.value)} />
+                        </td>
+                        <td>
+                           <input type="password" className="registerInputField" name="cnfrmpasswd" placeholder="Confirm Password"
+                              onChange={(e) => setCnfrmPasswd(e.target.value)} />
+                        </td>
+                     </tr>
+                        <p>{(passwd !== cnfrmpasswd) ? "Password Doesn't Match" : ""}</p>
+                  </tbody>
+                  <tfoot>
+                     <tr>
+                        <td colSpan={2}>
+                           <input className="check" type="checkbox"/> I have read and accept the Terms of Service & Privacy Policy
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <button type="reset" className="formButton">Clear</button>
+                        </td>
+                        <td>
+                           <button type="submit" className="formButton">Submit</button>
+                        </td>
+                     </tr>
+                  </tfoot>
+               </table>
+            </form>
+         </div>
+      </div>
    )
 
 }

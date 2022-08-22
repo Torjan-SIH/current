@@ -668,16 +668,21 @@ h1 {
    margin-bottom: 10%;
 }
 
-/*body{
-   background-image: url("https://img.freepik.com/free-vector/blue-curve-background_53876-113112.jpg?w=2000");
+body{
+   background-image: url("https://wallpaperaccess.com/full/5227233.png");
    background-size: cover;
 }
 
 body {
    background-size: cover;
 }
-*/
+
 .adiv {
    margin-bottom: 20%;
    margin-top: 20%;
+}
+
+body{
+   background-color:rgb(216, 3, 39);
+   background-size: cover;
 }

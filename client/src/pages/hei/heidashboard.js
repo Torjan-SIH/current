@@ -4,6 +4,7 @@ import { ListHeiDashboard } from "../../components/ListView/listview";
 import HeiSideBar from "../../components/SideBar/HEIsidebar";
 import TopBar from "../../components/TopBar/topbar";
 import './heiStyles.css';
+import { NavBarMedium} from "../../components/Navbar/index";
 
 const HeiDashBoard = () => {
 
@@ -12,6 +13,9 @@ const HeiDashBoard = () => {
     return(  
         <div className="heiProfileDiv">
             <TopBar/>
+            <div>
+                <NavBarMedium/>
+            </div>
             <div className="sideBySide">
                 <HeiSideBar/>
             </div>

@@ -2,12 +2,17 @@ import React from "react";
 import TopBar from "../../components/TopBar/topbar";
 import OeSideBar from "../../components/SideBar/oesidebar";
 import './oeStyles.css';
+import { NavBarMedium } from "../../components/Navbar";
+
+
 const OeProfile=() =>
 {
     return(
         <div className="oeProfileDiv">
             <TopBar/>
-            
+            <div>
+                <NavBarMedium/>
+            </div>
             <div className="sideBySide">
             <OeSideBar/>
             <form className="oeProfileForm">

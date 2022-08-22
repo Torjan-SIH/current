@@ -2,12 +2,17 @@ import React from "react";
 import FundSideBar from "../../components/SideBar/FUNDsidebar";
 import TopBar from "../../components/TopBar/topbar";
 import './fundsStyles.css';
+import { NavBarMedium } from "../../components/Navbar";
 
 const FundsProfile = () =>
 {
     return(
+        <div className="fundMainDiv">
         <div className="fundProfileDiv" >
             <TopBar/>
+            <div>
+                <NavBarMedium/>
+            </div>
             <div className="sideBySide">
                 <FundSideBar/>
             
@@ -31,8 +36,8 @@ const FundsProfile = () =>
                         <td><input type="number" name="oecontact" className="inputBox"></input></td>
                     </tr>
                     <tr>
-                        <th><h5>IT returns doc(past 3 years): </h5></th><br></br>
-                        <td><button type="file" name="itdoc" className="inputBox">View</button></td>
+                        <th><h5>past 3yrs IT returns doc: </h5></th><br></br>
+                        <td><input type="file" name="itdoc" className="inputBox"></input></td>
                     </tr>
                     <tr>
                         <th><h5>Office Address: </h5></th><br></br>
@@ -52,13 +57,14 @@ const FundsProfile = () =>
                     </tr>
                     <br></br>
                     <tr><td></td>
-                    <td><center><button className="btn2">Save</button></center></td>
-                    <td><center><button className="btn2">Edit</button></center></td>
+                    <td><center><button className="btn"><b>Save</b></button></center></td>
+                    <td><center><button className="btn"><b>Reset</b></button></center></td>
                     
                     </tr>
                 </table>
             </form>
             </div>
+        </div>
         </div>
     )
 }
