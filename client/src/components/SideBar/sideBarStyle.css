@@ -4,16 +4,26 @@
    text-align: start;
    border: 1px solid lightblue;
    margin: 0%;
+   background-color: rgb(89, 89, 247);
+   box-shadow: inset 0 0 10px #800046;
+   border-top-left-radius: 20px;
+   border-top-right-radius: 20px;
+   border-bottom-left-radius: 20px;
+   border-bottom-right-radius: 20px;
    display:grid ;
    grid-template-columns: auto;
-   box-shadow: inset 0 0 10px	#800046;
+   box-shadow: inset 0 0 10px #800046;
    
 } */
 .fundNav{
    display:grid;
    grid-template-columns: auto;   
 }
-
+/*nav a:hover
+{
+   color: aliceblue;
+   background-color: orange;
+}*/
 
 .sideBarElement{
    padding: 10px;
@@ -21,14 +31,46 @@
    list-style-type: none;
    text-decoration: none;
    margin: 0%;
-   
-   
+ 
+}
+.linkItem{
+   font-size:x-large;
+   color: aliceblue;
+   text-decoration: none;
+}
+.sideBarDiv>.item>link{
+   background:#bbb;
 }
 .sideBar{
    margin: 10px;
    margin-bottom: 0%;
    margin-top: 0%;
-   /*textColor:#fff;
-    bgColor:#333;*/
-    
 }
+.sideBarDiv{
+   border-style:double;
+   width:200px;
+   height: 250px;
+   background-color:  #24496a;
+}
+.linkItem:hover {
+   color: peru;
+   font-weight: 350;
+}
+/*.sideBarDiv li:hover{
+   background-color:#e15d05;
+   padding:12px;
+   color:#fff;
+   transition:all 0.5s;
+   border-top-left-radius: 20px;
+   border-top-right-radius: 20px;
+   border-bottom-left-radius: 20px;
+   border-bottom-right-radius: 20px;
+    
+}*/
+/*.sideBar li:hover:active::after{
+   background-color:#e15d05;
+   padding:12px;
+   color:#fff;
+   transition:all 0.5s;
+    
+}*/

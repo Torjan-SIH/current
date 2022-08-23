@@ -8,7 +8,9 @@
     margin-left: 50%;
     margin-right: 10%;
 }
-
+.heiApplying{
+    margin-left: 10%;
+}
 .sideBySide {
     display: inline-flex;
     margin-right: 10%;
@@ -38,12 +40,23 @@
 
 /* ------HEI Register page Styling-------*/
 
+.registerDiv {
+    margin-top: 10%;
+}
+
+.registerTable {
+    margin-left: auto;
+    margin-right: auto;
+    width: 200%;
+    text-align: left;
+}
 .registerMainDiv {
     width: 100%;
     display: flex;
     margin-top: 5rem;
     padding: 0%;
     width: 100%;
+
 }
 
 .mainDiv {
@@ -54,6 +67,10 @@
 
 .formButton {
     border: none;
+
+    margin: 20px 10px 20px 10px;
+    outline: none;
+    background: rgb(1, 251, 9);
     margin: 10px;
     background: rgb(0, 128, 77);
     color: #fff;
@@ -140,13 +157,15 @@
 
 
 
-.btn {
+.btn1 {
     height: 50px;
     border: none;
     margin: 20px 10px 20px 10px;
     outline: none;
+    background:rgb(55, 118, 247);
+    color: white;
     background: rgb(73, 134, 255);
-    color: black;
+    color: white;
     font-size: 22px;
     border-radius: 40px;
     text-align: center;
@@ -163,6 +182,57 @@
     width: 400%;
 }
 
+.heiProfileTable{
+   margin-right: 40%;  
+}
+.heiSideBar{
+    margin-left: 10%;
+    margin-right: 70%;
+}
+.applyDiv{
+    display: inline-flex;
+}
+
 .heiProfileTable {
     margin-left: 0%;
 }
+
+
+body {
+    margin: 0;
+ }
+ 
+ main {
+    margin: 16px;
+ }
+ 
+ 
+ .navbarMedium{
+    display: flex;
+    align-items: center;
+    height: 80px;
+    background: #24496a;
+    color: white;
+    font-weight: 300;
+    top: 0%;
+    z-index: 12;
+    position: fixed;
+    padding-top: 0%;
+    width: 100%;
+ }
+ 
+ .navbar__title_medium {
+    margin-right: auto;
+    vertical-align: middle;
+    padding: 0px 18px 0px 18px;
+    padding-left: 10px;
+ }
+ 
+ .logoSmall {
+    width: 65px;
+    height: 65px;
+    margin-left: 2rem;
+    margin-top: auto;
+    margin-bottom: auto;
+    top: 0%;
+ }

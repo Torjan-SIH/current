@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import FundSideBar from "../../components/SideBar/FUNDsidebar";
 import TopBar from "../../components/TopBar/topbar";
 import { ListFundDashboard }from "../../components/ListView/listview";
 import Axios from "axios";
+import { NavBarMedium } from "../../components/Navbar";
+import './fundsStyles.css';
+
 
 const FundsDashboard = () =>{
-    
+
     const [name, setName] = useState("blank");
 
     useEffect(() => {
@@ -15,17 +18,22 @@ const FundsDashboard = () =>{
     },[name])
 
     return(
-        <div className="fundProfileDiv" >
-            <TopBar/>
-            <div className="sideBySide">
-                <FundSideBar/>
-            </div>
-            <div className="sideBySide">
-                <ListFundDashboard/>
+        <div className="fundMainDiv">
+            <div className="fundProfileDiv" >
+                <TopBar/>
+                <div>
+                    <NavBarMedium/>
+                </div>
+                <div className="sideBySide">
+                    <FundSideBar/>
+                </div>
+                <div className="sideBySide">
+                    <ListFundDashboard/>
+                </div>
             </div>
         </div>
     )
 }
 export default FundsDashboard;
             
-        
+    

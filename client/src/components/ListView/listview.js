@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { PopUpViewScheme,  PopUpVerifyScheme, PopUpOeDashboard , PopUpHeiDashboard ,PopUpViewHeiProposal} from "./popup";
+import { PopUpViewScheme,  PopUpVerifyScheme, PopUpOeDashboard , PopUpHeiDashboard } from "./popup";
 import Axios from 'axios';
 
 export const ListFundScheme = () =>{
@@ -19,7 +19,9 @@ export const ListFundScheme = () =>{
     
     return(
         <div>
+
             <h3>FUND SCHEME</h3>
+
             <table className="listFundTable" cellPadding={15}>
                 <thead>
                     <tr className="listFundMetaData">
@@ -62,7 +64,9 @@ export const ListFundDashboard = () =>{
 
     return(
         <div>
+
             <h3>FUND DASHBOARD</h3>
+
             <table className="listFundTable" cellPadding={15}>
                 <thead>
                     <tr className="listFundMetaData">
@@ -104,6 +108,7 @@ export const ListFundOeEvaluation = () =>{
    
     return(
         <div>
+
             <h3>FUND OE Evaluation</h3>
             <table className="listFundTable" cellPadding={15}>
                 <thead>
@@ -146,7 +151,9 @@ export const ListOeDashboard = () =>{
 
     return(
         <div>
+
             <h3>OE DASHBOARD</h3>
+
             <table className="listFundTable" cellPadding={15}>
                 <thead>
                     <tr className="listFundMetaData">
@@ -189,7 +196,7 @@ export const ListHeiDashboard = () =>{
     return(
         <div>
             <tr><center><b><h2>HEI DASHBOARD</h2></b></center></tr>
-            <table className="listHeiTable" cellPadding={20} cellSpacing={5}>
+            <table className="listHeiTable" border='2'cellPadding={15} cellSpacing={5}>
                 <thead>
                     <tr className="listHeiMetaData">
                        {/* {column.map((head,index) => <td className="listHeiMetaData"><h3><b><center>{head.heading}</center></b></h3></td>)} */}
@@ -213,3 +220,46 @@ export const ListHeiDashboard = () =>{
         </div>
     )
 }
+/*export const ViewHeiProposal = () =>{
+
+    const[row,setRow]=useState([]);
+    const [popupstatus, setPopUpStatus] = useState(false);
+    const [popupinfo, setPopUpInfo] = useState();
+    
+    useEffect(()=>{  
+        Axios.get('http://localhost:3001/viewHeiPropo').then((response)=>{
+            setRow(response.data);
+            }).catch(err=>{
+            console.log(err)
+          });
+    },[])
+
+    return(
+        <div className="proposaltable">
+            <h2>HEI PROPOSALS</h2>
+            <table className="listProposalTable" border='2'cellPadding={'15'} cellSpacing={'5'} color="blue">
+                
+                <thead>
+                    <tr className="listProposalMetaData">
+                        {column.map((head,index) => <td className="listProposalMetaData"><h3><b><center>{head.heading}</center></b></h3></td>)} 
+                        <th>HEI Name</th>
+                        <th>Scheme ID</th>
+                        <th>Scheme Name</th>
+                        <th>Scheme Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td className="listProposalData">{row.map((data,index) => <tr><h5>{data.sid}</h5></tr>)}</td>
+                        <td className="listProposalData">{row.map((data,index) => <tr><h5>{data.sname}</h5></tr>)}</td>
+                        <td className="listProposalData">{row.map((data,index) => <tr><h5>{data.sdate}</h5></tr>)}</td>
+                        <td className="listProposalData">{row.map((data,index) => <tr><h5>{data.sno}</h5></tr>)}</td>
+                        <td className="listProposalData">{row.map((data,index) => <tr><h5></h5><button key={index} onClick={() => {setPopUpStatus(true); setPopUpInfo(data)}}>view{data.sno}</button></tr>)}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <PopUpViewHeiProposal trigger={popupstatus} setTrigger={setPopUpStatus} data={popupinfo}>this is popup</PopUpViewHeiProposal>
+        </div>
+    )
+}*/

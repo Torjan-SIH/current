@@ -2,17 +2,22 @@ import React from "react";
 import TopBar from "../../components/TopBar/topbar";
 import OeSideBar from "../../components/SideBar/oesidebar";
 import './oeStyles.css';
+import { NavBarMedium } from "../../components/Navbar";
+
+
 const OeProfile=() =>
 {
     return(
         <div className="oeProfileDiv">
             <TopBar/>
-            
+            <div>
+                <NavBarMedium/>
+            </div>
             <div className="sideBySide">
             <OeSideBar/>
             <form className="oeProfileForm">
                 <h1 className="oeProfileHeading">OE Profile</h1>
-                <table className="oeProfileTable" cellPadding={10}>
+                <table className="oeProfileTable" cellPadding={15} cellSpacing={30}>
                     <tr>
                         <th>ID: </th>
                         <td><input type="text" name="id" disabled value="IND001" className="inputBox"></input></td>
@@ -47,8 +52,8 @@ const OeProfile=() =>
                         <td><input type="text" name="oepincode" className="inputBox"></input></td>
                     </tr>
                     <tr>
-                    <td><center><button className="btn"><b>Save</b></button></center></td>
-                    <td><center><button className="btn"><b>Reset</b></button></center></td>
+                    <td><center><button className="btn">Save</button></center></td>
+                    <td><center><button className="btn">Edit</button></center></td>
                     </tr>
                 </table>
             </form>

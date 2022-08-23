@@ -8,13 +8,14 @@ const OeSideBar = () =>{
         <div className="sideBarDiv">
             {/* <ProSidebar>
                 <Menu iconShape='square' className="sideBar">
-                    <MenuItem className="sideBarElement"><Link to="/oedashboard"><h3><b>Dashboard</b></h3></Link></MenuItem><br></br>
-                    <MenuItem className="sideBarElement"><Link to="/oeprofile"><h3><b>Profile</b></h3></Link></MenuItem><br></br>
+                    <MenuItem className="sideBarElement"><Link to="/oedashboard" style={{color:"white"}}><h3><b>Dashboard</b></h3></Link></MenuItem><br></br>
+                    <MenuItem className="sideBarElement"><Link to="/oeprofile" style={{color:"white"}} ><h3><b>Profile</b></h3></Link></MenuItem><br></br>
                 </Menu>
             </ProSidebar> */}
             <nav className="oeNav">
-            <Link to="/oedashboard"><h3><b>Dashboard</b></h3></Link>
-            <Link to="/oeprofile"><h3><b>Profile</b></h3></Link>
+            <Link to="/oedashboard" className="linkItem"><h3><b>Dashboard</b></h3></Link>
+            <br></br>
+            <Link to="/oeprofile" className="linkItem"><h3><b>Profile</b></h3></Link>
             </nav>
         </div>
     )

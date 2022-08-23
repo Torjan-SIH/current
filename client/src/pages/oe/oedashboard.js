@@ -4,6 +4,7 @@ import TopBar from "../../components/TopBar/topbar";
 import OeSideBar from "../../components/SideBar/oesidebar";
 import './oeStyles.css';
 import { useSearchParams } from "react-router-dom";
+import { NavBarMedium } from "../../components/Navbar";
 
 
 const OeDashBoard=() =>{
@@ -18,15 +19,18 @@ const OeDashBoard=() =>{
     },[name,passwd,searchparams])
 
     return(
-        <div className="oeProfileDiv">
-            <TopBar name={name}/>
-            <div className="sideBySide">
-                <OeSideBar name={name}/>
+                <div className="oeProfileDiv">
+                    <TopBar name={name}/>
+            <div>
+                <NavBarMedium/>
             </div>
-            <div className="sideBySide">
-                <ListOeDashboard name={name}/>    
+                <div className="sideBySide">
+                    <OeSideBar name={name}/>
+                </div>
+                <div className="sideBySide">
+                    <ListOeDashboard name={name}/>    
+                </div>
             </div>
-        </div>
     )
 }
 

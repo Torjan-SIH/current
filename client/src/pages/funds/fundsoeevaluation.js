@@ -4,6 +4,7 @@ import { ListFundOeEvaluation }from "../../components/ListView/listview";
 import TopBar from "../../components/TopBar/topbar";
 import Axios from 'axios'
 import './fundsStyles.css';
+import { NavBarMedium } from "../../components/Navbar";
 
 const FundsOeEvaluation = () =>{
 
@@ -18,6 +19,9 @@ const FundsOeEvaluation = () =>{
     return(
         <div className="fundProfileDiv" >
             <TopBar/>
+            <div>
+                <NavBarMedium/>
+            </div>
             <div className="sideBySide">
                 <FundSideBar/>
             </div>

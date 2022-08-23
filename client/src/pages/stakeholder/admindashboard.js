@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Axios from "axios";
+import { NavBarMedium } from "../../components/Navbar";
 
 const AdminDash = () =>{
 
@@ -21,6 +22,9 @@ const AdminDash = () =>{
     return(
         <div>
             <div className="sideBarDiv">
+                <div>
+                    <NavBarMedium />
+                </div>
 
             </div>
             <div className="dashContent">

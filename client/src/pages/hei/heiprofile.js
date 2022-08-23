@@ -2,15 +2,20 @@ import React from "react";
 import HeiSideBar from "../../components/SideBar/HEIsidebar";
 import TopBar from "../../components/TopBar/topbar";
 import './heiStyles.css';
+import { NavBarMedium} from "../../components/Navbar/index";
 
 const HeiProfile = () => {
     return(  
         <div className="heiProfileDiv">
             <TopBar/>
+            <div>
+                <NavBarMedium/>
+            </div>
             <div className="sideBySide">
                 <HeiSideBar/>
                 <form className="heiProfileForm">
                     <h1 className="heiProfileHeading">HEI Profile</h1>
+
                     <table className="heiProfileTable" cellPadding={10} >
                     <tr>
                             <th>ID: </th>
@@ -47,8 +52,8 @@ const HeiProfile = () => {
                     
                         <br></br>
                     <tr><td></td>
-                            <td><center><button className="btn"><b>Save</b></button></center></td>
-                            <td><center><button className="btn"><b>Reset</b></button></center></td>
+                            <td><center><button className="btn1">Save</button></center></td>
+                            <td><center><button className="btn1">Edit</button></center></td>
                         </tr>
                     </table>
                 </form>

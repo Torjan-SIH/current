@@ -2,12 +2,17 @@ import React from "react";
 import FundSideBar from "../../components/SideBar/FUNDsidebar";
 import TopBar from "../../components/TopBar/topbar";
 import './fundsStyles.css';
+import { NavBarMedium } from "../../components/Navbar";
 
 const FundsProfile = () =>
 {
     return(
+        <div className="fundMainDiv">
         <div className="fundProfileDiv" >
             <TopBar/>
+            <div>
+                <NavBarMedium/>
+            </div>
             <div className="sideBySide">
                 <FundSideBar/>
             
@@ -59,6 +64,7 @@ const FundsProfile = () =>
                 </table>
             </form>
             </div>
+        </div>
         </div>
     )
 }

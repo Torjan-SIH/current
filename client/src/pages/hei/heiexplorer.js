@@ -3,6 +3,8 @@ import HeiSideBar from "../../components/SideBar/HEIsidebar";
 import { CardHeiExplorer } from "../../components/CardView/cardview";
 import Axios from 'axios';
 import TopBar from "../../components/TopBar/topbar";
+import { NavBarMedium} from "../../components/Navbar/index";
+
 
 const HeiExplorer = () => {
   
@@ -17,6 +19,9 @@ const HeiExplorer = () => {
   return(
     <div className="heiExploreDiv">
       <TopBar/>
+      <div>
+          <NavBarMedium/>
+      </div>
       <div className="sideBySide">
         <HeiSideBar />
       </div>
