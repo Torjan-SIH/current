@@ -199,6 +199,8 @@ export const PopUpVerifyScheme = (props) =>{
     ) : "";
 }
 
+
+
 export const PopUpOeDashboard = (props) =>{
     return (props.trigger) ? (
         <div className="popup">
@@ -234,37 +236,56 @@ export const PopUpOeDashboard = (props) =>{
         </div>
     ) : "";
 }
+
+
+
 export const PopUpHeiDashboard = (props) =>{
+
+    const deleteProposal = (e) =>{
+
+    }
+
     return (props.trigger) ? (
         <div className="popup">
             <div className="popupInner">
                 <button className="popupClose" onClick={() => props.setTrigger(false)}>Close</button>
-                <table>
-                    <tr>
-                        <td>HEI Name</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Scheme ID</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Scheme Name</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Applied Date</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Documents</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td><button>Accept</button></td>
-                        <td><button>Reject</button></td>
-                    </tr>
-                </table>
+                <div>
+                    <form>
+                        <table>
+                            <tr>
+                                <td>Scheme ID</td>
+                                <td>{props.data.sid}</td>
+                            </tr>
+                            <tr>
+                                <td>Scheme Name</td>
+                                <td>{props.data.sname}</td>
+                            </tr>
+                            <tr>
+                                <td>Agency name</td>
+                                <td>{props.data.aname}</td>
+                            </tr>
+                            <tr>
+                                <td>Applied Date</td>
+                                <td>{props.data.adate}</td>
+                            </tr>
+                            <tr>
+                                <td>Scheme Description</td>
+                                <td>{props.data.adesc}</td>
+                            </tr>
+                            <tr>
+                                <td>Scheme Doc.</td>
+                                <td>{}</td>
+                            </tr>
+                            <tr>
+                                <th>Status</th>
+                                <td>{props.data.sstatus}</td>
+                            </tr>
+                            <tr>
+                                <td><button onClick={(e) => deleteProposal(e)}>Delete</button></td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
             </div>
         </div>
     ) : "";

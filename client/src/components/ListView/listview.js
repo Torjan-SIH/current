@@ -176,14 +176,13 @@ export const ListHeiDashboard = () =>{
    
     const[row,setRow]=useState([]);
     const [popupstatus, setPopUpStatus] = useState(false);
-    const [popupinfo, setPopUpInfo] = useState();
+    const [popupdata, setPopUpData] = useState();
 
     useEffect(()=>{ 
-        Axios.get('http://localhost:3001/heiDashboard').then((response)=>{
-            
-            setRow(response.data);
+        Axios.get('http://localhost:3001/heidashboardlist').then((response)=>{
+                setRow(response.data);
             }).catch(err=>{
-            console.log(err)
+                console.log(err)
           })
     },[])
 
@@ -194,23 +193,23 @@ export const ListHeiDashboard = () =>{
                 <thead>
                     <tr className="listHeiMetaData">
                        {/* {column.map((head,index) => <td className="listHeiMetaData"><h3><b><center>{head.heading}</center></b></h3></td>)} */}
-                       <th>HEI Name</th>
                        <th>Scheme ID</th>
                        <th>Scheme Name</th>
-                       <th>Scheme Date</th>
+                       <th>Agency Name</th>
+                       <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td className="listHeiData">{row.map((data,index) => <tr ><h5>{data.sid}</h5></tr>)}</td>
                         <td className="listHeiData">{row.map((data,index) => <tr ><h5>{data.sname}</h5></tr>)}</td>
-                        <td className="listHeiData">{row.map((data,index) => <tr ><h5>{data.sdate}</h5></tr>)}</td>
-                        <td className="listHeiData">{row.map((data,index) => <tr ><h5>{data.sno}</h5></tr>)}</td>
-                        <td className="listHeidData">{row.map((data,index) => <tr ><button key={index} onClick={() => {setPopUpStatus(true); setPopUpInfo(data)}}>view{data.sno}</button></tr>)}</td>
+                        <td className="listHeiData">{row.map((data,index) => <tr ><h5>{data.aname}</h5></tr>)}</td>
+                        <td className="listHeiData">{row.map((data,index) => <tr ><h5>{data.sstatus}</h5></tr>)}</td>
+                        <td className="listHeidData">{row.map((data,index) => <tr ><button key={index} onClick={() => {setPopUpStatus(true); setPopUpData(data)}}>view{index+1}</button></tr>)}</td>
                     </tr>
                 </tbody>
             </table>
-            <PopUpHeiDashboard trigger={popupstatus} setTrigger={setPopUpStatus} data={popupinfo}>this is popup</PopUpHeiDashboard>
+            <PopUpHeiDashboard trigger={popupstatus} setTrigger={setPopUpStatus} data={popupdata}></PopUpHeiDashboard>
         </div>
     )
 }

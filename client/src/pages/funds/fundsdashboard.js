@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import FundSideBar from "../../components/SideBar/FUNDsidebar";
 import TopBar from "../../components/TopBar/topbar";
 import { ListFundDashboard }from "../../components/ListView/listview";
-import { useSearchParams } from "react-router-dom";
 import Axios from "axios";
 
 const FundsDashboard = () =>{

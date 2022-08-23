@@ -52,7 +52,7 @@ app.get('/funddashboard',(req,res)=>{
 
 app.get('/funddashboardlist',(req,res)=>{
     
-    db.query("select * from heiapply where amail=?",[mail],(err,result)=>{
+    db.query("select a.sid, a.sname, a.aname, a.amail, a.sdesc, a.sdoc, a.sdate, h.hname,h.hmail, h.adesc, h.adoc, h.adate, h.sstatus from heiapply h, agencyscheme a where amail=? and h.sid = a.sid",[mail],(err,result)=>{
         if(err){
             console.log(err);
         }
@@ -65,7 +65,7 @@ app.get('/funddashboardlist',(req,res)=>{
 app.post('/verifyscheme',(req,res)=>{
     const sid = req.body.sid;
     const amail = mail;
-    db.query("UPDATE heiapply SET sstatus='verifying' WHERE (amail = ? ) AND (sid = ?)",[amail,sid],(err,result)=>{
+    db.query("UPDATE heiapply SET sstatus='verifying' WHERE (sid = ?)",[sid],(err,result)=>{
         if(err){
             console.log(err);
         }
@@ -123,7 +123,7 @@ app.get('/fundoe',(req,res)=>{
 
 app.get('/fundoelist',(req,res)=>{
     
-    db.query("select * from heiapply where amail=?",[mail],(err,result)=>{
+    db.query("select a.sid, a.sname, a.aname, a.amail, a.sdesc, a.sdoc, a.sdate, h.hname,h.hmail, h.adesc, h.adoc, h.adate, h.sstatus from heiapply h, agencyscheme a where amail=? and h.sid = a.sid",[mail],(err,result)=>{
         if(err){
             console.log(err);
         }
@@ -133,44 +133,66 @@ app.get('/fundoelist',(req,res)=>{
     })
 })
 
+//-----------------Funds Profile----------------------
 
 
-app.get('/viewHeiPropo',(req,res)=>{
-    
-    db.query("",[mail],(err,result)=>{
-        if(err)
-        {console.log(err);}
-        else{res.send(result);}
-    })
+
+//------------------HEI Dashboard---------------------
+
+app.get('/heidashboard',(req,res)=>{
+    res.send(mail)
 })
-app.get('/oeDashboard',(req,res)=>{
+
+app.get('/heidashboardlist',(req,res)=>{
     
-    db.query("",[mail],(err,result)=>{
-        if(err)
-        {console.log(err);}
-        else{res.send(result);}
+    db.query("select * from heiapply where hmail=? ",[mail],(err,result)=>{
+        if(err){
+            console.log(err);
+        }
+        else{
+            res.send(result);
+        }
     })
 })
 
-app.get('/fundsDashboard',(req,res)=>{
-    
-    
-    db.query("",[mail],(err,result)=>{
-        if(err)
-        {console.log(err);}
-        else{res.send(result);}
-    })
-})
-app.get('/heiDashboard',(req,res)=>{
-    
-    db.query("",[mail],(err,result)=>{
-        if(err)
-        {console.log(err);}
-        else{res.send(result);}
-    })
-})
-    
+//-----------------HEI Explore-------------------
 
+app.get('/heiexplore',(req,res)=>{
+    res.send(mail)
+})
+
+app.get('/heiexplorecard',(req,res)=>{
+    
+    db.query("select * from agencyscheme",(err,result)=>{
+        if(err){
+            console.log(err);
+        }
+        else{
+            res.send(result);
+        }
+    })
+})
+    
+app.post('/heiapplyscheme',(req,res) =>{
+    const sid = req.body.sid;
+    const sname = req.body.sname;
+    const hname = req.body.hname;
+    const hmail = req.body.hmail;
+    const adoc = req.body.adoc;
+    const adesc = req.body.adesc;
+    const adate = req.body.adate;
+
+    db.query("insert into heiapply(sid,sname,hname,hmail,adoc,adesc,adate) values (?,?,?,?,?,?,?)",[sid,sname,hname,hmail,adoc,adesc,adate],(err,result) =>{
+        if(err){
+            console.log(err);
+        }
+        else{
+            console.log(result)
+            if(result.affectedRows === 1)
+                res.send("inserted");
+        }
+    })
+})
 
 //-----------------forgotpassword--------------------
 
