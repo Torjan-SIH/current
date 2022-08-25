@@ -29,7 +29,7 @@ const HeiRegister = () => {
       // const [pincode, setPinCode] = useState("");
       const [passwd, setPasswd] = useState("");
       const [cnfrmpasswd, setCnfrmPasswd] = useState("");
-      const [govtcert, setGovtCert] = useState(null)
+      const [govtcert, setGovtCert] = useState("")
       const [dor, setDOR] = useState("");
       const [userstatus, setUserStatus] = useState("accepted");
       
@@ -237,9 +237,9 @@ const HeiRegister = () => {
                            </td>
                         </tr> */}
                         <tr>
-                           <th>Govt. Authorization</th>
+                           <th>Govt. Authorization(upload file in the Google Drive and paste the link)</th>
                            <td>
-                              <input type="file" onChange={(e) => setGovtCert(e.target.value)}/>
+                              <input type="text" onChange={(e) => setGovtCert(e.target.value)}/>
                            </td>
                         </tr>
                         <tr>

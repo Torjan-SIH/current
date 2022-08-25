@@ -38,7 +38,7 @@ export const PopUpHeiCard = (props) =>{
         <div className="popup">
             <div className="popupInner">
                 <button className="popupClose" onClick={() => props.setTrigger(false)}>Close</button>
-<<<<<<< HEAD
+
                 <div>
                     <form onSubmit={(e) => applySubmit(e)}>
                         <table>
@@ -120,7 +120,7 @@ export const PopUpHeiCard = (props) =>{
                         <td></td>
                     </tr>
                 </table>
->>>>>>> a68f10f3f7db1e1cecd04d6cac9386250a8c72b6
+
             </div>
         </div>
     ) : "";

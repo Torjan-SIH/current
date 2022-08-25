@@ -21,12 +21,7 @@ const AdminDash = () =>{
     
     return(
         <div>
-            <div className="sideBarDiv">
-                <div>
-                    <NavBarMedium />
-                </div>
-
-            </div>
+            
             <div className="dashContent">
                 <div>
                     <h1>{heicount}</h1>

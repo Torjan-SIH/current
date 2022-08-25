@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
-import Axios from "axios";
+import React from "react";
+import { useState,useEffect } from "react";
+import  Axios  from "axios";
 import './holderstyles.css'
 
  const AgencyVerify = () =>{
@@ -9,53 +9,30 @@ import './holderstyles.css'
         {heading: 'Mail of Agency'},
         {heading: 'Contact No'},
         {heading: 'Agency Established Date'},
+        {heading: 'certificates'},
         {heading: 'Address'},
-        {heading: 'Government Authorization Certificate'},
-        {heading: 'IT returns(last 3 years'},
+        {heading: 'state'},
+        {heading: 'city'}
 
     ]
-    const row = [
-        {
-            sname: 'agency1',
-            smail: 'xyz',
-            sno: 1,
-            sdate:'1-1-1',
-            sadd:'abc',
-            scert:'abc',
-            sreturns:3,
-        },
-        {
-            sname: 'agency2',
-            smail:' def',
-            sno: 2,
-            sdate:'2-1-1',
-            sadd:'cde',
-            scert:'abc',
-            sreturns:4,
-        },
-        {
-            sname: 'agency3',
-            smail: 'ghi',
-            sno: 3,
-            sdate:'3-1-1',
-            sadd:'ghi',
-            scert:'abc',
-            sreturns:5,
-        },
-    ]
+ 
 
     const [popupstatus, setPopUpStatus] = useState(false);
     const [popupinfo, setPopUpInfo] = useState();
-
-
-    useEffect(() =>{
-        Axios.get('http://localhost:3001/agencyverify',{
-
-        }).then((response) =>{
+    const[row,setRow]=useState([]);
+    useEffect(()=>{ 
+        
+      
+        Axios.get('http://localhost:3001/fundverify').then((response)=>
+        {
+           
+           
+            setRow(response.data);
             
-        })
-    },[])
 
+        }).catch(err=>{console.log(err);})
+
+    },[])
 
     return(
         <div>
@@ -67,21 +44,19 @@ import './holderstyles.css'
                 </thead>
                 <tbody>
                     <tr>
-                        <td className="agencyVerifyMetaData">{row.map((data,index) => <tr >{data.sname}</tr>)}</td>
-                        <td className="agencyVerifyMetaData">{row.map((data,index) => <tr >{data.smail}</tr>)}</td>
-                        <td className="agencyVerifyMetaData">{row.map((data,index) => <tr >{data.sno}</tr>)}</td>
-                        <td className="agencyVerifyMetaData">{row.map((data,index) => <tr >{data.sdate}</tr>)}</td>
-                        <td className="agencyVerifyMetaData">{row.map((data,index) => <tr >{data.sadd}</tr>)}</td>
-                        <td className="agencyVerifyMetaData">{row.map((data,index) => <tr >{data.scert}</tr>)}</td>
-                        <td className="agencyVerifyMetaData">{row.map((data,index) => <tr >{data.sreturns}</tr>)}</td>
+                        
+                        <td className="agencyVerifyMetaData">{row.map((data,index) => <tr >{data.aname}</tr>)}</td>
+                        <td className="agencyVerifyMetaData">{row.map((data,index) => <tr >{data.amail}</tr>)}</td>
+                        <td className="agencyVerifyMetaData">{row.map((data,index) => <tr >{data.acontact}</tr>)}</td>
+                        <td className="agencyVerifyMetaData">{row.map((data,index) => <tr >{data.estdate}</tr>)}</td>
+                        <td className="agencyVerifyMetaData">{row.map((data,index) => <tr >{data.cert}</tr>)}</td>
+                        <td className="agencyVerifyMetaData">{row.map((data,index) => <tr >{data.aaddress}</tr>)}</td>
+                        <td className="agencyVerifyMetaData">{row.map((data,index) => <tr >{data.state}</tr>)}</td>
+                        <td className="agencyVerifyMetaData">{row.map((data,index) => <tr >{data.city}</tr>)}</td>
                         <td className="agencyVerifyMetaData">{row.map((data,index) => <tr ><button key={index} onClick={() => {setPopUpStatus(true); setPopUpInfo(data)}}>view{data.sno}</button></tr>)}</td>
                     </tr>
                 </tbody>
             </table>
-
-            <div>
-
-            </div>
         </div>
      )
 }

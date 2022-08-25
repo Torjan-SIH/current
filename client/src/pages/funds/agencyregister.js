@@ -18,8 +18,7 @@ const AgencyRegister = () => {
    const [city, setCity] = useState("");
    // const [pincode, setPinCode] = useState("");
    const [estdate, setEstDate] = useState("");
-   const [govtcert, setGovtCert] = useState();
-   const [itcert, setItCert] = useState();
+   const [cert, setCert] = useState("");
    const [passwd, setPasswd] = useState("");
    const [cnfrmpasswd, setCnfrmPasswd] = useState("");
    const [dor, setDOR] = useState();
@@ -40,8 +39,7 @@ const AgencyRegister = () => {
          city:city,
          // pincode:pincode,
          estdate:estdate,
-         govtcert:govtcert,
-         itcert:itcert,
+         cert:cert,
          passwd:passwd,
          dor:dor,
          userstatus:userstatus,
@@ -132,23 +130,14 @@ const AgencyRegister = () => {
                               onChange={(e) => setEstDate(e.target.value)} />
                         </td>
                      </tr>
+                     
                      <tr>
                         <th className="labels">
-                           Govt. authorised certificate
-                        </th>
-                        <td>
-                           <div class='file-input'>
-                              <input  type="file" className="labels" name="govtcertificate" onChange={(e) => setGovtCert(e.target.value)}/>
-                           </div>
-                        </td>
-                     </tr>
-                     <tr>
-                        <th className="labels">
-                           past 3yrs IT returns doc
+                           certificates(upload Govt.Authorized certificate and IT returns document in Google Drive and paste the link )
                         </th>
                         <td>
                            <div>
-                              <input  className="labels" type="file" name="itreturn" onChange={(e) => setItCert(e.target.value)}/>
+                              <input  className="labels" type="text" name="cert" onChange={(e) => setCert(e.target.value)}/>
                            </div>
                         </td>
                      </tr>

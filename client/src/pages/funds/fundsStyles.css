@@ -120,7 +120,7 @@
     display: inline-flex;
  }
  .registerTable{
-    margin: 100%;
+    /* margin: 100%; */
     width: 100%;
  }
 .registerDiv{

@@ -214,7 +214,7 @@ app.post('/heiapplyscheme',(req,res) =>{
             else{
                 if(result.length>0)
                 {
-                    
+                     
                     
                     var ajson =  JSON.parse(JSON.stringify(result));
                     
@@ -356,7 +356,7 @@ app.post('/oeregister',(req,res) => {
     const employeename = req.body.employeename;
     const employeerole = req.body.employeerole;
     const companyname =  req.body.companyname;
-    const companyemail = req.body.companyemail;
+    const employemail = req.body.employemail;
     const companycontact = req.body.companycontact;
     const companyaddress = req.body.companyaddress;
     const state = req.body.state;
@@ -369,47 +369,63 @@ app.post('/oeregister',(req,res) => {
 
     //const query = "INSERT INTO oeregister(ename,cname,cemail,ccontact,caddress) VALUES (?,?,?,?,?)";
     //const values = [employeename,companyname,companyemail,companycontact,companyaddress];
-
-    db.query("INSERT INTO oeuser(,oeroleoename,oecomp,compmail,compcontact,compaddress,state,city,vercode,aname,oepasswd,dor,status) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",[employeerole,employeename,companyname,companyemail,companycontact,companyaddress,state,city,verficationcode,agencyname,passwd,dor,userstatus],(err,result) =>{
+     
+    db.query("select scode from oeverify where empemail=?",[employemail],(err,result)=>
+    {
         if(err){
             console.log(err);
         }
         else{
-            if(result.affectedRows===1){
-                res.send("inserted1");
-                
-                var nodemailer = require('nodemailer');
-               var transporter = nodemailer.createTransport({
-               service: 'outlook',
-                auth: {
-                user: 'sumanth.k2019@gmail.com',
-                pass: 'JEE!mains1'
+            var code =  JSON.parse(JSON.stringify(result));
+            if( verficationcode ===code[0].scode){
+
+                db.query("INSERT INTO oeuser(,oeroleoename,oecomp,compmail,compcontact,compaddress,state,city,vercode,aname,oepasswd,dor,status) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",[employeerole,employeename,companyname,companyemail,companycontact,companyaddress,state,city,verficationcode,agencyname,passwd,dor,userstatus],(err,result) =>{
+                    if(err){
+                        console.log(err);
                     }
-               });
-
-           var mailOptions = {
-           from: 'sumanth.k2019@gmail.com',
-           to: email,
-           subject: 'Registratation for One Nation One Funding',
-           text: employeename+',Thank you for registering one nation one funding as a funding agency.we will intimate you about the activation of your account.username'+companyemail
-           };
-
-   transporter.sendMail(mailOptions, function(error, info){
-        if (error) {
-           res.send({wrong:'mail not sent'});
-           }         
-           else {
-               res.send({message:"mail sent"});
-           }
-           });
+                    else{
+                        if(result.affectedRows===1){
+                            res.send("inserted1");
+                            
+                            var nodemailer = require('nodemailer');
+                           var transporter = nodemailer.createTransport({
+                           service: 'outlook',
+                            auth: {
+                            user: 'sumanth.k2019@gmail.com',
+                            pass: 'JEE!mains1'
+                                }
+                           });
+            
+                       var mailOptions = {
+                       from: 'sumanth.k2019@gmail.com',
+                       to: email,
+                       subject: 'Registratation for One Nation One Funding',
+                       text: employeename+',Thank you for registering one nation one funding as a funding agency.we will intimate you about the activation of your account.username'+companyemail
+                       };
+            
+               transporter.sendMail(mailOptions, function(error, info){
+                    if (error) {
+                       res.send({wrong:'mail not sent'});
+                       }         
+                       else {
+                           res.send({message:"mail sent"});
+                       }
+                       });
+                        }
+                        else{
+                            res.send("Error")
+                            console.log("Failed to insert");
+                        }
+            
+                    }
+                })
             }
             else{
-                res.send("Error")
-                console.log("Failed to insert");
+                res.send({warning:"check verification code"});
             }
-
         }
     })
+    
 })
 
 
@@ -424,8 +440,7 @@ app.post('/agencyregister',(req,res) => {
     const state = req.body.state;
     const city = req.body.city;
     const estdate = req.body.estdate;
-    const govtcert = req.body.govtcert;
-    const itcert = req.body.itcert;
+    const cert = req.body.cert;
     const passwd = req.body.passwd;
     const dor = req.body.dor;
     const userstatus = req.body.userstatus;
@@ -444,7 +459,7 @@ app.post('/agencyregister',(req,res) => {
             }
             else
             {
-                db.query("INSERT INTO agencyuser(aname,amail,acontact,aaddress,state,city,estdate,govtcert,itcert,apasswd,dor,status) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",[name,email,contact,address,state,city,estdate,govtcert,itcert,passwd,dor,userstatus],(err,result) =>{
+                db.query("INSERT INTO agencyuser(aname,amail,acontact,aaddress,state,city,estdate,cert,apasswd,dor,status) VALUES (?,?,?,?,?,?,?,?,?,?,?)",[name,email,contact,address,state,city,estdate,cert,passwd,dor,userstatus],(err,result) =>{
                     if(err){
                         console.log(err);
                     }
@@ -683,18 +698,28 @@ app.get('/admindashboard',(req,res)=>
 })
 
 
+//---------------Admin HeiVerify Backend------------------------
+
+app.get('/heiverify',(req,res)=>{
+       
+    db.query("select hname,hmail,hcontact,govtcert,cat,haddress,state,city from heiuser",(err,result)=>{
+        if(err)
+        {console.log(err);}
+        else{res.send(result);}
+    })
+   
+})
+
 //---------------Admin AgencyVerify Backend------------------
 
-app.get('/agencyverify',(req,res)=>{
-
-    db.query('select govtcert from agencyuser',(err,result) => {
-        if(err){
-            console.log(err);
-        }
-        else{
-
-        }
+app.get('/fundverify',(req,res)=>{
+       
+    db.query("select aname,amail,acontact,estdate,cert,aaddress,state,city from agencyuser",(err,result)=>{
+        if(err)
+        {console.log(err);}
+        else{res.send(result);}
     })
+  
 })
 
 
