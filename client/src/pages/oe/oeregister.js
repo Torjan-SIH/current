@@ -12,14 +12,14 @@ const OeRegister = () => {
    const [employeename, setEmployeeName] = useState("");
    const [employeerole, setEmployeeRole] = useState("");
    const [companyname, setCompanyName] = useState("");
-   const [companyemail, setCompanyEmail] = useState("");
+   const [employeemail, setEmployeEmail] = useState("");
    const [companycontact, setCompanyContact] = useState("");
    const [companyaddress, setCompanyAddress] = useState("");
    const [country, setCountry] = useState("india");
    const [state, setState] = useState("");
    const [city, setCity] = useState("");
    const [pincode, setPinCode] = useState("");
-   const [verficationcode, setVerificationCode] = useState("");
+   const [verficationcode, setVerificationCode] = useState(0);
    const [agencyname, setAgencyName] = useState("");
    const [passwd, setPasswd] = useState("");
    const [cnfrmpasswd, setCnfrmPasswd] = useState("");
@@ -35,7 +35,7 @@ const OeRegister = () => {
          employeename: employeename,
          employeerole: employeerole,
          companyname: companyname,
-         companyemail: companyemail,
+         employeemail: employeemail,
          companycontact: companycontact,
          companyaddress: companyaddress,
          country: country,
@@ -53,6 +53,8 @@ const OeRegister = () => {
             navigate('/registeredpage');
          else if(response.data==="Error")
             alert("Technical error Failed to Register");
+         else if(response.data==="warning")
+               alert("Verification code is wrong");
          else
             alert("Something Went Wrong");
          });
@@ -107,8 +109,8 @@ const OeRegister = () => {
                      </tr>
                      <tr>
                         <td>
-                           <input className="registerInputField" type="email" name="companyemail" required placeholder="Company Email"
-                              onChange={(e) => setCompanyEmail(e.target.value)} />
+                           <input className="registerInputField" type="email" name="employeemail" required placeholder="Employee Email"
+                              onChange={(e) => setEmployeEmail(e.target.value)} />
                         </td>
                         <td>
                            <input className="registerInputField" type="text" name="companycontact" maxLength={10} minLength={10} pattern="[789][0-9]{9}" required placeholder="Company Contact no."
@@ -139,7 +141,7 @@ const OeRegister = () => {
                      </tr> */}
                      <tr>
                         <td>
-                           <input className="registerInputField" type="text" name="verificationcode" maxLength={6} minLength={6} pattern="[0-9]{6}" placeholder="Verfication Code" required
+                           <input className="registerInputField" type='number' name="verificationcode" maxLength={6} minLength={6} pattern="[0-9]{6}" placeholder="Verfication Code" required
                               onChange={(e) => setVerificationCode(e.target.value)} />
                         </td>
                         <td>
