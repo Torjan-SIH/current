@@ -20,7 +20,7 @@ const Home = () => {
         </div>
 
         <div className="marqueeScrollHome">
-          <marquee className="marqueeHome" width="90%" direction="left" height="fit-content" scrollamount="10">
+          <marquee className="marqueeHome" width="99%" direction="left" height="fit-content" scrollamount="10">
             One Nation - One Funding.
           </marquee>
         </div>
