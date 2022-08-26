@@ -23,7 +23,9 @@ import FundSchemes from './pages/funds/fundschemes';
 import FundsOeEvaluation from './pages/funds/fundsoeevaluation';
 import FundsDashboard from './pages/funds/fundsdashboard';
 import FundsProfile from './pages/funds/fundsprofile';
-import AdminDash from './pages/stakeholder/admindashboard'
+import Meet from './pages/oe/schedulemeeting'
+import AdminDash from './pages/stakeholder/admindashboard';
+
 
 function App() {
   return (
@@ -57,6 +59,7 @@ function App() {
           <Route path='/heiverify' element={<Heiverify />} />
           <Route path='/agencyverify' element={<Agencyverify />} />
           <Route path='/admindashboard' element={<AdminDash />}/>
+          <Route path='/schedulemeeting' element={<Meet />}/>
         </Routes>
       </BrowserRouter>
       {/* <Footers/> */}

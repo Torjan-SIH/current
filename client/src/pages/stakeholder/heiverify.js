@@ -2,25 +2,20 @@ import React from "react";
 import { useState,useEffect,Link } from "react";
 import  Axios from "axios";
 import './holderstyles.css'
-
+import { PopUpViewHei } from "./popupadmin";
 
  const HeiVerify = () =>{
     const column = [
         {heading: 'Name of HEI/Individual'},
         {heading: 'Mail'},
         {heading: 'Contact No'},
-        {heading: 'Government Authorization Certificate'},
-        {heading: 'Address'},
-        {heading: 'Role'},
-        {heading: 'Address'},
-        {heading: 'state'},
-        {heading: 'city'}
+         {heading: 'Role'},
+         {heading: 'Status'}
+      
 
     ]
-   
-
     const [popupstatus, setPopUpStatus] = useState(false);
-    const [popupinfo, setPopUpInfo] = useState();
+    const [popupdata, setPopUpData] = useState();
     const[row,setRow]=useState([]);
     useEffect(()=>{ 
         
@@ -50,15 +45,17 @@ import './holderstyles.css'
                         <td className="heiVerifyMetaData">{row.map((data,index) => <tr >{data.hname}</tr>)}</td>
                         <td className="heiVerifyMetaData">{row.map((data,index) => <tr >{data.hmail}</tr>)}</td>
                         <td className="heiVerifyMetaData">{row.map((data,index) => <tr >{data.hcontact}</tr>)}</td>
-                        <td className="heiVerifyMetaData">{row.map((data,index) => <tr >{data.govtcert}</tr>)}</td>
+                        {/* <td className="heiVerifyMetaData">{row.map((data,index) => <tr ><a href={data.govtcert}>click here to view the certificate</a></tr>)}</td> */}
                         <td className="heiVerifyMetaData">{row.map((data,index) => <tr >{data.cat}</tr>)}</td>
-                        <td className="heiVerifyMetaData">{row.map((data,index) => <tr >{data.haddress}</tr>)}</td>
-                        <td className="heiVerifyMetaData">{row.map((data,index) => <tr >{data.state}</tr>)}</td>
-                        <td className="heiVerifyMetaData">{row.map((data,index) => <tr >{data.city}</tr>)}</td>
-                        <td className="heiVerifyMetaData">{row.map((data,index) => <tr ><button key={index} onClick={() => {setPopUpStatus(true); setPopUpInfo(data)}}>view{data.sno}</button></tr>)}</td>
-                    </tr>
+                        {/* <td className="heiVerifyMetaData">{row.map((data,index) => <tr >{data.haddress}</tr>)}</td> */}
+                        {/* <td className="heiVerifyMetaData">{row.map((data,index) => <tr >{data.state}</tr>)}</td> */}
+                        <td className="heiVerifyMetaData">{row.map((data,index) => <tr >{data.status}</tr>)}</td>
+                        <td className="heiVerifyMetaData">{row.map((data,index) => <tr ><button key={index} onClick={() => {setPopUpStatus(true); setPopUpData(data)}}>view{index+1}</button></tr>)}</td>
+
+                                            </tr>
                 </tbody>
             </table>
+            <PopUpViewHei trigger={popupstatus} setTrigger={setPopUpStatus} data={popupdata}>this is popup</PopUpViewHei>
         </div>
      )
 }

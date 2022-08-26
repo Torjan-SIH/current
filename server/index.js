@@ -702,19 +702,177 @@ app.get('/admindashboard',(req,res)=>
 
 app.get('/heiverify',(req,res)=>{
        
-    db.query("select hname,hmail,hcontact,govtcert,cat,haddress,state,city from heiuser",(err,result)=>{
+    db.query("select hname,hmail,hcontact,govtcert,cat,haddress,state,city,status from heiuser where status='pending'",(err,result)=>{
         if(err)
         {console.log(err);}
-        else{res.send(result);}
+        else{res.send(result);
+       }
     })
    
+}) 
+
+//-------------Admin Hei Acceppt Backend-------------------------
+app.post('/adminverify',(req,res)=>
+{
+    const mail = req.body.mail;
+    db.query('update heiuser set status="accepted" where hmail=?',[mail],(err,result)=>
+    {
+        if(err)
+        {console.log(err);}
+       
+    })
+    var nodemailer = require('nodemailer');
+    var transporter = nodemailer.createTransport({
+    service: 'outlook',
+     auth: {
+     user: 'sumanth.k2019@gmail.com',
+     pass: 'JEE!mains1'
+         }
+    });
+
+var mailOptions = {
+    from: 'sumanth.k2019@gmail.com',
+        to: mail,
+    subject: 'Regarding verification of account',
+    text:'your account has been verified,please log into your account'
+    };
+
+    transporter.sendMail(mailOptions, function(error, info){
+        if (error) {
+        res.send({wrong:'mail not sent'});
+            }         
+        else {
+       
+    res.send({message:"mail sent"});
+            }
+    }); 
+     
+})
+
+//-----------------Admin hei reject Backend----------------------
+app.post('/adminheirej',(req,res)=>
+{
+    const mail = req.body.mail;
+    db.query('update heiuser set status="rejected" where hmail=?',[mail],(err,result)=>
+    {
+        if(err)
+        {console.log(err);}
+       
+    })
+    var nodemailer = require('nodemailer');
+    var transporter = nodemailer.createTransport({
+    service: 'outlook',
+     auth: {
+     user: 'sumanth.k2019@gmail.com',
+     pass: 'JEE!mains1'
+         }
+    });
+
+var mailOptions = {
+    from: 'sumanth.k2019@gmail.com',
+        to: mail,
+    subject: 'Regarding verification of account',
+    text:'your account has been verified,it was rejected'
+    };
+
+    transporter.sendMail(mailOptions, function(error, info){
+        if (error) {
+        res.send({wrong:'mail not sent'});
+            }         
+        else {
+           
+    res.send({message:"mail sent"});
+            }
+    }); 
+     
+
+})
+
+
+//---------------Admin funding accept backend
+
+app.post('/adminfunverify',(req,res)=>
+{
+    const mail = req.body.mail;
+    db.query('update agencyuser set status="accepted" where amail=?',[mail],(err,result)=>
+    {
+        if(err)
+        {console.log(err);}
+       
+    })
+    var nodemailer = require('nodemailer');
+    var transporter = nodemailer.createTransport({
+    service: 'outlook',
+     auth: {
+     user: 'sumanth.k2019@gmail.com',
+     pass: 'JEE!mains1'
+         }
+    });
+
+var mailOptions = {
+    from: 'sumanth.k2019@gmail.com',
+        to: mail,
+    subject: 'Regarding verification of account',
+    text:'your account has been verified,please log into your account'
+    };
+
+    transporter.sendMail(mailOptions, function(error, info){
+        if (error) {
+        res.send({wrong:'mail not sent'});
+            }         
+        else {
+       
+    res.send({message:"mail sent"});
+            }
+    }); 
+     
+})
+
+//--------------Admin agency reject backend--------------------
+
+app.post('/adminfunrej',(req,res)=>
+{
+    const mail = req.body.mail;
+    db.query('update agencyuser set status="rejected" where amail=?',[mail],(err,result)=>
+    {
+        if(err)
+        {console.log(err);}
+       
+    })
+    var nodemailer = require('nodemailer');
+    var transporter = nodemailer.createTransport({
+    service: 'outlook',
+     auth: {
+     user: 'sumanth.k2019@gmail.com',
+     pass: 'JEE!mains1'
+         }
+    });
+
+var mailOptions = {
+    from: 'sumanth.k2019@gmail.com',
+        to: mail,
+    subject: 'Regarding verification of account',
+    text:'your account has been verified,it was rejected'
+    };
+
+    transporter.sendMail(mailOptions, function(error, info){
+        if (error) {
+        res.send({wrong:'mail not sent'});
+            }         
+        else {
+           
+    res.send({message:"mail sent"});
+            }
+    }); 
+     
+
 })
 
 //---------------Admin AgencyVerify Backend------------------
 
 app.get('/fundverify',(req,res)=>{
        
-    db.query("select aname,amail,acontact,estdate,cert,aaddress,state,city from agencyuser",(err,result)=>{
+    db.query("select aname,amail,acontact,estdate,cert,aaddress,state,city,status from agencyuser where status='pending'",(err,result)=>{
         if(err)
         {console.log(err);}
         else{res.send(result);}

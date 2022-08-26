@@ -7,6 +7,7 @@ import { NavBarMedium } from "../../components/Navbar";
 
 const OeProfile=() =>
 {
+ 
     return(
         <div className="oeProfileDiv">
             <TopBar/>
