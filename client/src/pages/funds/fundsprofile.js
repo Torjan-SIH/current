@@ -17,8 +17,6 @@ const FundsProfile = () =>{
     return(
         <div className="fundMainDiv">
             <div className="fundProfileDiv">
-
-            
             <div>
                 <NavBarMedium/>
             </div>
