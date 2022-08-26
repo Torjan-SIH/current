@@ -16,7 +16,8 @@ let role = "";
 const db = mysql.createConnection({
     user:"root",
     host:"localhost",
-    password:'',
+    password:'root',
+    port: "8889",
     database:'onof',
     
    
@@ -52,11 +53,12 @@ app.get('/funddashboard',(req,res)=>{
 
 app.get('/funddashboardlist',(req,res)=>{
     
-    db.query("select a.sid, a.sname, a.aname, a.amail, a.sdesc, a.sdoc, a.sdate, h.hname,h.hmail, h.adesc, h.adoc, h.adate, h.sstatus from heiapply h, agencyscheme a where amail=? and h.sid = a.sid",[mail],(err,result)=>{
+    db.query("select distinct(a.sid, a.sname, a.aname, a.amail, a.sdesc, a.sdoc, a.sdate, h.hname,h.hmail, h.adesc, h.adoc, h.adate, h.sstatus) from heiapply h, agencyscheme a where amail=? and h.sid = a.sid",[mail],(err,result)=>{
         if(err){
             console.log(err);
         }
         else{
+            console.log(result);
             res.send(result);
         }
     })
@@ -135,7 +137,9 @@ app.get('/fundoelist',(req,res)=>{
 
 //-----------------Funds Profile----------------------
 
-
+app.get('/fundprofile',(req,res)=>{
+    res.send(mail)
+})
 
 //------------------HEI Dashboard---------------------
 
@@ -193,6 +197,7 @@ app.post('/heiapplyscheme',(req,res) =>{
         }
     })
 })
+
 
 //-----------------forgotpassword--------------------
 

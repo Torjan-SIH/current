@@ -1,34 +1,33 @@
-import React, { useEffect, useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 import './sideBarStyle.css';
 
-const FundSideBar = (props) =>{
+const FundSideBar = (props) => {
 
     return(
         <div className="sideBarDiv">
-            {/* <ProSidebar>
-                <Menu iconShape='square' className="sideBar">
-<<<<<<< HEAD
-                    <MenuItem className="sideBarElement"><Link to="/fundsdashboard" style={{color:"white"}} className="linkItem">Dashboard</Link></MenuItem>
-                    <MenuItem className="sideBarElement"><Link to="/fundsoeevaluation" style={{color:"white"}} className="linkItem">OE Evaluation</Link></MenuItem>
-                    <MenuItem className="sideBarElement"><Link to="/fundschemes" style={{color:"white"}} className="linkItem">Schemes</Link></MenuItem>
-                    <MenuItem className="sideBarElement"><Link to="/fundsexplorer"style={{color:"white"}} className="linkItem">Explore</Link></MenuItem>
-                    <MenuItem className="sideBarElement"><Link to="/fundsprofile" style={{color:"white"}} className="linkItem">Profile</Link></MenuItem>
-                    <MenuItem className="sideBarElement"><Link to="/fundsdashboard">Dashboard</Link></MenuItem>
-                    <MenuItem className="sideBarElement"><Link to="/fundsoeevaluation">OE Evaluation</Link></MenuItem>
-                    <MenuItem className="sideBarElement"><Link to="/fundschemes">Schemes</Link></MenuItem>
-                    <MenuItem className="sideBarElement"><Link to="/fundsprofile">Profile</Link></MenuItem>
-                </Menu>
-            </ProSidebar> */}
+            <div className="header">
+                <p>{props.name}</p>
+            </div>
+            <hr></hr>
             <nav className="fundNav">
-            <Link to="/fundsdashboard" className="linkItem" ><b>Dashboard</b></Link>
-            <br></br>
-            <Link to="/fundsoeevaluation" className="linkItem"><b>OE Evaluation</b></Link>
-            <br></br>
-            <Link to="/fundschemes" className="linkItem"><b>Schemes</b></Link>
-            <br></br>
-            <Link to="/fundsprofile" className="linkItem"><b>Profile</b></Link>
-        </nav>
+                <Link to="/fundsdashboard" className="linkItem" ><b>Dashboard</b></Link>
+                <Link to="/fundsoeevaluation" className="linkItem"><b>OE Evaluation</b></Link>
+                <Link to="/fundschemes" className="linkItem"><b>Schemes</b></Link>
+                <Link to="/fundsprofile" className="linkItem"><b>Profile</b></Link>
+            </nav>
+
+            {/* <ul class="menu-hover-fill flex flex-col items-start leading-none text-2xl uppercase space-y-4">
+                <li><a href="#" data-text="home">home</a></li>
+                <li><a href="#" data-text="archives">archives</a></li>
+                <li><a href="#" data-text="tags">tags</a></li>
+                <li><a href="#" data-text="categories">categories</a></li>
+                <li><a href="#" data-text="about">about</a></li>
+            </ul> */}
+            <div className="bottom">
+                <hr></hr>
+                <Link to="/" className="linkItem">Logout</Link>
+            </div>
         </div>
     )
 }

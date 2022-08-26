@@ -5,17 +5,7 @@
 }
 
 .fundProfileForm {
-
-    margin-left: 50%;
-    margin-right: 10%;
-    border-radius: 10px;
     width: 100%;
-}
-
-
-.fundProfileTable {
-    margin-right: 40%;
-
 }
 
 .fundProfileTable {
@@ -27,8 +17,9 @@
 .sideBySide {
     display: inline-flex;
     margin-right: 10%;
+    margin-top: 8%;
+    margin-left: 2%;
     align-items: center;
-
 }
 
 .heiExplorerDiv {
@@ -223,13 +214,9 @@
 }
 
 .inputBox {
-    width: 400%;
+    width: 100%;
     margin-left: 0%;
     box-sizing: border-box;
-}
-
-.inputBox {
-    width: 300%;
 }
 
 body {

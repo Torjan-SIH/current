@@ -10,7 +10,7 @@ import { NavBarMedium } from "../../components/Navbar";
 const FundSchemes = () =>
 {
     const [popupstatus, setPopUpStatus] = useState(false);
-    const [name, setName] = useState();
+    const [name, setName] = useState('blank');
 
     useEffect(() => {
         Axios.get('http://localhost:3001/funddashboard').then((response)=>{
@@ -20,16 +20,17 @@ const FundSchemes = () =>
 
     return(
         <div className="fundProfileDiv" >
-            <TopBar/>
             <div>
                 <NavBarMedium/>
             </div>
             
             <div className="sideBySide">
-                <FundSideBar/>
+                <FundSideBar name={name}/>
             </div>
             <div className="sideBySide">
-                <ListFundScheme/>
+                <div className="content">
+                    <ListFundScheme/>
+                </div>
             </div>
             <div className="sideBySide">
                 <button onClick={() => setPopUpStatus(true)} >New Scheme</button>

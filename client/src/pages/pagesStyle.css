@@ -48,8 +48,8 @@
 }
 
 .marqueeScrollHome {
-   background-color: whitesmoke;
-   border: 1px solid whitesmoke;
+   background-color: rgb(180, 177, 177);
+   border: 0px;
    /* box-shadow: 4px 10px 14px 4px rgba(57, 17, 69, .2); */
    /* border-radius: 50px; */
    width: 100%;
@@ -58,7 +58,6 @@
 }
 
 .marqueeHome {
-   background-color: whitesmoke;
    font-size: 30px;
    color: brown;
    padding: 1px;
@@ -269,10 +268,6 @@
 
 .myform1 {
    margin-bottom: 3.5%;
-}
-
-marquee {
-   background-color: black;
 }
 
 .blink {
@@ -671,6 +666,7 @@ body {
    background-image: url("https://wallpaperaccess.com/full/5227233.png");
    background-size: cover;
 }
+
 
 body {
    background-size: cover;
