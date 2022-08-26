@@ -4,6 +4,10 @@ import React from "react";
 const Meet=()=>
 {
 
+    const sendreq=()=>
+    {
+        
+    }
     return(
         <div className="meeting">
         <form className="oeMeet">
@@ -15,7 +19,7 @@ const Meet=()=>
                     <td><input type="text" className="meetinginput" placeholder="paste the meeting link"/></td>
                 </tr>
                 <tr>
-                    <input type="submit" value="send" onclick={(e)=>sendreq(e)}/>
+                    {/* <input type="submit" value="send" onclick={(e)=>sendreq(e)}/> */}
                 </tr>
             </table>
         </form>

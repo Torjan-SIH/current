@@ -18,15 +18,16 @@ const FundsOeEvaluation = () =>{
     
     return(
         <div className="fundProfileDiv" >
-            <TopBar/>
             <div>
                 <NavBarMedium/>
             </div>
             <div className="sideBySide">
-                <FundSideBar/>
+                <FundSideBar name={name}/>
             </div>
             <div className="sideBySide">
-                <ListFundOeEvaluation/>
+                <div>
+                    <ListFundOeEvaluation/>
+                </div>
             </div>
         </div>
     )

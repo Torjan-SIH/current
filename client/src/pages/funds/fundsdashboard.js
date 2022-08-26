@@ -1,9 +1,9 @@
-import React, { useState,useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import FundSideBar from "../../components/SideBar/FUNDsidebar";
 import TopBar from "../../components/TopBar/topbar";
 import { ListFundDashboard }from "../../components/ListView/listview";
-import Axios from "axios";
 import { NavBarMedium } from "../../components/Navbar";
+import Axios from "axios";
 import './fundsStyles.css';
 
 
@@ -20,15 +20,16 @@ const FundsDashboard = () =>{
     return(
         <div className="fundMainDiv">
             <div className="fundProfileDiv" >
-                <TopBar/>
                 <div>
                     <NavBarMedium/>
                 </div>
                 <div className="sideBySide">
-                    <FundSideBar/>
+                        <FundSideBar name={name}/>
                 </div>
                 <div className="sideBySide">
-                    <ListFundDashboard/>
+                    <div className="content">
+                        <ListFundDashboard/>
+                    </div>
                 </div>
             </div>
         </div>

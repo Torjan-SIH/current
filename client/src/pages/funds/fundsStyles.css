@@ -5,18 +5,9 @@
 }
 
 .fundProfileForm {
-    
-    margin-left: 50%;
-    margin-right: 10%;
-    border-radius: 10px;
     width: 100%;
 }
 
-
-.fundProfileTable{
-    margin-right: 40%;
-    
-}
 .fundProfileTable {
     margin-right: auto;
     margin-left: auto;
@@ -26,8 +17,9 @@
 .sideBySide {
     display: inline-flex;
     margin-right: 10%;
+    margin-top: 8%;
+    margin-left: 2%;
     align-items: center;
-
 }
 
 .heiExplorerDiv {
@@ -98,32 +90,39 @@
     margin-top: 7rem;
     align-items: left;
     text-align: left;
- }
- /* .registerDiv{
+}
+
+/* .registerDiv{
     display: inline-flex;
  } */
- .check{
-    height:30px;
+.check {
+    height: 30px;
     width: 30px;
- }
- /* .registerForm{
+}
+
+/* .registerForm{
     width: 100%;
     font-size: xx-large;
     display: inline;
  } */
- .radio{
-    height:30px;
+.radio {
+    height: 30px;
     width: 30px;
- }
- 
- .mainDiv{
+}
+
+/* .mainDiv {
     display: inline-flex;
- }
- .registerTable{
+<<<<<<< HEAD
+} */
+
+.registerTable {}
+
+.registerTable {
     /* margin: 100%; */
     width: 100%;
- }
-.registerDiv{
+}
+
+.registerDiv {
     width: 100%;
     margin: 0%;
 }
@@ -157,6 +156,7 @@
 
 .registerForm {
     width: 93%;
+    /* background-color: rgb(255, 255, 255); */
 }
 
 .registerTable {
@@ -212,24 +212,22 @@
     text-decoration: none;
     width: max-content;
 }
-.inputBox{
-    width: 400%;
+
+.inputBox {
+    width: 100%;
     margin-left: 0%;
     box-sizing: border-box;
-}
-.inputBox {
-    width: 300%;
 }
 
 body {
     margin: 0;
- }
- 
- main {
+}
+
+main {
     margin: 16px;
- }
- 
- .navMedium {
+}
+
+.navMedium {
     position: fixed;
     align-items: center;
     height: 80px;
@@ -240,9 +238,9 @@ body {
     z-index: 12;
     padding-top: 0%;
     width: 100%;
- }
- 
- .navbarMedium{
+}
+
+.navbarMedium {
     display: flex;
     align-items: center;
     height: 80px;
@@ -254,20 +252,20 @@ body {
     position: fixed;
     padding-top: 0%;
     width: 100%;
- }
- 
- .navbar__title_medium {
+}
+
+.navbar__title_medium {
     margin-right: auto;
     vertical-align: middle;
     padding: 0px 18px 0px 18px;
     padding-left: 10px;
- }
- 
- .logoSmall {
+}
+
+.logoSmall {
     width: 65px;
     height: 65px;
     margin-left: 2rem;
     margin-top: auto;
     margin-bottom: auto;
     top: 0%;
- }
+}

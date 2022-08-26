@@ -9,7 +9,7 @@ export const ListFundScheme = () =>{
     const [popupstatus, setPopUpStatus] = useState(false);
     const [popupdata, setPopUpData] = useState();
     
-    useEffect(()=>{
+    useEffect(() => {
         Axios.get('http://localhost:3001/fundschemelist').then((response) => {
                 setRow(response.data);
             }).catch(err=>{
@@ -57,6 +57,7 @@ export const ListFundDashboard = () =>{
         
         Axios.get('http://localhost:3001/funddashboardlist').then((response)=>{
                 setRow(response.data);
+                console.log(response.data);
             }).catch(err=>{
                 console.log(err)
             });
